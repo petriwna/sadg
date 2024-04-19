@@ -1,0 +1,38 @@
+.card {
+  border-radius: 8px;
+  width: 288px;
+  //height: 512px;
+  box-shadow: 0 8px 16px 0 rgba(24, 24, 23, 0.08);
+  background: #fff;
+  overflow: hidden;
+  cursor: pointer;
+
+  &__container {
+    padding: 20px;
+  }
+
+  &__title {
+
+  }
+
+  &__price-container {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  &__button-detail {
+    background-color: var(--color-brand-normal);
+  }
+
+  &__button-buy {
+    background-color: var(--color-secondary);
+
+  }
+}

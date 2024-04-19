@@ -1,0 +1,16 @@
+.hero-section {
+  padding: 124px 0;
+  background-color: var(--color-primary-dark);
+  font-size: 40px;
+  color: var(--color-primary-light);
+
+  &__container {
+    margin-bottom: 48px;
+  }
+
+  &__title {
+    font-size: 67px;
+    line-height: 1;
+    font-weight: 900;
+  }
+}

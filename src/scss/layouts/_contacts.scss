@@ -1,0 +1,38 @@
+.contacts {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__paragraph {
+    color: var(--color-secondary-text);
+    font-weight: 400;
+    font-size: 28px;
+  }
+
+  &__form-field {
+    margin-bottom: 24px;
+  }
+
+  &__button {
+    display: block;
+    background-color: var(--color-brand-normal);
+    border: 2px solid var(--color-brand-normal);
+    margin: 0 auto 16px;
+
+    &:hover {
+      color: var(--color-brand-dark);
+    }
+  }
+}

@@ -5,12 +5,38 @@
   color: var(--color-primary-light);
 
   &__container {
+    width: 530px;
     margin-bottom: 48px;
   }
 
   &__title {
-    font-size: 67px;
+    font-size: 58px;
     line-height: 1;
     font-weight: 900;
+  }
+
+  &__description {
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  &__guarantee {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 18px;
+    background: rgba(246, 95, 95, 0.1);
+    border-radius: 100px;
+    width: 190px;
+    padding: 8px;
+
+    &--text {
+      margin-bottom: 0;
+      color: var(--color-primary-light);
+    }
+  }
+
+  &__icon {
+    fill: var(--color-brand-yellow-dark);
   }
 }

@@ -1,0 +1,26 @@
+.order-card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 233px;
+
+  &__img {
+    width: 233px;
+    height: 195px;
+    background-image: url("../../public/images/delivery.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__description {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+}

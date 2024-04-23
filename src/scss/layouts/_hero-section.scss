@@ -6,7 +6,7 @@
 
   &__container {
     width: 530px;
-    margin-bottom: 48px;
+    margin-bottom: 38px;
   }
 
   &__title {
@@ -18,6 +18,9 @@
   &__description {
     font-size: 24px;
     font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
 
   &__guarantee {
@@ -38,5 +41,48 @@
 
   &__icon {
     fill: var(--color-brand-yellow-dark);
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 29px;
+  }
+
+  &__button {
+    background: var(--color-brand-normal);
+    border: 2px solid var(--color-brand-normal);
+
+    &:hover {
+      color: var(--color-brand-dark);
+    }
+  }
+
+  &__video-btn {
+    font-weight: 500;
+    font-size: 18px;
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 50px;
+    padding: 0 10px 0 5px;
+
+    &:hover {
+      background: var(--color-secondary-hover);
+    }
+  }
+
+  &__btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--color-brand-yellow-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon-btn {
+    fill: #010F1C;
   }
 }

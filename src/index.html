@@ -40,27 +40,39 @@
                         та не прогарає, мангал "не поведе" з роками використання.</p>
                     <div class="hero-section__guarantee">
                         <svg class="hero-section__icon" width="24" height="24">
-                            <use href="../public/images/icons.svg#icon-guarantee"></use>
+                            <use href="public/images/icons.svg#icon-guarantee"></use>
                         </svg>
                         <p class="hero-section__guarantee--text">Гарантія 5 років.</p>
+                    </div>
+                    <div class="hero-section__buttons">
+                        <button class="button hero-section__button">Вибрати мангал</button>
+                        <div class="hero-section__video-btn">
+                            <div class="hero-section__btn">
+                                <svg class="hero-section__icon-btn" width="11" height="11">
+                                    <use href="public/images/icons.svg#icon-play"></use>
+                                </svg>
+                            </div>
+                            <span>Переглянути відео</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="advantages">
-        <div class="advantages__title">
-            <div class="container">
-                <ul class="advantages__list">
-                    <li class="advantages__item">Недорога доставка</li>
-                    <li class="advantages__item">Обмезена пропозиція</li>
-                    <li class="advantages__item">Оплата при отриманні</li>
-                </ul>
-            </div>
-        </div>
+    <section class="advantages section">
+        <!--        <div class="advantages__title">-->
+        <!--            <div class="container">-->
+        <!--                <ul class="advantages__list">-->
+        <!--                    <li class="advantages__item">Недорога доставка</li>-->
+        <!--                    <li class="advantages__item">Обмезена пропозиція</li>-->
+        <!--                    <li class="advantages__item">Оплата при отриманні</li>-->
+        <!--                </ul>-->
+        <!--            </div>-->
+        <!--        </div>-->
         <div class="container">
-            <div class="advantages__ex">
-                <h2>Наші переваги</h2>
+            <h2 class="section__title section__title--centered">Наші переваги</h2>
+            <div class="advantages__description">
+                <div class="advantages__img-slider"></div>
                 <ul>
                     <li>Найнижчі ціни від виробника</li>
                     <li>Є мангали під 6, 8, 10, 12 шампурів</li>
@@ -70,41 +82,69 @@
             </div>
         </div>
     </section>
-    <section>
+    <section class="sale section">
         <div class="container">
             <h2 class="visually-hidden">Акції</h2>
-            <div>
-                <p>Звичайна ціна від:</p>
-                <p>1349 грн</p>
+            <div class="sale__prop">
+                <div class="sale__price old-price">
+                    <span>Звичайна ціна від:</span>
+                    <p class="sale__old">1349 грн</p>
+                </div>
+                <div class="sale__price">
+                    <span>Акційна ціна від:</span><span class="sale__promotion">-45%</span>
+                    <p class="sale__new">690 грн</p>
+                </div>
+            </div>
+            <!--            <p>Залишилось по акції: <span>6</span></p>-->
+            <div class="sale__bottom">
+                <p>Всього замовлень: <span>648</span></p>
+                <button class="sale__button button">Вибрати мангал</button>
             </div>
             <div>
-                <p>Акційна ціна від:</p><span>Економія 45%</span>
-                <p>690 грн</p>
-            </div>
-            <p>Залишилось по акції: <span>6</span></p>
-            <p>Всього замовлень: <span>648</span></p>
-            <button>Вибрати мангал</button>
-            <div>
-                <p>Замовляй повний комплект та отримуйте додаткову знижку на чозли та шампура</p>
+                <h4 class="sale__second-title">Замовляй повний комплект та отримуйте додаткову знижку на чозли та шампура</h4>
                 <img src="public" alt="Комплект з акцією">
             </div>
         </div>
     </section>
-    <section>
+    <section class="info section">
         <div class="container">
-            <h2>Розкладний мангал-валіза від українського виробника</h2>
-            <ul>
-                <li>Жаростійка сталь X25T</li>
-                <li>Мангал не "веде" та не прогарає</li>
-                <li>Два рівні прожарювання для повного контролю</li>
-                <li>В наявності різні розміри шампура та чохли</li>
+            <h2 class="info__title section__title section__title--centered">Розкладний мангал-валіза від українського
+                виробника</h2>
+            <video id="info-video" controls autoplay muted loop class="info__video">
+                <source src="public/videos/info-video.mp4" type="video/mp4">
+                Ваш браузер не підтримує відео.
+            </video>
+            <ul class="info__list">
+                <li class="info__item">
+                    <svg class="info__icon" width="34" height="34">
+                        <use href="public/images/icons.svg#icon-done"></use>
+                    </svg>
+                    Жаростійка сталь X25T
+                </li>
+                <li class="info__item">
+                    <svg class="info__icon" width="34" height="34">
+                        <use href="public/images/icons.svg#icon-done"></use>
+                    </svg>
+                    Мангал не "веде" та не прогарає
+                </li>
+                <li class="info__item">
+                    <svg class="info__icon" width="34" height="34">
+                        <use href="public/images/icons.svg#icon-done"></use>
+                    </svg>
+                    Два рівні прожарювання для повного контролю
+                </li>
+                <li class="info__item">
+                    <svg class="info__icon" width="34" height="34">
+                        <use href="public/images/icons.svg#icon-done"></use>
+                    </svg>
+                    В наявності різні розміри шампура та чохли
+                </li>
             </ul>
-            <video></video>
         </div>
     </section>
-    <section class="catalog">
+    <section class="catalog section">
         <div class="container">
-            <h2 class="visually-hidden">Каталог</h2>
+            <h2 class="section__title section__title--centered">Каталог</h2>
             <h3>Мангали 2мм</h3>
             <div class="catalog__slider">
                 <div class="formats-section__container swiper-container">
@@ -391,9 +431,9 @@
             <img src="public" alt="photo">
         </div>
     </section>
-    <section>
+    <section class="reviews section">
         <div class="container">
-            <h2>reviews</h2>
+            <h2 class="review__title section__title section__title--centered">Відгуки</h2>
         </div>
     </section>
     <section class="order section">
@@ -405,7 +445,7 @@
                     <article class="order-card">
                         <div class="order-card__img"></div>
                         <div class="order-card__description">
-                            <h4 class="order-card__title">Заявка.</h4>
+                            <h4 class="order-card__title">1. Заявка.</h4>
                             <p>Залишаєте заявку на нашому сайті.</p>
                         </div>
                     </article>
@@ -414,7 +454,7 @@
                     <article class="order-card">
                         <div class="order-card__img"></div>
                         <div class="order-card__description">
-                            <h4 class="order-card__title">Дзвінок.</h4>
+                            <h4 class="order-card__title">2. Дзвінок.</h4>
                             <p>Ми уточнимо деталі замовлення.</p>
                         </div>
                     </article>
@@ -423,7 +463,7 @@
                     <article class="order-card">
                         <div class="order-card__img"></div>
                         <div class="order-card__description">
-                            <h4 class="order-card__title">Відправка.</h4>
+                            <h4 class="order-card__title">3. Відправка.</h4>
                             <p>Доставляємо замовлення протягом 2-3 днів.</p>
                         </div>
                     </article>
@@ -432,7 +472,7 @@
                     <article class="order-card">
                         <div class="order-card__img"></div>
                         <div class="order-card__description">
-                            <h4 class="order-card__title">Отримання.</h4>
+                            <h4 class="order-card__title">4. Отримання.</h4>
                             <p>Оплачуєте при отриманні.</p>
                         </div>
                     </article>

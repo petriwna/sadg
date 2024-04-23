@@ -25,6 +25,10 @@ const paths = {
         src: 'src/public/images/**/*.{png,svg,jpg}',
         dest: 'dist/public/images/'
     },
+    videos: {
+        src: 'src/public/videos/**/*.{mp3,mp4}',
+        dest: 'dist/public/videos/'
+    },
     html: {
         src: './src/**/*.html',
         dest: './dist'
@@ -67,6 +71,11 @@ gulp.task('images', () => {
         .pipe(gulp.dest(paths.images.dest));
 });
 
+gulp.task('videos', () => {
+    return gulp.src(paths.videos.src)
+        .pipe(gulp.dest(paths.videos.dest));
+});
+
 gulp.task('server', () => {
     connect.server({
         root: 'dist',
@@ -75,13 +84,14 @@ gulp.task('server', () => {
     });
 });
 
-gulp.task('default', gulp.series('html', 'sass', 'scripts', 'images', 'server'));
+gulp.task('default', gulp.series('html', 'sass', 'scripts', 'images', 'videos', 'server'));
 
 gulp.task('watch', () => {
     gulp.watch(paths.html.src, gulp.series('html'));
     gulp.watch(paths.styles.src, gulp.series('sass'));
     gulp.watch(paths.scripts.src, gulp.series('scripts'));
     gulp.watch(paths.images.src, gulp.series('images'));
+    gulp.watch(paths.videos.src, gulp.series('videos'));
     gulp.watch('src/**/*', gulp.series('reload'));
 
 });

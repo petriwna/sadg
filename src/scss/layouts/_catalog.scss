@@ -7,12 +7,15 @@
 
   &__container {
     overflow: hidden;
+    width: 100%;
   }
 
   &__list {
     margin-bottom: 32px;
     display: flex;
     gap: 30px;
+    width: 100%;
+    justify-content: space-around;
   }
 
   &__button {

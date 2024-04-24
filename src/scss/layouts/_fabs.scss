@@ -16,11 +16,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     &:hover {
       -webkit-transform: scale(1.1);
       transform: scale(1.1);
     }
+  }
+
+  &__counter {
+    min-width: 30px;
+    width: initial;
+    height: 30px;
+    padding: 0 5px;
+    background-color: red;
+    color: #fff;
+    border-radius: 30px;
+    position: absolute;
+    right: -3px;
+    bottom: -3px;
+    text-align: center;
+    line-height: 30px;
+    box-sizing: border-box;
   }
 
   &__icon {

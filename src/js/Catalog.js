@@ -1,10 +1,13 @@
 import {Modal} from "./Modal";
+import {Basket} from "./Basket";
 
 export class Catalog {
     constructor() {
         this.cards = document.querySelectorAll('.card');
-        this.btnDetails = document.querySelectorAll('.details')
-        this.modal = new Modal('.backdrop', '.modal-btn-close');
+        this.btnDetails = document.querySelectorAll('.details');
+        this.btnBuy = document.querySelectorAll('.card__button-buy')
+        this.modal = new Modal();
+        this.basket = new Basket();
         this.addClickListeners()
     }
 
@@ -14,25 +17,37 @@ export class Catalog {
         });
 
         this.btnDetails.forEach(btn => {
-            btn.addEventListener('click', event => this.handleClickDetails(event))
-        })
+            btn.addEventListener('click', event => this.handleClickDetails(event));
+        });
+
+        this.btnBuy.forEach(btn => {
+            btn.addEventListener('click', event => this.handleClickBuy(event));
+        });
     }
 
     handleCardClick(event) {
-        this.openModal(event);
+        const card = event.currentTarget.closest('.card');
+        this.modal.openModalProduct(card);
     }
 
-    openModal(event){
-        const card = event.currentTarget;
-        this.modal.toggle(card);
+    openModal(card, event){
+        this.modal.openModal(card, event);
     }
 
     handleClickDetails(event) {
         event.stopPropagation();
-        this.openModal(event);
+        const card = event.currentTarget.closest('.card');
+        if (card) {
+            this.openModal(card, event);
+        }
     }
 
-    handleClickBuy() {
-
+    handleClickBuy(event) {
+        event.stopPropagation();
+        const card = event.currentTarget.closest('.card');
+        this.openModal(card, event);
+        if (card) {
+            this.basket.addProduct(card);
+        }
     }
 }

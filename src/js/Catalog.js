@@ -19,16 +19,17 @@ export class Catalog {
     }
 
     handleCardClick(event) {
-        const card = event.currentTarget;
-        const id = card.dataset.id;
-        const category = card.dataset.category;
+        this.openModal(event);
+    }
 
-        this.modal.toggle();
+    openModal(event){
+        const card = event.currentTarget;
+        this.modal.toggle(card);
     }
 
     handleClickDetails(event) {
         event.stopPropagation();
-        this.modal.toggle();
+        this.openModal(event);
     }
 
     handleClickBuy() {

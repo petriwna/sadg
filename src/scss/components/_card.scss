@@ -17,27 +17,6 @@
     text-align: center;
   }
 
-  &__price-container {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &__price-new {
-    font-weight: 600;
-    font-size: 18px;
-    text-align: center;
-  }
-
-  &__price-old {
-    color: var(--color-secondary-text);
-    font-weight: 400;
-    font-size: 14px;
-    text-decoration: line-through;
-    text-align: center;
-  }
-
   &__buttons {
     display: flex;
     gap: 5px;

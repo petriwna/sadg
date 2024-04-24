@@ -1,0 +1,25 @@
+.price {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+
+  &--left {
+    justify-content: left;
+  }
+
+
+  &__new {
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  &__old {
+    color: var(--color-secondary-text);
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration: line-through;
+    text-align: center;
+  }
+}

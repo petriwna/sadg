@@ -19,8 +19,8 @@
 
                 <ul class="header__menu">
                     <li><a class="link" href="#advantages">Переваги</a></li>
-                    <li><a class="link" href="#description">Опис</a></li>
                     <li><a class="link" href="#sale">Акції</a></li>
+                    <li><a class="link" href="#info">Опис</a></li>
                     <li><a class="link" href="#catalog">Каталог</a></li>
                     <li><a class="link" href="#features">Особливості</a></li>
                     <li><a class="link" href="#reviews">Відгуки</a></li>
@@ -45,21 +45,21 @@
                         <p class="hero-section__guarantee--text">Гарантія 5 років.</p>
                     </div>
                     <div class="hero-section__buttons">
-                        <button class="button hero-section__button">Вибрати мангал</button>
-                        <div class="hero-section__video-btn">
+                        <a class="button hero-section__button link" href="#catalog">Вибрати мангал</a>
+                        <a class="hero-section__video-btn link" href="#info">
                             <div class="hero-section__btn">
                                 <svg class="hero-section__icon-btn" width="11" height="11">
                                     <use href="public/images/icons.svg#icon-play"></use>
                                 </svg>
                             </div>
                             <span>Переглянути відео</span>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="advantages section">
+    <section class="advantages section" id="advantages">
         <!--        <div class="advantages__title">-->
         <!--            <div class="container">-->
         <!--                <ul class="advantages__list">-->
@@ -82,7 +82,7 @@
             </div>
         </div>
     </section>
-    <section class="sale section">
+    <section class="sale section" id="sale">
         <div class="container">
             <h2 class="visually-hidden">Акції</h2>
             <div class="sale__prop">
@@ -98,15 +98,16 @@
             <!--            <p>Залишилось по акції: <span>6</span></p>-->
             <div class="sale__bottom">
                 <p>Всього замовлень: <span>648</span></p>
-                <button class="sale__button button">Вибрати мангал</button>
+                <a class="button hero-section__button link" href="#catalog">Вибрати мангал</a>
             </div>
             <div>
-                <h4 class="sale__second-title">Замовляй повний комплект та отримуйте додаткову знижку на чозли та шампура</h4>
+                <h4 class="sale__second-title">Замовляй повний комплект та отримуйте додаткову знижку на чозли та
+                    шампура</h4>
                 <img src="public" alt="Комплект з акцією">
             </div>
         </div>
     </section>
-    <section class="info section">
+    <section class="info section" id="info">
         <div class="container">
             <h2 class="info__title section__title section__title--centered">Розкладний мангал-валіза від українського
                 виробника</h2>
@@ -142,7 +143,7 @@
             </ul>
         </div>
     </section>
-    <section class="catalog section">
+    <section class="catalog section" id="catalog">
         <div class="container">
             <h2 class="section__title section__title--centered">Каталог</h2>
             <h3>Мангали 2мм</h3>
@@ -150,7 +151,7 @@
                 <div class="formats-section__container swiper-container">
                     <ul class="catalog__list">
                         <li>
-                            <article class="card">
+                            <article class="card 2mm-js" data-id="1" data-category="2mm">
                                 <img
                                         class="card__image"
                                         src="public/images/93072235.jpg"
@@ -163,14 +164,14 @@
                                         <p class="card__price-old">1 349 грн.</p>
                                     </div>
                                     <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail">Деталі</button>
-                                        <button type="button" class="button card__button-buy">Замовити</button>
+                                        <button type="button" class="button card__button-detail details">Деталі</button>
+                                        <button type="button" class="button card__button-buy buy">Замовити</button>
                                     </div>
                                 </div>
                             </article>
                         </li>
                         <li>
-                            <article class="card">
+                            <article class="card 2mm-js" data-id="2" data-category="2mm">
                                 <img
                                         class="card__image"
                                         src="public/images/93072235.jpg"
@@ -183,14 +184,14 @@
                                         <p class="card__price-old">1 349 грн.</p>
                                     </div>
                                     <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail">Деталі</button>
-                                        <button type="button" class="button card__button-buy">Замовити</button>
+                                        <button type="button" class="button card__button-detail details">Деталі</button>
+                                        <button type="button" class="button card__button-buy buy">Замовити</button>
                                     </div>
                                 </div>
                             </article>
                         </li>
                         <li>
-                            <article class="card">
+                            <article class="card 2mm-js" data-id="3" data-category="2mm">
                                 <img
                                         class="card__image"
                                         src="public/images/93072235.jpg"
@@ -203,14 +204,14 @@
                                         <p class="card__price-old">1 349 грн.</p>
                                     </div>
                                     <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail">Деталі</button>
-                                        <button type="button" class="button card__button-buy">Замовити</button>
+                                        <button type="button" class="button card__button-detail details">Деталі</button>
+                                        <button type="button" class="button card__button-buy buy">Замовити</button>
                                     </div>
                                 </div>
                             </article>
                         </li>
                         <li>
-                            <article class="card">
+                            <article class="card 2mm-js" data-id="4" data-category="2mm">
                                 <img
                                         class="card__image"
                                         src="public/images/93072235.jpg"
@@ -223,8 +224,8 @@
                                         <p class="card__price-old">1 349 грн.</p>
                                     </div>
                                     <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail">Деталі</button>
-                                        <button type="button" class="button card__button-buy">Замовити</button>
+                                        <button type="button" class="button card__button-detail details">Деталі</button>
+                                        <button type="button" class="button card__button-buy buy">Замовити</button>
                                     </div>
                                 </div>
                             </article>
@@ -237,7 +238,7 @@
                 <div class="formats-section__container swiper-container">
                     <ul class="catalog__list">
                         <li>
-                            <article class="card">
+                            <article class="card 3mm-js" data-id="1" data-category="3mm">
                                 <img
                                         class="card__image"
                                         src="public/images/93072235.jpg"
@@ -250,14 +251,14 @@
                                         <p class="card__price-old">1 349 грн.</p>
                                     </div>
                                     <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail">Деталі</button>
-                                        <button type="button" class="button card__button-buy">Замовити</button>
+                                        <button type="button" class="button card__button-detail details">Деталі</button>
+                                        <button type="button" class="button card__button-buy buy">Замовити</button>
                                     </div>
                                 </div>
                             </article>
                         </li>
                         <li>
-                            <article class="card">
+                            <article class="card 3mm-js" data-id="2" data-category="3mm">
                                 <img
                                         class="card__image"
                                         src="public/images/93072235.jpg"
@@ -270,14 +271,14 @@
                                         <p class="card__price-old">1 349 грн.</p>
                                     </div>
                                     <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail">Деталі</button>
-                                        <button type="button" class="button card__button-buy">Замовити</button>
+                                        <button type="button" class="button card__button-detail details">Деталі</button>
+                                        <button type="button" class="button card__button-buy buy">Замовити</button>
                                     </div>
                                 </div>
                             </article>
                         </li>
                         <li>
-                            <article class="card">
+                            <article class="card 3mm-js" data-id="3" data-category="3mm">
                                 <img
                                         class="card__image"
                                         src="public/images/93072235.jpg"
@@ -290,14 +291,14 @@
                                         <p class="card__price-old">1 349 грн.</p>
                                     </div>
                                     <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail">Деталі</button>
-                                        <button type="button" class="button card__button-buy">Замовити</button>
+                                        <button type="button" class="button card__button-detail details">Деталі</button>
+                                        <button type="button" class="button card__button-buy buy">Замовити</button>
                                     </div>
                                 </div>
                             </article>
                         </li>
                         <li>
-                            <article class="card">
+                            <article class="card 3mm-js" data-id="4" data-category="3mm">
                                 <img
                                         class="card__image"
                                         src="public/images/93072235.jpg"
@@ -310,8 +311,8 @@
                                         <p class="card__price-old">1 349 грн.</p>
                                     </div>
                                     <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail">Деталі</button>
-                                        <button type="button" class="button card__button-buy">Замовити</button>
+                                        <button type="button" class="button card__button-detail details">Деталі</button>
+                                        <button type="button" class="button card__button-buy buy">Замовити</button>
                                     </div>
                                 </div>
                             </article>
@@ -324,7 +325,7 @@
                 <div class="formats-section__container swiper-container">
                     <ul class="catalog__list">
                         <li>
-                            <article class="card">
+                            <article class="card compl-js" data-id="1" data-category="accessories">
                                 <img
                                         class="card__image"
                                         src="public/images/93072235.jpg"
@@ -337,14 +338,14 @@
                                         <p class="card__price-old">1 349 грн.</p>
                                     </div>
                                     <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail">Деталі</button>
-                                        <button type="button" class="button card__button-buy">Замовити</button>
+                                        <button type="button" class="button card__button-detail details">Деталі</button>
+                                        <button type="button" class="button card__button-buy buy">Замовити</button>
                                     </div>
                                 </div>
                             </article>
                         </li>
                         <li>
-                            <article class="card">
+                            <article class="card compl-js" data-id="2" data-category="accessories">
                                 <img
                                         class="card__image"
                                         src="public/images/93072235.jpg"
@@ -357,14 +358,14 @@
                                         <p class="card__price-old">1 349 грн.</p>
                                     </div>
                                     <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail">Деталі</button>
-                                        <button type="button" class="button card__button-buy">Замовити</button>
+                                        <button type="button" class="button card__button-detail details">Деталі</button>
+                                        <button type="button" class="button card__button-buy buy">Замовити</button>
                                     </div>
                                 </div>
                             </article>
                         </li>
                         <li>
-                            <article class="card">
+                            <article class="card compl-js" data-id="3" data-category="accessories">
                                 <img
                                         class="card__image"
                                         src="public/images/93072235.jpg"
@@ -377,14 +378,14 @@
                                         <p class="card__price-old">1 349 грн.</p>
                                     </div>
                                     <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail">Деталі</button>
-                                        <button type="button" class="button card__button-buy">Замовити</button>
+                                        <button type="button" class="button card__button-detail details">Деталі</button>
+                                        <button type="button" class="button card__button-buy buy">Замовити</button>
                                     </div>
                                 </div>
                             </article>
                         </li>
                         <li>
-                            <article class="card">
+                            <article class="card compl-js" data-id="4" data-category="accessories">
                                 <img
                                         class="card__image"
                                         src="public/images/93072235.jpg"
@@ -397,8 +398,8 @@
                                         <p class="card__price-old">1 349 грн.</p>
                                     </div>
                                     <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail">Деталі</button>
-                                        <button type="button" class="button card__button-buy">Замовити</button>
+                                        <button type="button" class="button card__button-detail details">Деталі</button>
+                                        <button type="button" class="button card__button-buy buy">Замовити</button>
                                     </div>
                                 </div>
                             </article>
@@ -408,7 +409,7 @@
             </div>
         </div>
     </section>
-    <section class="features section">
+    <section class="features section" id="features">
         <div class="container">
             <h2 class="features__title section__title section__title--centered">Особливості</h2>
             <ul>
@@ -431,12 +432,12 @@
             <img src="public" alt="photo">
         </div>
     </section>
-    <section class="reviews section">
+    <section class="reviews section" id="reviews">
         <div class="container">
             <h2 class="review__title section__title section__title--centered">Відгуки</h2>
         </div>
     </section>
-    <section class="order section">
+    <section class="order section" id="order">
         <div class="container">
             <h2 class="order__title section__title section__title--centered">Простий процес
                 щоб зробити замовлення</h2>
@@ -480,7 +481,7 @@
             </ul>
         </div>
     </section>
-    <section class="contacts section">
+    <section class="contacts section" id="contacts">
         <div class="container">
             <div class="contacts__container">
                 <div class="contacts__text">
@@ -525,6 +526,7 @@
             </div>
         </div>
     </section>
+
 </main>
 <footer class="footer">
     <div class="container">
@@ -533,7 +535,7 @@
                 <div class="footer__logo">
                     <a href="#">
                         <img
-                                src="public/images/logo.svg"
+                                src="public/images/"
                                 alt="Логотип"
                         />
                     </a>
@@ -590,5 +592,23 @@
         </div>
     </div>
 </footer>
+
+<div class="fab">
+    <svg class="fab__icon" width="34" height="34">
+        <use href="public/images/icons.svg#icon-shopping"></use>
+    </svg>
+</div>
+
+<div class="backdrop is-hidden">
+    <div class="modal">
+        <button class="modal__btn-close modal-btn-close" type="button">
+            <svg width="24" height="24">
+                <use href="../public/images/icons.svg#icon-close"></use>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<script type="module" src="./js/bundle.js"></script>
 </body>
 </html>

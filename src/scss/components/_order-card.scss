@@ -2,7 +2,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  width: 233px;
+  flex: 1;
 
   &__img {
     width: 233px;
@@ -14,8 +14,8 @@
   }
 
   &__description {
-    width: 100%;
     text-align: center;
+    width: 233px;
   }
 
   &__title {

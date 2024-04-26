@@ -1,11 +1,13 @@
 .card {
   border-radius: 8px;
-  width: 288px;
-  //height: 512px;
   box-shadow: 0 8px 16px 0 rgba(24, 24, 23, 0.08);
   background: #fff;
   overflow: hidden;
   cursor: pointer;
+
+  @media screen and (min-width: $bp-tablet) {
+    width: 288px;
+  }
 
   &__container {
     padding: 20px;

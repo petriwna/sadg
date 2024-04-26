@@ -6,7 +6,7 @@
           content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Grill</title>
-<!--    <link rel="stylesheet" href="./css/style.min.css">-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
 <header class="header">
@@ -26,6 +26,33 @@
                     <li><a class="link" href="#reviews">Відгуки</a></li>
                 </ul>
             </nav>
+            <button class="header__burger menu-btn-open" type="button">
+                <svg width="24" height="24">
+                    <use href="../public/images/icons.svg#icon-menu"></use>
+                </svg>
+            </button>
+
+            <div class="mobile-menu">
+                <button class="mobile-menu__btn-close menu-btn-close" type="button">
+                    <svg width="24" height="24">
+                        <use href="../public/images/icons.svg#icon-close"></use>
+                    </svg>
+                </button>
+                <a class="mobile-menu__logo" href="/">
+                    <img
+                      src="public/images/"
+                      alt="Логотип"
+                    />
+                </a>
+                <ul class="mobile-menu__list">
+                    <li><a class="mobile-menu__link" href="#advantages">Переваги</a></li>
+                    <li><a class="mobile-menu__link" href="#sale">Акції</a></li>
+                    <li><a class="mobile-menu__link" href="#info">Опис</a></li>
+                    <li><a class="mobile-menu__link" href="#catalog">Каталог</a></li>
+                    <li><a class="mobile-menu__link" href="#features">Особливості</a></li>
+                    <li><a class="mobile-menu__link" href="#reviews">Відгуки</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </header>
@@ -149,8 +176,8 @@
             <h3>Мангали 2мм</h3>
             <div class="catalog__slider">
                 <div class="catalog__container swiper-container">
-                    <ul class="catalog__list">
-                        <li>
+                    <ul class="catalog__list swiper-wrapper">
+                        <li class="swiper-slide">
                             <article class="card 2mm-js" data-id="1" data-category="2mm">
                                 <img
                                         class="card__image"
@@ -216,7 +243,7 @@
                                 </div>
                             </article>
                         </li>
-                        <li>
+                        <li class="swiper-slide">
                             <article class="card 2mm-js" data-id="2" data-category="2mm">
                                 <img
                                         class="card__image"
@@ -275,7 +302,7 @@
                                 </div>
                             </article>
                         </li>
-                        <li>
+                        <li class="swiper-slide">
                             <article class="card 2mm-js" data-id="3" data-category="2mm">
                                 <img
                                         class="card__image"
@@ -340,7 +367,7 @@
                                 </div>
                             </article>
                         </li>
-                        <li>
+                        <li class="swiper-slide">
                             <article class="card 2mm-js" data-id="4" data-category="2mm">
                                 <img
                                         class="card__image"
@@ -406,13 +433,19 @@
                             </article>
                         </li>
                     </ul>
+                    <div class="pagination">
+                        <span class="pagination__button"></span>
+                        <span class="pagination__button"></span>
+                        <span class="pagination__button"></span>
+                        <span class="pagination__button"></span>
+                    </div>
                 </div>
             </div>
             <h3>Мангали 3мм</h3>
             <div class="catalog__slider">
-                <div class="formats-section__container swiper-container">
-                    <ul class="catalog__list">
-                        <li>
+                <div class="catalog__container swiper-container">
+                    <ul class="catalog__list swiper-wrapper">
+                        <li class="swiper-slide">
                             <article class="card 3mm-js" data-id="1" data-category="3mm">
                                 <img
                                         class="card__image"
@@ -433,7 +466,7 @@
                                 </div>
                             </article>
                         </li>
-                        <li>
+                        <li class="swiper-slide">
                             <article class="card 3mm-js" data-id="2" data-category="3mm">
                                 <img
                                         class="card__image"
@@ -454,7 +487,7 @@
                                 </div>
                             </article>
                         </li>
-                        <li>
+                        <li class="swiper-slide">
                             <article class="card 3mm-js" data-id="3" data-category="3mm">
                                 <img
                                         class="card__image"
@@ -475,7 +508,7 @@
                                 </div>
                             </article>
                         </li>
-                        <li>
+                        <li class="swiper-slide">
                             <article class="card 3mm-js" data-id="4" data-category="3mm">
                                 <img
                                         class="card__image"
@@ -497,13 +530,19 @@
                             </article>
                         </li>
                     </ul>
+                    <div class="pagination">
+                        <span class="pagination__button"></span>
+                        <span class="pagination__button"></span>
+                        <span class="pagination__button"></span>
+                        <span class="pagination__button"></span>
+                    </div>
                 </div>
             </div>
             <h3>Комплектуючі до мангалу</h3>
             <div class="catalog__slider">
-                <div class="formats-section__container swiper-container">
-                    <ul class="catalog__list">
-                        <li>
+                <div class="catalog__container swiper-container">
+                    <ul class="catalog__list swiper-wrapper">
+                        <li class="swiper-slide">
                             <article class="card compl-js" data-id="1" data-category="accessories">
                                 <img
                                         class="card__image"
@@ -523,7 +562,7 @@
                                 </div>
                             </article>
                         </li>
-                        <li>
+                        <li class="swiper-slide">
                             <article class="card compl-js" data-id="2" data-category="accessories">
                                 <img
                                         class="card__image"
@@ -543,7 +582,7 @@
                                 </div>
                             </article>
                         </li>
-                        <li>
+                        <li class="swiper-slide">
                             <article class="card compl-js" data-id="3" data-category="accessories">
                                 <img
                                         class="card__image"
@@ -563,7 +602,7 @@
                                 </div>
                             </article>
                         </li>
-                        <li>
+                        <li class="swiper-slide">
                             <article class="card compl-js" data-id="4" data-category="accessories">
                                 <img
                                         class="card__image"
@@ -584,6 +623,12 @@
                             </article>
                         </li>
                     </ul>
+                    <div class="pagination">
+                        <span class="pagination__button"></span>
+                        <span class="pagination__button"></span>
+                        <span class="pagination__button"></span>
+                        <span class="pagination__button"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -823,6 +868,6 @@
     </div>
 </div>
 
-<!--<script type="module" src="./js/bundle.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </body>
 </html>

@@ -1,31 +1,24 @@
-import {Modal} from "./Modal";
-
 export class Basket {
+  constructor() {
+    this.basketFab = document.querySelector('#basket');
+    this.countBasket = document.querySelector('#basket-count');
+    this.basket = {};
+    this.addClickListeners();
+  }
 
-    constructor() {
-        this.basketFab = document.querySelector('#basket')
-        this.countBasket = document.querySelector('#basket-count');
-        this.modal = new Modal();
-        this.basket = {}
-        this.addClickListeners();
-    }
+  addClickListeners() {
+    this.basketFab.addEventListener('click', () => this.handleClickFab());
+  }
 
-    addClickListeners() {
-        this.basketFab.addEventListener('click', () => this.handleClickFab())
-    }
+  handleClickFab() {
+    this.modal.openModalBasket();
+  }
 
-    handleClickFab(){
-        this.modal.openModalBasket();
-    }
+  addProductToBasket(card) {
+    console.log(card);
+    this.basketFab.style.display = 'flex';
 
-    addProduct(card) {
-        // const productName = card.querySelector('.card__title').textContent;
-        console.log(card)
-        this.basketFab.style.display = 'flex';
-        // this.basket[productName] = 1;
-        // console.log(this.basket)
-
-        this.count = this.basket.length;
-        this.countBasket.textContent = this.count;
-    }
+    this.count = this.basket.length;
+    this.countBasket.textContent = this.count;
+  }
 }

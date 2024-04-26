@@ -6,6 +6,7 @@ const dotenv = require('dotenv');
 const dotenvExpand = require('dotenv-expand');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 const envs = dotenv.config();
 dotenvExpand.expand(envs);
@@ -180,6 +181,7 @@ module.exports = {
       minify: true,
       inject: 'body',
     }),
+    new WebpackManifestPlugin(),
   ].filter(Boolean),
   devtool: 'source-map',
   devServer: {
@@ -197,8 +199,9 @@ module.exports = {
     static: {
       directory: path.join(process.cwd(), 'dist'),
       publicPath: '',
-      watch: true,
-      ignored: getAppSrc(),
+      watch: {
+        ignored: getAppSrc(),
+      },
     },
     client: {
       logging: 'info',

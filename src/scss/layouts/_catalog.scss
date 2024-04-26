@@ -1,13 +1,12 @@
 .catalog {
   &__slider {
     display: flex;
-    gap: 32px;
+    gap: 30px;
     align-items: center;
   }
 
   &__container {
     overflow: hidden;
-    //width: 100%;
   }
 
   &__list {
@@ -15,9 +14,7 @@
 
     @media screen and (min-width: $bp-large-desktop) {
       display: flex;
-      gap: 30px;
       width: 100%;
-      justify-content: space-around;
     }
   }
 

@@ -9,7 +9,7 @@ export class MobileMenu {
   }
 
   disableScroll() {
-    document.body.classList.toggle('is-scroll-disabled');
+    document.body.classList.toggle('is-scroll-disable');
   }
 
   addListener() {

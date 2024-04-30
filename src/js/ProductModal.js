@@ -8,6 +8,12 @@ export class ProductModal extends Modal {
     this.modalCode = document.querySelector('.modal__code');
     this.modalPrice = document.querySelector('.modal__price');
     this.modalDescription = document.querySelector('.modal__description');
+    this.cardDescriptionCopy = null;
+
+    this.handleClickClose = this.handleClickClose.bind(this);
+
+    this.closeBtn.addEventListener('click', this.handleClickClose);
+    this.backdrop.addEventListener('click', this.handleClickClose);
   }
 
   openWithProduct(card) {
@@ -21,15 +27,25 @@ export class ProductModal extends Modal {
     const cardPriceOld = card.querySelector('.price__old').textContent;
     const cardPriceNew = card.querySelector('.price__new').textContent;
     const cardDescription = card.querySelector('.product');
-    const cardDescriptionCopy = cardDescription.cloneNode(true);
+    this.cardDescriptionCopy = cardDescription.cloneNode(true);
 
-    cardDescriptionCopy.classList.remove('visually-hidden');
+    this.cardDescriptionCopy.classList.remove('visually-hidden');
     this.modalTitle.textContent = cardTitle;
     this.modalCode.textContent = cardCode;
     this.modalPrice.innerHTML = `
             <p class="price__new">${cardPriceNew}</p>
             <p class="price__old">${cardPriceOld}</p>
         `;
-    this.modalDescription.appendChild(cardDescriptionCopy);
+    this.modalDescription.appendChild(this.cardDescriptionCopy);
+  }
+
+  handleClickClose() {
+    this.removeDescription();
+  }
+
+  removeDescription() {
+    if (this.cardDescriptionCopy) {
+      this.cardDescriptionCopy.remove();
+    }
   }
 }

@@ -1,4 +1,3 @@
-import '../scss/main.scss';
 import Swiper from 'swiper/bundle';
 
 import { Catalog } from './Catalog';
@@ -21,11 +20,11 @@ export class Main {
   }
 
   initCatalog() {
-    const catalog = new Catalog();
+    new Catalog();
   }
 
   initSwiper() {
-    const mySwiper = new Swiper('.swiper-container', {
+    new Swiper('.swiper-container', {
       slidesPerView: 'auto',
       spaceBetween: 20,
       breakpoints: {
@@ -47,6 +46,7 @@ export class Main {
         el: '.pagination',
         bulletClass: 'pagination__button',
         bulletActiveClass: 'pagination__button--active',
+        clickable: true,
       },
     });
   }

@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
+  z-index: 2;
   transition: opacity 0.3s,
   visibility 0.3s;
   cursor: pointer;
@@ -32,6 +33,7 @@
   display: flex;
   gap: 30px;
   overflow-y: auto;
+  cursor: auto;
 
   @media screen and (min-width: $bp-tablet) {
     padding: 48px;

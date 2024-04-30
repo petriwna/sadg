@@ -8,10 +8,16 @@ export class Modal {
 
   open() {
     this.backdrop.classList.remove('is-hidden');
+    this.disableScroll();
   }
 
   close() {
     this.backdrop.classList.add('is-hidden');
+    this.disableScroll();
+  }
+
+  disableScroll() {
+    document.body.classList.toggle('is-scroll-disable');
   }
 
   handleClickOutside(event) {

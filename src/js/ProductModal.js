@@ -9,6 +9,8 @@ export class ProductModal extends Modal {
     this.modalCode = document.querySelector('.modal__code');
     this.modalPrice = document.querySelector('.modal__price');
     this.modalDescription = document.querySelector('.modal__description');
+    this.modalImg = document.querySelector('.modal__img');
+    this.price = document.querySelector('.price__new').textContent;
 
     this.counterInput = document.getElementById('order-counter');
     this.incrementBtn = document.querySelector('.plus');
@@ -53,6 +55,7 @@ export class ProductModal extends Modal {
     const code = card.querySelector('.card__code').textContent;
     const priceOld = card.querySelector('.price__old').textContent;
     const priceNew = card.querySelector('.price__new').textContent;
+    this.modalImg = card.querySelector('.card__image').getAttribute('src');
     const description = card.querySelector('.product').cloneNode(true);
     description.classList.remove('visually-hidden');
 
@@ -107,6 +110,12 @@ export class ProductModal extends Modal {
   }
 
   handleClickOrderBtn() {
-    console.log('order');
+    this.basket.addProductToBasket(
+      this.modalImg,
+      this.modalTitle,
+      this.modalCode.textContent,
+      this.price,
+      this.counterInputValue,
+    );
   }
 }

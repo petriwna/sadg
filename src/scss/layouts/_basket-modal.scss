@@ -8,7 +8,8 @@
   border-radius: 32px;
   padding: 64px 48px;
   display: flex;
-  gap: 30px;
+  flex-direction: column;
+  gap: 10px;
   overflow-y: auto;
 
   @media screen and (min-width: $bp-tablet) {

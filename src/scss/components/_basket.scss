@@ -1,0 +1,28 @@
+.basket {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, .2);
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+
+  &__item {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  &__img {
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    border-radius: 7px;
+    background-color: #eee;
+    background-position: center;
+  }
+
+  &__description {
+    padding: 15px 0;
+  }
+}

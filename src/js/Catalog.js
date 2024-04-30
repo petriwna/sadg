@@ -43,8 +43,12 @@ export class Catalog {
   handleClickBuy(event) {
     event.stopPropagation();
     const card = event.currentTarget.closest('.card');
+    const img = card.querySelector('.card__image').getAttribute('src');
+    const name = card.querySelector('.card__title').textContent;
+    const code = card.querySelector('.card__code').textContent;
+    const price = card.querySelector('.price__new').textContent;
     if (card) {
-      this.basketModal.openWithBasket(card);
+      this.basketModal.openWithBasket(img, name, code, price, 1);
     }
   }
 }

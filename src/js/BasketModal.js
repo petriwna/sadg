@@ -4,17 +4,15 @@ import { Modal } from './Modal';
 export class BasketModal extends Modal {
   constructor() {
     super('#modal-basket', '#close-basket');
-    this.fabBasket = document.getElementById('basket');
     this.basket = new Basket();
   }
 
-  openWithBasket(basketItems) {
-    this.populateBasket(basketItems);
+  openWithBasket(img, name, code, price, quantity) {
+    this.populateBasket(img, name, code, price, quantity);
     this.open();
   }
 
-  populateBasket(basketItems) {
-    this.fabBasket.style.display = 'flex';
-    this.basket.addProductToBasket(basketItems);
+  populateBasket(img, name, code, price, quantity) {
+    this.basket.addProductToBasket(img, name, code, price, quantity);
   }
 }

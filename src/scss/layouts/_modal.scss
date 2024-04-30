@@ -77,6 +77,49 @@
     color: var(--color-secondary-text);
   }
 
+  &__buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__counter {
+    display: flex;
+    border: 1px solid var(--color-secondary-border);
+    border-radius: 5px;
+    padding: 10px;
+    align-items: center;
+  }
+
+  &__value {
+    background: transparent;
+    border: none;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__plus-minus {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  &__order {
+    background-color: var(--color-brand-yellow-light);
+    border: 2px solid var(--color-brand-yellow-light);
+
+    &:hover {
+      color: var(--color-brand-yellow-dark);
+    }
+  }
+
+
   &__text {
     margin-bottom: 40px;
     text-align: center;

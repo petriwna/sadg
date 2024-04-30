@@ -2,6 +2,10 @@ export class Modal {
   constructor(backdropSelector, closeBtnSelector) {
     this.backdrop = document.querySelector(backdropSelector);
     this.closeBtn = document.querySelector(closeBtnSelector);
+
+    this.modalContent = document.querySelector('.modal');
+    this.modalContent.addEventListener('click', (event) => this.handleModalClick(event));
+
     this.closeBtn.addEventListener('click', () => this.close());
     this.backdrop.addEventListener('click', (event) => this.handleClickOutside(event));
   }
@@ -24,5 +28,9 @@ export class Modal {
     if (event.target === this.backdrop) {
       this.close();
     }
+  }
+
+  handleModalClick(event) {
+    event.stopPropagation();
   }
 }

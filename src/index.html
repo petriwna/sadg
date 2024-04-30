@@ -1,873 +1,880 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang='uk'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Grill</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <meta charset='UTF-8'>
+  <meta name='viewport'
+        content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Grill</title>
+  <link rel='stylesheet' href='https://unpkg.com/swiper/swiper-bundle.min.css'>
 </head>
 <body>
-<header class="header">
-    <div class="container">
-        <div class="header__container">
-            <nav class="header__nav">
-                <a href="/">
-                    <img class="header__logo" src="public/images/" alt="Логотип"/>
-                </a>
+<header class='header'>
+  <div class='container'>
+    <div class='header__container'>
+      <nav class='header__nav'>
+        <a href='/'>
+          <img class='header__logo' src='public/images/' alt='Логотип' />
+        </a>
 
-                <ul class="header__menu">
-                    <li><a class="link" href="#advantages">Переваги</a></li>
-                    <li><a class="link" href="#sale">Акції</a></li>
-                    <li><a class="link" href="#info">Опис</a></li>
-                    <li><a class="link" href="#catalog">Каталог</a></li>
-                    <li><a class="link" href="#features">Особливості</a></li>
-                    <li><a class="link" href="#reviews">Відгуки</a></li>
-                </ul>
-            </nav>
-            <button class="header__burger menu-btn-open" type="button">
-                <svg width="24" height="24">
-                    <use href="../public/images/icons.svg#icon-menu"></use>
-                </svg>
-            </button>
+        <ul class='header__menu'>
+          <li><a class='link' href='#advantages'>Переваги</a></li>
+          <li><a class='link' href='#sale'>Акції</a></li>
+          <li><a class='link' href='#info'>Опис</a></li>
+          <li><a class='link' href='#catalog'>Каталог</a></li>
+          <li><a class='link' href='#features'>Особливості</a></li>
+          <li><a class='link' href='#reviews'>Відгуки</a></li>
+        </ul>
+      </nav>
+      <button class='header__burger menu-btn-open' type='button'>
+        <svg width='24' height='24'>
+          <use href='../public/images/icons.svg#icon-menu'></use>
+        </svg>
+      </button>
 
-            <div class="mobile-menu">
-                <button class="mobile-menu__btn-close menu-btn-close" type="button">
-                    <svg width="24" height="24">
-                        <use href="../public/images/icons.svg#icon-close"></use>
-                    </svg>
-                </button>
-                <a class="mobile-menu__logo" href="/">
-                    <img
-                      src="public/images/"
-                      alt="Логотип"
-                    />
-                </a>
-                <ul class="mobile-menu__list">
-                    <li><a class="mobile-menu__link" href="#advantages">Переваги</a></li>
-                    <li><a class="mobile-menu__link" href="#sale">Акції</a></li>
-                    <li><a class="mobile-menu__link" href="#info">Опис</a></li>
-                    <li><a class="mobile-menu__link" href="#catalog">Каталог</a></li>
-                    <li><a class="mobile-menu__link" href="#features">Особливості</a></li>
-                    <li><a class="mobile-menu__link" href="#reviews">Відгуки</a></li>
-                </ul>
-            </div>
-        </div>
+      <div class='mobile-menu'>
+        <button class='mobile-menu__btn-close menu-btn-close' type='button'>
+          <svg width='24' height='24'>
+            <use href='../public/images/icons.svg#icon-close'></use>
+          </svg>
+        </button>
+        <a class='mobile-menu__logo' href='/'>
+          <img
+            src='public/images/'
+            alt='Логотип'
+          />
+        </a>
+        <ul class='mobile-menu__list'>
+          <li><a class='mobile-menu__link' href='#advantages'>Переваги</a></li>
+          <li><a class='mobile-menu__link' href='#sale'>Акції</a></li>
+          <li><a class='mobile-menu__link' href='#info'>Опис</a></li>
+          <li><a class='mobile-menu__link' href='#catalog'>Каталог</a></li>
+          <li><a class='mobile-menu__link' href='#features'>Особливості</a></li>
+          <li><a class='mobile-menu__link' href='#reviews'>Відгуки</a></li>
+        </ul>
+      </div>
     </div>
+  </div>
 </header>
 <main>
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-section__container">
-                <h1 class="hero-section__title">Розкладний мангал-валіза</h1>
-                <div class="hero-section__description">
-                    <p>Незамінна річ для відпочинку на природі</p>
-                    <p>Виготовлений з жаростійкої сталі 2 або 3 мм, яка не деформується
-                        та не прогарає, мангал "не поведе" з роками використання.</p>
-                    <div class="hero-section__guarantee">
-                        <svg class="hero-section__icon" width="24" height="24">
-                            <use href="public/images/icons.svg#icon-guarantee"></use>
-                        </svg>
-                        <p class="hero-section__guarantee--text">Гарантія 5 років.</p>
-                    </div>
-                    <div class="hero-section__buttons">
-                        <a class="button hero-section__button link" href="#catalog">Вибрати мангал</a>
-                        <a class="hero-section__video-btn link" href="#info">
-                            <div class="hero-section__btn">
-                                <svg class="hero-section__icon-btn" width="11" height="11">
-                                    <use href="public/images/icons.svg#icon-play"></use>
-                                </svg>
-                            </div>
-                            <span>Переглянути відео</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+  <section class='hero-section'>
+    <div class='container'>
+      <div class='hero-section__container'>
+        <h1 class='hero-section__title'>Розкладний мангал-валіза</h1>
+        <div class='hero-section__description'>
+          <p>Незамінна річ для відпочинку на природі</p>
+          <p>Виготовлений з жаростійкої сталі 2 або 3 мм, яка не деформується
+            та не прогарає, мангал "не поведе" з роками використання.</p>
+          <div class='hero-section__guarantee'>
+            <svg class='hero-section__icon' width='24' height='24'>
+              <use href='public/images/icons.svg#icon-guarantee'></use>
+            </svg>
+            <p class='hero-section__guarantee--text'>Гарантія 5 років.</p>
+          </div>
+          <div class='hero-section__buttons'>
+            <a class='button hero-section__button link' href='#catalog'>Вибрати мангал</a>
+            <a class='hero-section__video-btn link' href='#info'>
+              <div class='hero-section__btn'>
+                <svg class='hero-section__icon-btn' width='11' height='11'>
+                  <use href='public/images/icons.svg#icon-play'></use>
+                </svg>
+              </div>
+              <span>Переглянути відео</span>
+            </a>
+          </div>
         </div>
-    </section>
-    <section class="advantages section" id="advantages">
-        <!--        <div class="advantages__title">-->
-        <!--            <div class="container">-->
-        <!--                <ul class="advantages__list">-->
-        <!--                    <li class="advantages__item">Недорога доставка</li>-->
-        <!--                    <li class="advantages__item">Обмезена пропозиція</li>-->
-        <!--                    <li class="advantages__item">Оплата при отриманні</li>-->
-        <!--                </ul>-->
-        <!--            </div>-->
-        <!--        </div>-->
-        <div class="container">
-            <h2 class="section__title section__title--centered">Наші переваги</h2>
-            <div class="advantages__description">
-                <div class="advantages__img-slider"></div>
-                <ul>
-                    <li>Найнижчі ціни від виробника</li>
-                    <li>Є мангали під 6, 8, 10, 12 шампурів</li>
-                    <li>Компактний та легкий</li>
-                    <li>Можна докупити шампури та чохли</li>
-                </ul>
-            </div>
+      </div>
+    </div>
+  </section>
+  <section class='advantages section' id='advantages'>
+    <!--        <div class="advantages__title">-->
+    <!--            <div class="container">-->
+    <!--                <ul class="advantages__list">-->
+    <!--                    <li class="advantages__item">Недорога доставка</li>-->
+    <!--                    <li class="advantages__item">Обмезена пропозиція</li>-->
+    <!--                    <li class="advantages__item">Оплата при отриманні</li>-->
+    <!--                </ul>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <div class='container'>
+      <h2 class='section__title section__title--centered'>Наші переваги</h2>
+      <div class='advantages__description'>
+        <div class='advantages__img-slider'></div>
+        <ul>
+          <li>Найнижчі ціни від виробника</li>
+          <li>Є мангали під 6, 8, 10, 12 шампурів</li>
+          <li>Компактний та легкий</li>
+          <li>Можна докупити шампури та чохли</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class='sale section' id='sale'>
+    <div class='container'>
+      <h2 class='visually-hidden'>Акції</h2>
+      <div class='sale__prop'>
+        <div class='sale__price old-price'>
+          <span>Звичайна ціна від:</span>
+          <p class='sale__old'>1349 грн</p>
         </div>
-    </section>
-    <section class="sale section" id="sale">
-        <div class="container">
-            <h2 class="visually-hidden">Акції</h2>
-            <div class="sale__prop">
-                <div class="sale__price old-price">
-                    <span>Звичайна ціна від:</span>
-                    <p class="sale__old">1349 грн</p>
-                </div>
-                <div class="sale__price">
-                    <span>Акційна ціна від:</span><span class="sale__promotion">-45%</span>
-                    <p class="sale__new">690 грн</p>
-                </div>
-            </div>
-            <!--            <p>Залишилось по акції: <span>6</span></p>-->
-            <div class="sale__bottom">
-                <p>Всього замовлень: <span>648</span></p>
-                <a class="button hero-section__button link" href="#catalog">Вибрати мангал</a>
-            </div>
-            <div>
-                <h4 class="sale__second-title">Замовляй повний комплект та отримуйте додаткову знижку на чозли та
-                    шампура</h4>
-                <img src="public" alt="Комплект з акцією">
-            </div>
+        <div class='sale__price'>
+          <span>Акційна ціна від:</span><span class='sale__promotion'>-45%</span>
+          <p class='sale__new'>690 грн</p>
         </div>
-    </section>
-    <section class="info section" id="info">
-        <div class="container">
-            <h2 class="info__title section__title section__title--centered">Розкладний мангал-валіза від українського
-                виробника</h2>
-            <video id="info-video" controls autoplay muted loop class="info__video">
-                <source src="public/videos/info-video.mp4" type="video/mp4">
-                Ваш браузер не підтримує відео.
-            </video>
-            <ul class="info__list">
-                <li class="info__item">
-                    <svg class="info__icon" width="34" height="34">
-                        <use href="public/images/icons.svg#icon-done"></use>
-                    </svg>
-                    Жаростійка сталь X25T
-                </li>
-                <li class="info__item">
-                    <svg class="info__icon" width="34" height="34">
-                        <use href="public/images/icons.svg#icon-done"></use>
-                    </svg>
-                    Мангал не "веде" та не прогарає
-                </li>
-                <li class="info__item">
-                    <svg class="info__icon" width="34" height="34">
-                        <use href="public/images/icons.svg#icon-done"></use>
-                    </svg>
-                    Два рівні прожарювання для повного контролю
-                </li>
-                <li class="info__item">
-                    <svg class="info__icon" width="34" height="34">
-                        <use href="public/images/icons.svg#icon-done"></use>
-                    </svg>
-                    В наявності різні розміри шампура та чохли
-                </li>
-            </ul>
-        </div>
-    </section>
-    <section class="catalog section" id="catalog">
-        <div class="container">
-            <h2 class="section__title section__title--centered">Каталог</h2>
-            <h3>Мангали 2мм</h3>
-            <div class="catalog__slider">
-                <div class="catalog__container swiper-container">
-                    <ul class="catalog__list swiper-wrapper">
-                        <li class="swiper-slide">
-                            <article class="card 2mm-js" data-id="1" data-category="2mm">
-                                <img
-                                        class="card__image"
-                                        src="public/images/93072235.jpg"
-                                        alt="Mangal"
-                                />
-                                <div class="card__container">
-                                    <h4 class="card__title">Мангал розкладний 2мм на 6 шампурів</h4>
-                                    <p class="card__code visually-hidden">Код товару: mgl-2-6</p>
-                                    <div class="product visually-hidden">
-                                        <p class="product__title">Мангал "Турист" на 6 шампурів</p>
-                                        <p>Комплектація: бічні стінки (2шт.), ніжки (4шт.).</p>
-                                        <p>Мангал зручний у транспортуванні та простий в збірці, збирається в невелику
-                                            валізку в який вкладаються всі комплектуючі! Виконаний з листів сталі
-                                            товщиною
-                                            2.0 мм, і представлений в чотирьох розмірах на 6, 8, 10 і 12 шампурів!
-                                            <span class="accent">Продається без шампурів, їх можна придбати окремо!!!</span>
-                                        </p>
-
-
-                                        <p class="accent">Габаритні розміри в складеному стані:</p>
-                                        <ul>
-                                            <li>Довжина: 30 см</li>
-                                            <li>Ширина: 24 см</li>
-                                            <li>Висота: 5 см</li>
-                                        </ul>
-                                        <p class="accent">Габаритні розміри в розкладеному стані:</p>
-                                        <ul>
-                                            <li>Довжина: 30 см</li>
-                                            <li>Ширина: 30 см</li>
-                                            <li>Висота: 15 см</li>
-                                            <li>Загальна висота з ніжками: 40 см</li>
-                                        </ul>
-                                        <p class="accent">Є можливість доукомплектувати чохлом, опахалом, шампурами і
-                                            чохлом для шампурів</p>
-
-                                        <p class="accent">ХАРАКТЕРИСТИКИ:</p>
-                                        <p class="accent">Основні</p>
-
-                                        <ul>
-                                            <li>Виробник: РЕВ</li>
-                                            <li>Країна виробник: Україна</li>
-                                            <li>Тип: Мангал</li>
-                                            <li>Тип палива: Деревне вугілля, дрова</li>
-                                            <li>Товщина корпусу: 2мм</li>
-                                            <li>Конструкція: Збірно-розбірна</li>
-                                            <li>Форма: Прямокутна</li>
-                                            <li>Комплектація кришкою: Не передбачена</li>
-                                            <li>Стан: Новий</li>
-                                            <li>Користувальницькі характеристики:
-                                                Місткість шампурів 1-6шт
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="card__price price">
-                                        <p class="price__new">690 грн.</p>
-                                        <p class="price__old">1 349 грн.</p>
-                                    </div>
-                                    <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail details">Деталі</button>
-                                        <button type="button" class="button card__button-buy buy">Замовити</button>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="swiper-slide">
-                            <article class="card 2mm-js" data-id="2" data-category="2mm">
-                                <img
-                                        class="card__image"
-                                        src="public/images/93072235.jpg"
-                                        alt="Mangal"
-                                />
-                                <div class="card__container">
-                                    <h4 class="card__title">Мангал розкладний 2мм на 8 шампурів</h4>
-                                    <p class="card__code visually-hidden">Код товару: mgl-2-8</p>
-                                    <div class="card__price-container price">
-                                        <p class="price__new">760 грн.</p>
-                                        <p class="price__old">1 445 грн.</p>
-                                    </div>
-                                    <div class="product visually-hidden">
-                                        <p class="product__title">Мангал розкладний у валізу з ніжками на 8 шампурів</p>
-
-                                        <p>Розкладний мангал валіза для приготування їжі на природі, чудово підійде для
-                                            тих, хто любить виїхати на природу і приготувати смачний шашлик.
-                                            Особливості даного мангалу це його компактність і простота складання,
-                                            встановити
-                                            цей мангал у Вас займе лише кілька хвилин.</p>
-
-                                        <p class="accent">Увага! Не розбирайте мангал до того, як він повністю не
-                                            охолоне, щоб уникнути
-                                            опіків.</p>
-
-                                        <p><span class="accent">Розміри у складеному стані:</span> 47х28х6 см</p>
-                                        <p><span class="accent">Розміри у розкладеному стані:</span> 39х31х55см</p>
-                                        <p><span class="accent">Висота топки:</span> 15см</p>
-
-                                        <p class="accent">Є можливість доукомплектувати чохлом, опахалом, шампурами,
-                                            чохол для шампурів</p>
-
-                                        <p class="accent">ХАРАКТЕРИСТИКИ:</p>
-
-                                        <p class="accent">Основні</p>
-                                        <ul>
-                                            <li><span class="accent">Виробник:</span> РЕВ</li>
-                                            <li><span class="accent">Країна виробник:</span> Україна</li>
-                                            <li><span class="accent">Тип:</span> Мангал</li>
-                                            <li><span class="accent">Тип палива:</span> Деревне вугілля, дрова</li>
-                                            <li><span class="accent">Товщина корпусу:</span> 2мм</li>
-                                            <li><span class="accent">Конструкція:</span> Збірно-розбірна</li>
-                                            <li><span class="accent">Форма:</span> Прямокутна</li>
-                                            <li><span class="accent">Комплектація кришкою:</span>Не передбачена</li>
-                                            <li><span class="accent">Стан:</span> Новий</li>
-                                            <li><span class="accent">Користувальницькі характеристики:</span> Місткість
-                                                шампурів 1-8шт
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail details">Деталі</button>
-                                        <button type="button" class="button card__button-buy buy">Замовити</button>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="swiper-slide">
-                            <article class="card 2mm-js" data-id="3" data-category="2mm">
-                                <img
-                                        class="card__image"
-                                        src="public/images/93072235.jpg"
-                                        alt="Mangal"
-                                />
-                                <div class="card__container">
-                                    <h4 class="card__title">Мангал розкладний 2мм на 10 шампурів</h4>
-                                    <p class="card__code visually-hidden">Код товару: mgl-2-10</p>
-                                    <div class="card__price price">
-                                        <p class="price__new">830 грн.</p>
-                                        <p class="price__old">1 580 грн.</p>
-                                    </div>
-                                    <div class="product visually-hidden">
-                                        <p class="product__title">Мангал "Турист" на 10 шампурів</p>
-                                        <p>Виконаний із якісного металу. Товщина металу 2
-                                            мм.
-                                            Компактна металоконструкція повністю розбирається, зручна для
-                                            транспортування.
-                                        </p>
-                                        <ul>
-                                            <li>Розміри: 48 х 31х 55 см;</li>
-                                            <li>Вага: 6,5 кг;</li>
-                                            <li>Товщина стін: 2,0 мм;</li>
-                                            <li>Матеріал: жаростійка сталь.</li>
-                                        </ul>
-                                        <p>Конструкція мангалу дозволяє швидко скласти його у вигляді валізи.</p>
-                                        <p>Для цього необхідно:</p>
-                                        <ul>
-                                            <li>викрутити ніжки із корпусу;</li>
-                                            <li>зняти бічні стінки;</li>
-                                            <li>укласти ніжки та бічні стінки на дно мангалу;</li>
-                                            <li>закрити стулки та закріпити замком;</li>
-                                            <li>вийняти ручку транспортування.</li>
-                                        </ul>
-                                        <p class="accent">Є можливість доукомплектувати чохлом, опахалом, шампурами і
-                                            чохлом для
-                                            шампурів.</p>
-
-                                        <p class="accent">ХАРАКТЕРИСТИКИ:</p>
-
-                                        <p class="accent">Основні</p>
-                                        <ul>
-                                            <li><span class="accent">Виробник:</span> РЕВ</li>
-                                            <li><span class="accent">Країна виробник:</span> Україна</li>
-                                            <li><span class="accent">Тип:</span> Мангал</li>
-                                            <li><span class="accent">Тип палива:</span> Деревне вугілля, дрова</li>
-                                            <li><span class="accent">Товщина корпусу:</span> 2мм</li>
-                                            <li><span class="accent">Конструкція:</span> Збірно-розбірна</li>
-                                            <li><span class="accent">Форма:</span> Прямокутна</li>
-                                            <li><span class="accent">Комплектація кришкою:</span> Не передбачена</li>
-                                            <li><span class="accent">Стан:</span> Новий</li>
-                                            <li><span class="accent">Користувальницькі характеристики:</span>Місткість
-                                                шампурів 1-10шт
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail details">Деталі</button>
-                                        <button type="button" class="button card__button-buy buy">Замовити</button>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="swiper-slide">
-                            <article class="card 2mm-js" data-id="4" data-category="2mm">
-                                <img
-                                        class="card__image"
-                                        src="public/images/93072235.jpg"
-                                        alt="Mangal"
-                                />
-                                <div class="card__container">
-                                    <h4 class="card__title">Мангал розкладний 2мм на 12 шампурів</h4>
-                                    <p class="card__code visually-hidden">Код товару: mgl-2-12</p>
-                                    <div class="card__price price">
-                                        <p class="price__new">870 грн.</p>
-                                        <p class="price__old">1 650 грн.</p>
-                                    </div>
-                                    <div class="product visually-hidden">
-                                        <p>
-                                            Найкраща пропозицію для відпочинку на природі - Мангал Валіза що зручно
-                                            захопити з собою у власний автомобіль, так і в вагон електрички. Мангал
-                                            складаний, стійкий на будь-яких поверхнях рельєфу, будь то лісова галявина
-                                            або дворова плитка. Переноситься Легко, швидко збирається і дуже простий у
-                                            використанні.
-
-                                            Особливості:
-                                            • Робоча частина мангалу на рівні пояса, що дуже зручно – не потрібно
-                                            нахилятися при приготуванні страви.
-                                            • Мангал має ребра жорсткості для стійкості конструкції.
-                                            • Ніжки вкручуються по різьбі, завдяки чому мангал можна легко переставити і
-                                            бути впевненим, що ніжки не випадуть.
-                                            • На верхній частині мангалу є засувка, що дозволяє транспортувати його не
-                                            боячись, що він розкриється.
-                                            • У нижній частині стінок є отвори для припливу повітря, що забезпечує
-                                            достатній жар від вугілля.
-                                            • швидка збірка, близько 2 хвилин.
-                                            • Займає мало місця в багажнику автомобіля.
-
-                                            Матеріал: вуглецева сталь.
-                                            Розміри : 55х31х65 см
-                                            Вага: 12 кг
-
-                                            Є можливість доукомплектувати чохлом, опахалом, шампурами і чохлом для
-                                            шампурів
-
-                                            ХАРАКТЕРИСТИКИ:
-
-                                            Основні
-                                            Виробник РЕВ
-                                            Країна виробник Україна
-                                            Тип Мангал
-                                            Тип палива Деревне вугілля, дрова
-                                            Товщина корпусу 2мм
-                                            Конструкція Збірно-розбірна
-                                            Форма Прямокутна
-                                            Комплектація кришкою Не передбачена
-                                            Стан Новий
-                                            Користувальницькі характеристики
-                                            Місткість шампурів 1-12шт
-                                        </p>
-                                    </div>
-                                    <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail details">Деталі</button>
-                                        <button type="button" class="button card__button-buy buy">Замовити</button>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                    </ul>
-                    <div class="pagination">
-                        <span class="pagination__button"></span>
-                        <span class="pagination__button"></span>
-                        <span class="pagination__button"></span>
-                        <span class="pagination__button"></span>
-                    </div>
-                </div>
-            </div>
-            <h3>Мангали 3мм</h3>
-            <div class="catalog__slider">
-                <div class="catalog__container swiper-container">
-                    <ul class="catalog__list swiper-wrapper">
-                        <li class="swiper-slide">
-                            <article class="card 3mm-js" data-id="1" data-category="3mm">
-                                <img
-                                        class="card__image"
-                                        src="public/images/93072235.jpg"
-                                        alt="Mangal"
-                                />
-                                <div class="card__container">
-                                    <h4 class="card__title">Мангал розкладний 3мм на 6 шампурів</h4>
-                                    <p class="card__code visually-hidden">Код товару: mgl-3-6</p>
-                                    <div class="card__price price">
-                                        <p class="price__new">690 грн.</p>
-                                        <p class="price__old">1 349 грн.</p>
-                                    </div>
-                                    <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail details">Деталі</button>
-                                        <button type="button" class="button card__button-buy buy">Замовити</button>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="swiper-slide">
-                            <article class="card 3mm-js" data-id="2" data-category="3mm">
-                                <img
-                                        class="card__image"
-                                        src="public/images/93072235.jpg"
-                                        alt="Mangal"
-                                />
-                                <div class="card__container">
-                                    <h4 class="card__title">Мангал розкладний 3мм на 8 шампурів</h4>
-                                    <p class="card__code visually-hidden">Код товару: mgl-3-8</p>
-                                    <div class="card__price price">
-                                        <p class="price__new">690 грн.</p>
-                                        <p class="price__old">1 349 грн.</p>
-                                    </div>
-                                    <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail details">Деталі</button>
-                                        <button type="button" class="button card__button-buy buy">Замовити</button>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="swiper-slide">
-                            <article class="card 3mm-js" data-id="3" data-category="3mm">
-                                <img
-                                        class="card__image"
-                                        src="public/images/93072235.jpg"
-                                        alt="Mangal"
-                                />
-                                <div class="card__container">
-                                    <h4 class="card__title">Мангал розкладний 3мм на 10 шампурів</h4>
-                                    <p class="card__code visually-hidden">Код товару: mgl-3-10</p>
-                                    <div class="card__price price">
-                                        <p class="price__new">690 грн.</p>
-                                        <p class="price__old">1 349 грн.</p>
-                                    </div>
-                                    <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail details">Деталі</button>
-                                        <button type="button" class="button card__button-buy buy">Замовити</button>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="swiper-slide">
-                            <article class="card 3mm-js" data-id="4" data-category="3mm">
-                                <img
-                                        class="card__image"
-                                        src="public/images/93072235.jpg"
-                                        alt="Mangal"
-                                />
-                                <div class="card__container">
-                                    <h4 class="card__title">Мангал розкладний 3мм на 12 шампурів</h4>
-                                    <p class="card__code visually-hidden">Код товару: mgl-3-12</p>
-                                    <div class="card__price price">
-                                        <p class="price__new">690 грн.</p>
-                                        <p class="price__old">1 349 грн.</p>
-                                    </div>
-                                    <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail details">Деталі</button>
-                                        <button type="button" class="button card__button-buy buy">Замовити</button>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                    </ul>
-                    <div class="pagination">
-                        <span class="pagination__button"></span>
-                        <span class="pagination__button"></span>
-                        <span class="pagination__button"></span>
-                        <span class="pagination__button"></span>
-                    </div>
-                </div>
-            </div>
-            <h3>Комплектуючі до мангалу</h3>
-            <div class="catalog__slider">
-                <div class="catalog__container swiper-container">
-                    <ul class="catalog__list swiper-wrapper">
-                        <li class="swiper-slide">
-                            <article class="card compl-js" data-id="1" data-category="accessories">
-                                <img
-                                        class="card__image"
-                                        src="public/images/93072235.jpg"
-                                        alt="Mangal"
-                                />
-                                <div class="card__container">
-                                    <h4 class="card__title">Мангал розкладний 2мм на 6 шампурів</h4>
-                                    <div class="card__price price">
-                                        <p class="price__new">690 грн.</p>
-                                        <p class="price__old">1 349 грн.</p>
-                                    </div>
-                                    <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail details">Деталі</button>
-                                        <button type="button" class="button card__button-buy buy">Замовити</button>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="swiper-slide">
-                            <article class="card compl-js" data-id="2" data-category="accessories">
-                                <img
-                                        class="card__image"
-                                        src="public/images/93072235.jpg"
-                                        alt="Mangal"
-                                />
-                                <div class="card__container">
-                                    <h4 class="card__title">Мангал розкладний 2мм на 6 шампурів</h4>
-                                    <div class="card__price price">
-                                        <p class="price__new">690 грн.</p>
-                                        <p class="price__old">1 349 грн.</p>
-                                    </div>
-                                    <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail details">Деталі</button>
-                                        <button type="button" class="button card__button-buy buy">Замовити</button>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="swiper-slide">
-                            <article class="card compl-js" data-id="3" data-category="accessories">
-                                <img
-                                        class="card__image"
-                                        src="public/images/93072235.jpg"
-                                        alt="Mangal"
-                                />
-                                <div class="card__container">
-                                    <h4 class="card__title">Мангал розкладний 2мм на 6 шампурів</h4>
-                                    <div class="card__price price">
-                                        <p class="price__new">690 грн.</p>
-                                        <p class="price__old">1 349 грн.</p>
-                                    </div>
-                                    <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail details">Деталі</button>
-                                        <button type="button" class="button card__button-buy buy">Замовити</button>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="swiper-slide">
-                            <article class="card compl-js" data-id="4" data-category="accessories">
-                                <img
-                                        class="card__image"
-                                        src="public/images/93072235.jpg"
-                                        alt="Mangal"
-                                />
-                                <div class="card__container">
-                                    <h4 class="card__title">Мангал розкладний 2мм на 6 шампурів</h4>
-                                    <div class="card__price price">
-                                        <p class="price__new">690 грн.</p>
-                                        <p class="price__old">1 349 грн.</p>
-                                    </div>
-                                    <div class="card__buttons">
-                                        <button type="button" class="button card__button-detail details">Деталі</button>
-                                        <button type="button" class="button card__button-buy buy">Замовити</button>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                    </ul>
-                    <div class="pagination">
-                        <span class="pagination__button"></span>
-                        <span class="pagination__button"></span>
-                        <span class="pagination__button"></span>
-                        <span class="pagination__button"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="features section" id="features">
-        <div class="container">
-            <h2 class="features__title section__title section__title--centered">Особливості</h2>
-            <ul>
-                <li>Якісний матеріал гарячокатана сталь.
-                    Метал якісний при нагріванні не деформується.
-                    Прослужить довгі роки
-                </li>
-                <li>2 рівні прожарювання.
-                    На першому рівні можна смажити шашлик 20-30 хв, а для експрес прожарювання
-                    можна використовувати другий рівень.
-                </li>
-                <li>Швидке складання за 2 хвилини
-                    Збирання мангалу не займе більше 2 хвилин, що дозволить швидко розпочати процес приготування
-                    шашлику
-                </li>
-                <li>Просте використання
-                    Компактний, відмнно підійде для походів, рибілок, на дачу, відпочинку з друзями і не тільки
-                </li>
-            </ul>
-            <img src="public" alt="photo">
-        </div>
-    </section>
-    <section class="reviews section" id="reviews">
-        <div class="container">
-            <h2 class="review__title section__title section__title--centered">Відгуки</h2>
-        </div>
-    </section>
-    <section class="order section" id="order">
-        <div class="container">
-            <h2 class="order__title section__title section__title--centered">Простий процес
-                щоб зробити замовлення</h2>
-            <ul class="order__list">
-                <li>
-                    <article class="order-card">
-                        <div class="order-card__img"></div>
-                        <div class="order-card__description">
-                            <h4 class="order-card__title">1. Заявка.</h4>
-                            <p>Залишаєте заявку на нашому сайті.</p>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article class="order-card">
-                        <div class="order-card__img"></div>
-                        <div class="order-card__description">
-                            <h4 class="order-card__title">2. Дзвінок.</h4>
-                            <p>Ми уточнимо деталі замовлення.</p>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article class="order-card">
-                        <div class="order-card__img"></div>
-                        <div class="order-card__description">
-                            <h4 class="order-card__title">3. Відправка.</h4>
-                            <p>Доставляємо замовлення протягом 2-3 днів.</p>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article class="order-card">
-                        <div class="order-card__img"></div>
-                        <div class="order-card__description">
-                            <h4 class="order-card__title">4. Отримання.</h4>
-                            <p>Оплачуєте при отриманні.</p>
-                        </div>
-                    </article>
-                </li>
-            </ul>
-        </div>
-    </section>
-    <section class="contacts section" id="contacts">
-        <div class="container">
-            <div class="contacts__container">
-                <div class="contacts__text">
-                    <h2 class="contacts__title section__title section__title--centered">Потрібна консультація?</h2>
-                    <p class="contacts__paragraph">Заповніть форму, щоб ми могли з вами зв'язатися!</p>
-                </div>
-                <form name="contact-form" autocomplete="off">
-                    <div class="contacts__form-field input">
-                        <label class="input__label visually-hidden" for="contact-name"
-                        >Ім’я</label
-                        >
-                        <input
-                                class="input__control"
-                                id="contact-name"
-                                type="text"
-                                name="contact-name"
-                                placeholder="Ім’я"
-                                required
-                        />
-                    </div>
-                    <div class="contacts__form-field input">
-                        <label class="input__label visually-hidden" for="contact-tel"
-                        >Телефон</label
-                        >
-                        <input
-                                class="input__control"
-                                id="contact-tel"
-                                name="contact-tel"
-                                type="tel"
-                                placeholder="Телефон"
-                                required
-                        />
-                    </div>
-                    <button class="contacts__button button" type="submit"
-                    >Замовити дзвінок
-                    </button>
-                    <p class="form-terms"
-                    >Натискаючи на кнопку я погоджуюсь з
-                        <a class="form-terms__link" href="#"> політикою конфіденційності</a>
+      </div>
+      <!--            <p>Залишилось по акції: <span>6</span></p>-->
+      <div class='sale__bottom'>
+        <p>Всього замовлень: <span>648</span></p>
+        <a class='button hero-section__button link' href='#catalog'>Вибрати мангал</a>
+      </div>
+      <div>
+        <h4 class='sale__second-title'>Замовляй повний комплект та отримуйте додаткову знижку на чозли та
+          шампура</h4>
+        <img src='public' alt='Комплект з акцією'>
+      </div>
+    </div>
+  </section>
+  <section class='info section' id='info'>
+    <div class='container'>
+      <h2 class='info__title section__title section__title--centered'>Розкладний мангал-валіза від українського
+        виробника</h2>
+      <video id='info-video' controls autoplay muted loop class='info__video'>
+        <source src='public/videos/info-video.mp4' type='video/mp4'>
+        Ваш браузер не підтримує відео.
+      </video>
+      <ul class='info__list'>
+        <li class='info__item'>
+          <svg class='info__icon' width='34' height='34'>
+            <use href='public/images/icons.svg#icon-done'></use>
+          </svg>
+          Жаростійка сталь X25T
+        </li>
+        <li class='info__item'>
+          <svg class='info__icon' width='34' height='34'>
+            <use href='public/images/icons.svg#icon-done'></use>
+          </svg>
+          Мангал не "веде" та не прогарає
+        </li>
+        <li class='info__item'>
+          <svg class='info__icon' width='34' height='34'>
+            <use href='public/images/icons.svg#icon-done'></use>
+          </svg>
+          Два рівні прожарювання для повного контролю
+        </li>
+        <li class='info__item'>
+          <svg class='info__icon' width='34' height='34'>
+            <use href='public/images/icons.svg#icon-done'></use>
+          </svg>
+          В наявності різні розміри шампура та чохли
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class='catalog section' id='catalog'>
+    <div class='container'>
+      <h2 class='section__title section__title--centered'>Каталог</h2>
+      <h3>Мангали 2мм</h3>
+      <div class='catalog__slider'>
+        <div class='catalog__container swiper-container'>
+          <ul class='catalog__list swiper-wrapper'>
+            <li class='swiper-slide'>
+              <article class='card 2mm-js' data-id='1' data-category='2mm'>
+                <img
+                  class='card__image'
+                  src='public/images/93072235.jpg'
+                  alt='Mangal'
+                />
+                <div class='card__container'>
+                  <h4 class='card__title'>Мангал розкладний 2мм на 6 шампурів</h4>
+                  <p class='card__code visually-hidden'>Код товару: mgl-2-6</p>
+                  <div class='product visually-hidden'>
+                    <p class='product__title'>Мангал "Турист" на 6 шампурів</p>
+                    <p>Комплектація: бічні стінки (2шт.), ніжки (4шт.).</p>
+                    <p>Мангал зручний у транспортуванні та простий в збірці, збирається в невелику
+                      валізку в який вкладаються всі комплектуючі! Виконаний з листів сталі
+                      товщиною
+                      2.0 мм, і представлений в чотирьох розмірах на 6, 8, 10 і 12 шампурів!
+                      <span class='accent'>Продається без шампурів, їх можна придбати окремо!!!</span>
                     </p>
-                </form>
-            </div>
+
+
+                    <p class='accent'>Габаритні розміри в складеному стані:</p>
+                    <ul>
+                      <li>Довжина: 30 см</li>
+                      <li>Ширина: 24 см</li>
+                      <li>Висота: 5 см</li>
+                    </ul>
+                    <p class='accent'>Габаритні розміри в розкладеному стані:</p>
+                    <ul>
+                      <li>Довжина: 30 см</li>
+                      <li>Ширина: 30 см</li>
+                      <li>Висота: 15 см</li>
+                      <li>Загальна висота з ніжками: 40 см</li>
+                    </ul>
+                    <p class='accent'>Є можливість доукомплектувати чохлом, опахалом, шампурами і
+                      чохлом для шампурів</p>
+
+                    <p class='accent'>ХАРАКТЕРИСТИКИ:</p>
+                    <p class='accent'>Основні</p>
+
+                    <ul>
+                      <li>Виробник: РЕВ</li>
+                      <li>Країна виробник: Україна</li>
+                      <li>Тип: Мангал</li>
+                      <li>Тип палива: Деревне вугілля, дрова</li>
+                      <li>Товщина корпусу: 2мм</li>
+                      <li>Конструкція: Збірно-розбірна</li>
+                      <li>Форма: Прямокутна</li>
+                      <li>Комплектація кришкою: Не передбачена</li>
+                      <li>Стан: Новий</li>
+                      <li>Користувальницькі характеристики:
+                        Місткість шампурів 1-6шт
+                      </li>
+                    </ul>
+                  </div>
+                  <div class='card__price price'>
+                    <p class='price__new'>690 грн.</p>
+                    <p class='price__old'>1 349 грн.</p>
+                  </div>
+                  <div class='card__buttons'>
+                    <button type='button' class='button card__button-detail details'>Деталі</button>
+                    <button type='button' class='button card__button-buy buy'>Замовити</button>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class='swiper-slide'>
+              <article class='card 2mm-js' data-id='2' data-category='2mm'>
+                <img
+                  class='card__image'
+                  src='public/images/93072235.jpg'
+                  alt='Mangal'
+                />
+                <div class='card__container'>
+                  <h4 class='card__title'>Мангал розкладний 2мм на 8 шампурів</h4>
+                  <p class='card__code visually-hidden'>Код товару: mgl-2-8</p>
+                  <div class='card__price-container price'>
+                    <p class='price__new'>760 грн.</p>
+                    <p class='price__old'>1 445 грн.</p>
+                  </div>
+                  <div class='product visually-hidden'>
+                    <p class='product__title'>Мангал розкладний у валізу з ніжками на 8 шампурів</p>
+
+                    <p>Розкладний мангал валіза для приготування їжі на природі, чудово підійде для
+                      тих, хто любить виїхати на природу і приготувати смачний шашлик.
+                      Особливості даного мангалу це його компактність і простота складання,
+                      встановити
+                      цей мангал у Вас займе лише кілька хвилин.</p>
+
+                    <p class='accent'>Увага! Не розбирайте мангал до того, як він повністю не
+                      охолоне, щоб уникнути
+                      опіків.</p>
+
+                    <p><span class='accent'>Розміри у складеному стані:</span> 47х28х6 см</p>
+                    <p><span class='accent'>Розміри у розкладеному стані:</span> 39х31х55см</p>
+                    <p><span class='accent'>Висота топки:</span> 15см</p>
+
+                    <p class='accent'>Є можливість доукомплектувати чохлом, опахалом, шампурами,
+                      чохол для шампурів</p>
+
+                    <p class='accent'>ХАРАКТЕРИСТИКИ:</p>
+
+                    <p class='accent'>Основні</p>
+                    <ul>
+                      <li><span class='accent'>Виробник:</span> РЕВ</li>
+                      <li><span class='accent'>Країна виробник:</span> Україна</li>
+                      <li><span class='accent'>Тип:</span> Мангал</li>
+                      <li><span class='accent'>Тип палива:</span> Деревне вугілля, дрова</li>
+                      <li><span class='accent'>Товщина корпусу:</span> 2мм</li>
+                      <li><span class='accent'>Конструкція:</span> Збірно-розбірна</li>
+                      <li><span class='accent'>Форма:</span> Прямокутна</li>
+                      <li><span class='accent'>Комплектація кришкою:</span>Не передбачена</li>
+                      <li><span class='accent'>Стан:</span> Новий</li>
+                      <li><span class='accent'>Користувальницькі характеристики:</span> Місткість
+                        шампурів 1-8шт
+                      </li>
+                    </ul>
+                  </div>
+                  <div class='card__buttons'>
+                    <button type='button' class='button card__button-detail details'>Деталі</button>
+                    <button type='button' class='button card__button-buy buy'>Замовити</button>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class='swiper-slide'>
+              <article class='card 2mm-js' data-id='3' data-category='2mm'>
+                <img
+                  class='card__image'
+                  src='public/images/93072235.jpg'
+                  alt='Mangal'
+                />
+                <div class='card__container'>
+                  <h4 class='card__title'>Мангал розкладний 2мм на 10 шампурів</h4>
+                  <p class='card__code visually-hidden'>Код товару: mgl-2-10</p>
+                  <div class='card__price price'>
+                    <p class='price__new'>830 грн.</p>
+                    <p class='price__old'>1 580 грн.</p>
+                  </div>
+                  <div class='product visually-hidden'>
+                    <p class='product__title'>Мангал "Турист" на 10 шампурів</p>
+                    <p>Виконаний із якісного металу. Товщина металу 2
+                      мм.
+                      Компактна металоконструкція повністю розбирається, зручна для
+                      транспортування.
+                    </p>
+                    <ul>
+                      <li>Розміри: 48 х 31х 55 см;</li>
+                      <li>Вага: 6,5 кг;</li>
+                      <li>Товщина стін: 2,0 мм;</li>
+                      <li>Матеріал: жаростійка сталь.</li>
+                    </ul>
+                    <p>Конструкція мангалу дозволяє швидко скласти його у вигляді валізи.</p>
+                    <p>Для цього необхідно:</p>
+                    <ul>
+                      <li>викрутити ніжки із корпусу;</li>
+                      <li>зняти бічні стінки;</li>
+                      <li>укласти ніжки та бічні стінки на дно мангалу;</li>
+                      <li>закрити стулки та закріпити замком;</li>
+                      <li>вийняти ручку транспортування.</li>
+                    </ul>
+                    <p class='accent'>Є можливість доукомплектувати чохлом, опахалом, шампурами і
+                      чохлом для
+                      шампурів.</p>
+
+                    <p class='accent'>ХАРАКТЕРИСТИКИ:</p>
+
+                    <p class='accent'>Основні</p>
+                    <ul>
+                      <li><span class='accent'>Виробник:</span> РЕВ</li>
+                      <li><span class='accent'>Країна виробник:</span> Україна</li>
+                      <li><span class='accent'>Тип:</span> Мангал</li>
+                      <li><span class='accent'>Тип палива:</span> Деревне вугілля, дрова</li>
+                      <li><span class='accent'>Товщина корпусу:</span> 2мм</li>
+                      <li><span class='accent'>Конструкція:</span> Збірно-розбірна</li>
+                      <li><span class='accent'>Форма:</span> Прямокутна</li>
+                      <li><span class='accent'>Комплектація кришкою:</span> Не передбачена</li>
+                      <li><span class='accent'>Стан:</span> Новий</li>
+                      <li><span class='accent'>Користувальницькі характеристики:</span>Місткість
+                        шампурів 1-10шт
+                      </li>
+                    </ul>
+                  </div>
+                  <div class='card__buttons'>
+                    <button type='button' class='button card__button-detail details'>Деталі</button>
+                    <button type='button' class='button card__button-buy buy'>Замовити</button>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class='swiper-slide'>
+              <article class='card 2mm-js' data-id='4' data-category='2mm'>
+                <img
+                  class='card__image'
+                  src='public/images/93072235.jpg'
+                  alt='Mangal'
+                />
+                <div class='card__container'>
+                  <h4 class='card__title'>Мангал розкладний 2мм на 12 шампурів</h4>
+                  <p class='card__code visually-hidden'>Код товару: mgl-2-12</p>
+                  <div class='card__price price'>
+                    <p class='price__new'>870 грн.</p>
+                    <p class='price__old'>1 650 грн.</p>
+                  </div>
+                  <div class='product visually-hidden'>
+                    <p>
+                      Найкраща пропозицію для відпочинку на природі - Мангал Валіза що зручно
+                      захопити з собою у власний автомобіль, так і в вагон електрички. Мангал
+                      складаний, стійкий на будь-яких поверхнях рельєфу, будь то лісова галявина
+                      або дворова плитка. Переноситься Легко, швидко збирається і дуже простий у
+                      використанні.</p>
+
+                    <p>Особливості:</p>
+                    <ul>
+                      <li>Робоча частина мангалу на рівні пояса, що дуже зручно – не потрібно
+                        нахилятися при приготуванні страви.
+                      </li>
+                      <li>Мангал має ребра жорсткості для стійкості конструкції.</li>
+                      <li>Ніжки вкручуються по різьбі, завдяки чому мангал можна легко переставити і
+                        бути впевненим, що ніжки не випадуть.
+                      </li>
+                      <li>На верхній частині мангалу є засувка, що дозволяє транспортувати його не
+                        боячись, що він розкриється.
+                      </li>
+                      <li>У нижній частині стінок є отвори для припливу повітря, що забезпечує
+                        достатній жар від вугілля.
+                      </li>
+                      <li>швидка збірка, близько 2 хвилин.</li>
+                      <li>Займає мало місця в багажнику автомобіля.</li>
+                    </ul>
+                    <p><span class='accent'>Матеріал:</span> вуглецева сталь.</p>
+                    <p><span class='accent'>Розміри:</span> 55х31х65 см</p>
+                    <p><span class='accent'>Вага:</span> 12 кг</p>
+
+                    <p>Є можливість доукомплектувати чохлом, опахалом, шампурами і чохлом для
+                      шампурів</p>
+
+                    <p class='accent'>ХАРАКТЕРИСТИКИ:</p>
+
+                    <p>Основні</p>
+                    <ul>
+                      <li><span class='accent'>Виробник:</span> РЕВ</li>
+                      <li><span class='accent'>Країна:</span> виробник Україна</li>
+                      <li><span class='accent'>Тип:</span> Мангал</li>
+                      <li><span class='accent'>Тип палива:</span> Деревне вугілля, дрова</li>
+                      <li><span class='accent'>Товщина корпусу:</span> 2мм</li>
+                      <li><span class='accent'>Конструкція:</span> Збірно-розбірна</li>
+                      <li><span class='accent'>Форма:</span> Прямокутна</li>
+                      <li><span class='accent'>Комплектація кришкою:</span> Не передбачена</li>
+                      <li><span class='accent'>Стан:</span> Новий</li>
+                      <li><span class='accent'>Користувальницькі характеристики:</span>
+                      Місткість шампурів 1-12шт</li>
+                    </ul>
+                    </p>
+                  </div>
+                  <div class='card__buttons'>
+                    <button type='button' class='button card__button-detail details'>Деталі</button>
+                    <button type='button' class='button card__button-buy buy'>Замовити</button>
+                  </div>
+                </div>
+              </article>
+            </li>
+          </ul>
+          <div class='pagination'>
+            <span class='pagination__button'></span>
+            <span class='pagination__button'></span>
+            <span class='pagination__button'></span>
+            <span class='pagination__button'></span>
+          </div>
         </div>
-    </section>
+      </div>
+      <h3>Мангали 3мм</h3>
+      <div class='catalog__slider'>
+        <div class='catalog__container swiper-container'>
+          <ul class='catalog__list swiper-wrapper'>
+            <li class='swiper-slide'>
+              <article class='card 3mm-js' data-id='1' data-category='3mm'>
+                <img
+                  class='card__image'
+                  src='public/images/93072235.jpg'
+                  alt='Mangal'
+                />
+                <div class='card__container'>
+                  <h4 class='card__title'>Мангал розкладний 3мм на 6 шампурів</h4>
+                  <p class='card__code visually-hidden'>Код товару: mgl-3-6</p>
+                  <div class='card__price price'>
+                    <p class='price__new'>690 грн.</p>
+                    <p class='price__old'>1 349 грн.</p>
+                  </div>
+                  <div class='card__buttons'>
+                    <button type='button' class='button card__button-detail details'>Деталі</button>
+                    <button type='button' class='button card__button-buy buy'>Замовити</button>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class='swiper-slide'>
+              <article class='card 3mm-js' data-id='2' data-category='3mm'>
+                <img
+                  class='card__image'
+                  src='public/images/93072235.jpg'
+                  alt='Mangal'
+                />
+                <div class='card__container'>
+                  <h4 class='card__title'>Мангал розкладний 3мм на 8 шампурів</h4>
+                  <p class='card__code visually-hidden'>Код товару: mgl-3-8</p>
+                  <div class='card__price price'>
+                    <p class='price__new'>690 грн.</p>
+                    <p class='price__old'>1 349 грн.</p>
+                  </div>
+                  <div class='card__buttons'>
+                    <button type='button' class='button card__button-detail details'>Деталі</button>
+                    <button type='button' class='button card__button-buy buy'>Замовити</button>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class='swiper-slide'>
+              <article class='card 3mm-js' data-id='3' data-category='3mm'>
+                <img
+                  class='card__image'
+                  src='public/images/93072235.jpg'
+                  alt='Mangal'
+                />
+                <div class='card__container'>
+                  <h4 class='card__title'>Мангал розкладний 3мм на 10 шампурів</h4>
+                  <p class='card__code visually-hidden'>Код товару: mgl-3-10</p>
+                  <div class='card__price price'>
+                    <p class='price__new'>690 грн.</p>
+                    <p class='price__old'>1 349 грн.</p>
+                  </div>
+                  <div class='card__buttons'>
+                    <button type='button' class='button card__button-detail details'>Деталі</button>
+                    <button type='button' class='button card__button-buy buy'>Замовити</button>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class='swiper-slide'>
+              <article class='card 3mm-js' data-id='4' data-category='3mm'>
+                <img
+                  class='card__image'
+                  src='public/images/93072235.jpg'
+                  alt='Mangal'
+                />
+                <div class='card__container'>
+                  <h4 class='card__title'>Мангал розкладний 3мм на 12 шампурів</h4>
+                  <p class='card__code visually-hidden'>Код товару: mgl-3-12</p>
+                  <div class='card__price price'>
+                    <p class='price__new'>690 грн.</p>
+                    <p class='price__old'>1 349 грн.</p>
+                  </div>
+                  <div class='card__buttons'>
+                    <button type='button' class='button card__button-detail details'>Деталі</button>
+                    <button type='button' class='button card__button-buy buy'>Замовити</button>
+                  </div>
+                </div>
+              </article>
+            </li>
+          </ul>
+          <div class='pagination'>
+            <span class='pagination__button'></span>
+            <span class='pagination__button'></span>
+            <span class='pagination__button'></span>
+            <span class='pagination__button'></span>
+          </div>
+        </div>
+      </div>
+      <h3>Комплектуючі до мангалу</h3>
+      <div class='catalog__slider'>
+        <div class='catalog__container swiper-container'>
+          <ul class='catalog__list swiper-wrapper'>
+            <li class='swiper-slide'>
+              <article class='card compl-js' data-id='1' data-category='accessories'>
+                <img
+                  class='card__image'
+                  src='public/images/93072235.jpg'
+                  alt='Mangal'
+                />
+                <div class='card__container'>
+                  <h4 class='card__title'>Мангал розкладний 2мм на 6 шампурів</h4>
+                  <div class='card__price price'>
+                    <p class='price__new'>690 грн.</p>
+                    <p class='price__old'>1 349 грн.</p>
+                  </div>
+                  <div class='card__buttons'>
+                    <button type='button' class='button card__button-detail details'>Деталі</button>
+                    <button type='button' class='button card__button-buy buy'>Замовити</button>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class='swiper-slide'>
+              <article class='card compl-js' data-id='2' data-category='accessories'>
+                <img
+                  class='card__image'
+                  src='public/images/93072235.jpg'
+                  alt='Mangal'
+                />
+                <div class='card__container'>
+                  <h4 class='card__title'>Мангал розкладний 2мм на 6 шампурів</h4>
+                  <div class='card__price price'>
+                    <p class='price__new'>690 грн.</p>
+                    <p class='price__old'>1 349 грн.</p>
+                  </div>
+                  <div class='card__buttons'>
+                    <button type='button' class='button card__button-detail details'>Деталі</button>
+                    <button type='button' class='button card__button-buy buy'>Замовити</button>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class='swiper-slide'>
+              <article class='card compl-js' data-id='3' data-category='accessories'>
+                <img
+                  class='card__image'
+                  src='public/images/93072235.jpg'
+                  alt='Mangal'
+                />
+                <div class='card__container'>
+                  <h4 class='card__title'>Мангал розкладний 2мм на 6 шампурів</h4>
+                  <div class='card__price price'>
+                    <p class='price__new'>690 грн.</p>
+                    <p class='price__old'>1 349 грн.</p>
+                  </div>
+                  <div class='card__buttons'>
+                    <button type='button' class='button card__button-detail details'>Деталі</button>
+                    <button type='button' class='button card__button-buy buy'>Замовити</button>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class='swiper-slide'>
+              <article class='card compl-js' data-id='4' data-category='accessories'>
+                <img
+                  class='card__image'
+                  src='public/images/93072235.jpg'
+                  alt='Mangal'
+                />
+                <div class='card__container'>
+                  <h4 class='card__title'>Мангал розкладний 2мм на 6 шампурів</h4>
+                  <div class='card__price price'>
+                    <p class='price__new'>690 грн.</p>
+                    <p class='price__old'>1 349 грн.</p>
+                  </div>
+                  <div class='card__buttons'>
+                    <button type='button' class='button card__button-detail details'>Деталі</button>
+                    <button type='button' class='button card__button-buy buy'>Замовити</button>
+                  </div>
+                </div>
+              </article>
+            </li>
+          </ul>
+          <div class='pagination'>
+            <span class='pagination__button'></span>
+            <span class='pagination__button'></span>
+            <span class='pagination__button'></span>
+            <span class='pagination__button'></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class='features section' id='features'>
+    <div class='container'>
+      <h2 class='features__title section__title section__title--centered'>Особливості</h2>
+      <ul>
+        <li>Якісний матеріал гарячокатана сталь.
+          Метал якісний при нагріванні не деформується.
+          Прослужить довгі роки
+        </li>
+        <li>2 рівні прожарювання.
+          На першому рівні можна смажити шашлик 20-30 хв, а для експрес прожарювання
+          можна використовувати другий рівень.
+        </li>
+        <li>Швидке складання за 2 хвилини
+          Збирання мангалу не займе більше 2 хвилин, що дозволить швидко розпочати процес приготування
+          шашлику
+        </li>
+        <li>Просте використання
+          Компактний, відмнно підійде для походів, рибілок, на дачу, відпочинку з друзями і не тільки
+        </li>
+      </ul>
+      <img src='public' alt='photo'>
+    </div>
+  </section>
+  <section class='reviews section' id='reviews'>
+    <div class='container'>
+      <h2 class='review__title section__title section__title--centered'>Відгуки</h2>
+    </div>
+  </section>
+  <section class='order section' id='order'>
+    <div class='container'>
+      <h2 class='order__title section__title section__title--centered'>Простий процес
+        щоб зробити замовлення</h2>
+      <ul class='order__list'>
+        <li>
+          <article class='order-card'>
+            <div class='order-card__img'></div>
+            <div class='order-card__description'>
+              <h4 class='order-card__title'>1. Заявка.</h4>
+              <p>Залишаєте заявку на нашому сайті.</p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class='order-card'>
+            <div class='order-card__img'></div>
+            <div class='order-card__description'>
+              <h4 class='order-card__title'>2. Дзвінок.</h4>
+              <p>Ми уточнимо деталі замовлення.</p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class='order-card'>
+            <div class='order-card__img'></div>
+            <div class='order-card__description'>
+              <h4 class='order-card__title'>3. Відправка.</h4>
+              <p>Доставляємо замовлення протягом 2-3 днів.</p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class='order-card'>
+            <div class='order-card__img'></div>
+            <div class='order-card__description'>
+              <h4 class='order-card__title'>4. Отримання.</h4>
+              <p>Оплачуєте при отриманні.</p>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class='contacts section' id='contacts'>
+    <div class='container'>
+      <div class='contacts__container'>
+        <div class='contacts__text'>
+          <h2 class='contacts__title section__title section__title--centered'>Потрібна консультація?</h2>
+          <p class='contacts__paragraph'>Заповніть форму, щоб ми могли з вами зв'язатися!</p>
+        </div>
+        <form name='contact-form' autocomplete='off'>
+          <div class='contacts__form-field input'>
+            <label class='input__label visually-hidden' for='contact-name'
+            >Ім’я</label
+            >
+            <input
+              class='input__control'
+              id='contact-name'
+              type='text'
+              name='contact-name'
+              placeholder='Ім’я'
+              required
+            />
+          </div>
+          <div class='contacts__form-field input'>
+            <label class='input__label visually-hidden' for='contact-tel'
+            >Телефон</label
+            >
+            <input
+              class='input__control'
+              id='contact-tel'
+              name='contact-tel'
+              type='tel'
+              placeholder='Телефон'
+              required
+            />
+          </div>
+          <button class='contacts__button button' type='submit'
+          >Замовити дзвінок
+          </button>
+          <p class='form-terms'
+          >Натискаючи на кнопку я погоджуюсь з
+            <a class='form-terms__link' href='#'> політикою конфіденційності</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
 
 </main>
-<footer class="footer">
-    <div class="container">
-        <div class="footer__container">
-            <nav class="footer__nav">
-                <div class="footer__logo">
-                    <a href="#">
-                        <img
-                                src="public/images/"
-                                alt="Логотип"
-                        />
-                    </a>
-                </div>
-                <ul class="footer__menu">
-                    <li><a class="link" href="#advantages">Переваги</a></li>
-                    <li><a class="link" href="#description">Опис</a></li>
-                    <li><a class="link" href="#sale">Акції</a></li>
-                    <li><a class="link" href="#catalog">Каталог</a></li>
-                    <li><a class="link" href="#features">Особливості</a></li>
-                    <li><a class="link" href="#reviews">Відгуки</a></li>
-                </ul>
-            </nav>
-            <address class="footer__address">
-                <div class="footer__address-contacts">
-                    <ul class="footer__address-list">
-                        <li>
-                            <a class="footer__address-link" href="tel:+380994730710">
-                                + 38 (099) 473 07 10
-                            </a>
-                        </li>
-                        <li>
-                            <a class="footer__address-link" href="tel:+380687271299">
-                                + 38 (068) 727 12 99
-                            </a>
-                        </li>
-                        <li>
-                            <a class="footer__address-link" href="mailto:dedmazay.hi@gmail.com">
-                                dedmazay.hi@gmail.com
-                            </a>
-                        </li>
-                        <li>
-                            <a class="footer__address-link"
-                               href="https://maps.app.goo.gl/1zViFr31i1wrmvyTA"
-                               target="_blank">
-                                Україна, м. Харків, вул. Героїв Праці 52
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="footer__socials"></div>
-                </div>
-                <div class="footer__address-info">
-                    <div class="footer__schedule">
-                        <h3 class="">Графік роботи:</h3>
-                        <p>ПН-ПТ: 09:00 - 18:00</p>
-                        <p>СБ-НД: 10:00 - 16:00</p>
-                    </div>
-                    <a class="footer__address-link" href="#" target="_blank"
-                    >Політика конфіденційності</a
-                    >
-                    <p class="footer__address-copyright">© 2024 Дані захищені</p>
-                </div>
-            </address>
+<footer class='footer'>
+  <div class='container'>
+    <div class='footer__container'>
+      <nav class='footer__nav'>
+        <div class='footer__logo'>
+          <a href='#'>
+            <img
+              src='public/images/'
+              alt='Логотип'
+            />
+          </a>
         </div>
+        <ul class='footer__menu'>
+          <li><a class='link' href='#advantages'>Переваги</a></li>
+          <li><a class='link' href='#description'>Опис</a></li>
+          <li><a class='link' href='#sale'>Акції</a></li>
+          <li><a class='link' href='#catalog'>Каталог</a></li>
+          <li><a class='link' href='#features'>Особливості</a></li>
+          <li><a class='link' href='#reviews'>Відгуки</a></li>
+        </ul>
+      </nav>
+      <address class='footer__address'>
+        <div class='footer__address-contacts'>
+          <ul class='footer__address-list'>
+            <li>
+              <a class='footer__address-link' href='tel:+380994730710'>
+                + 38 (099) 473 07 10
+              </a>
+            </li>
+            <li>
+              <a class='footer__address-link' href='tel:+380687271299'>
+                + 38 (068) 727 12 99
+              </a>
+            </li>
+            <li>
+              <a class='footer__address-link' href='mailto:dedmazay.hi@gmail.com'>
+                dedmazay.hi@gmail.com
+              </a>
+            </li>
+            <li>
+              <a class='footer__address-link'
+                 href='https://maps.app.goo.gl/1zViFr31i1wrmvyTA'
+                 target='_blank'>
+                Україна, м. Харків, вул. Героїв Праці 52
+              </a>
+            </li>
+          </ul>
+          <div class='footer__socials'></div>
+        </div>
+        <div class='footer__address-info'>
+          <div class='footer__schedule'>
+            <h3 class=''>Графік роботи:</h3>
+            <p>ПН-ПТ: 09:00 - 18:00</p>
+            <p>СБ-НД: 10:00 - 16:00</p>
+          </div>
+          <a class='footer__address-link' href='#' target='_blank'
+          >Політика конфіденційності</a
+          >
+          <p class='footer__address-copyright'>© 2024 Дані захищені</p>
+        </div>
+      </address>
     </div>
+  </div>
 </footer>
 
-<div class="fabs">
-    <div class="fabs__item" id="basket" style="display: none">
-        <svg class="fabs__icon" width="34" height="34">
-            <use href="public/images/icons.svg#icon-shopping"></use>
-        </svg>
-        <div class="fabs__counter" id="basket-count"></div>
-    </div>
-    <div class="fabs__item" id="up">
-        <svg class="fabs__icon" width="34" height="34">
-            <use href="public/images/icons.svg#icon-up"></use>
-        </svg>
-    </div>
+<div class='fabs'>
+  <div class='fabs__item' id='basket' style='display: none'>
+    <svg class='fabs__icon' width='34' height='34'>
+      <use href='public/images/icons.svg#icon-shopping'></use>
+    </svg>
+    <div class='fabs__counter' id='basket-count'></div>
+  </div>
+  <div class='fabs__item' id='up'>
+    <svg class='fabs__icon' width='34' height='34'>
+      <use href='public/images/icons.svg#icon-up'></use>
+    </svg>
+  </div>
 </div>
 
-<div class="backdrop is-hidden" id="modal-product">
-    <div class="modal">
-        <button class="modal__btn-close modal-btn-close" id="close-product" type="button">
-            <svg width="24" height="24">
-                <use href="../public/images/icons.svg#icon-close"></use>
-            </svg>
-        </button>
-        <div class="modal__images">
-            <ul>
-                <li>
-                    <img src="public/images/93072235.jpg" alt="Мангал">
-                </li>
-            </ul>
-        </div>
-        <div class="modal__description">
-            <h4 class="modal__title"></h4>
-            <p class="modal__code"></p>
-            <div class="modal__price price price--left">
-            </div>
-            <div class="modal__buttons">
-
-            </div>
-        </div>
+<div class='backdrop is-hidden' id='modal-product'>
+  <div class='modal'>
+    <button class='modal__btn-close modal-btn-close' id='close-product' type='button'>
+      <svg width='24' height='24'>
+        <use href='../public/images/icons.svg#icon-close'></use>
+      </svg>
+    </button>
+    <div class='modal__images'>
+      <ul>
+        <li>
+          <img src='public/images/93072235.jpg' alt='Мангал'>
+        </li>
+      </ul>
     </div>
+    <div class='modal__description'>
+      <h4 class='modal__title'></h4>
+      <p class='modal__code'></p>
+      <div class='modal__price price price--left'>
+      </div>
+      <div class='modal__buttons'>
+
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="backdrop is-hidden" id="modal-basket">
-    <div class="basket-modal">
-        <button class="basket-modal__btn-close modal-btn-close" id="close-basket" type="button">
-            <svg width="24" height="24">
-                <use href="../public/images/icons.svg#icon-close"></use>
-            </svg>
-        </button>
-        <h1>basket</h1>
-    </div>
+<div class='backdrop is-hidden' id='modal-basket'>
+  <div class='basket-modal'>
+    <button class='basket-modal__btn-close modal-btn-close' id='close-basket' type='button'>
+      <svg width='24' height='24'>
+        <use href='../public/images/icons.svg#icon-close'></use>
+      </svg>
+    </button>
+    <h1>basket</h1>
+  </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js'></script>
 </body>
 </html>

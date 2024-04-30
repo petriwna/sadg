@@ -43,9 +43,8 @@ export class Catalog {
   handleClickBuy(event) {
     event.stopPropagation();
     const card = event.currentTarget.closest('.card');
-    this.modal.openModalBasket(card);
     if (card) {
-      this.basketModal.open();
+      this.basketModal.openWithBasket(card);
     }
   }
 }

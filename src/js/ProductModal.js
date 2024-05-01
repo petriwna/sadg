@@ -56,7 +56,10 @@ export class ProductModal extends Modal {
     const priceOldElement = card.querySelector('.price__old');
     const priceNew = card.querySelector('.price__new').textContent;
     const size = card.querySelectorAll('.card__size');
-    this.modalImg = card.querySelector('.card__image').getAttribute('src');
+    const img = card.querySelector('.card__image');
+    const imgSrc = img.getAttribute('src');
+    this.modalImg.setAttribute('src', imgSrc);
+    this.modalImg.setAttribute('alt', title);
     const description = card.querySelector('.product').cloneNode(true);
 
     description.classList.remove('visually-hidden');

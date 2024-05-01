@@ -43,38 +43,91 @@ export class ProductModal extends Modal {
   }
 
   getProductDescription(card) {
-    const { title, code, priceNew, priceOld, description } = this.extractProductDetails(card);
+    const { title, code, priceNew, priceOld, size, description } = this.extractProductDetails(card);
 
     this.cardDescriptionCopy = description;
 
-    this.updateModalContent(title, code, priceNew, priceOld, description);
+    this.updateModalContent(title, code, priceNew, priceOld, size, description);
   }
 
   extractProductDetails(card) {
     const title = card.querySelector('.card__title').textContent;
     const code = card.querySelector('.card__code').textContent;
-    const priceOld = card.querySelector('.price__old').textContent;
+    const priceOldElement = card.querySelector('.price__old');
     const priceNew = card.querySelector('.price__new').textContent;
+    const size = card.querySelectorAll('.card__size');
     this.modalImg = card.querySelector('.card__image').getAttribute('src');
     const description = card.querySelector('.product').cloneNode(true);
+
     description.classList.remove('visually-hidden');
 
-    return { title, code, priceNew, priceOld, description };
+    let priceOld = '';
+
+    if (priceOldElement !== null) {
+      priceOld = priceOldElement.textContent;
+    }
+
+    return { title, code, priceNew, priceOld, size, description };
   }
 
-  updateModalContent(title, code, priceNew, priceOld, description) {
+  updateModalContent(title, code, priceNew, priceOld, size, description) {
     this.modalTitle.textContent = title;
     this.modalCode.textContent = code;
     this.modalPrice.innerHTML = `
       <p class="price__new">${priceNew}</p>
-      <p class="price__old">${priceOld}</p>
+      ${priceOld ? `<p class="price__old">${priceOld}</p>` : ''}
     `;
+
+    if (size.length > 1) {
+      const sizeList = this.renderSizeList(size);
+      this.modalDescription.appendChild(sizeList);
+    }
+
     this.modalDescription.appendChild(description);
+  }
+
+  renderSizeList(listSize) {
+    const sizeList = document.createElement('div');
+    sizeList.classList.add('modal__size-list');
+
+    listSize.forEach((size, index) => {
+      const sizeContainer = document.createElement('div');
+      sizeContainer.classList.add('modal__size-item');
+
+      const contentSize = size.textContent;
+      const data = size.dataset.size;
+      const sizeListItem = document.createElement('input');
+      sizeListItem.setAttribute('type', 'radio');
+      sizeListItem.setAttribute('value', `${contentSize}`);
+      sizeListItem.setAttribute('name', `${data}`);
+
+      const label = document.createElement('label');
+      label.setAttribute('for', `${data}`);
+      label.innerText = contentSize;
+
+      sizeContainer.appendChild(sizeListItem);
+      sizeContainer.appendChild(label);
+
+      sizeList.appendChild(sizeContainer);
+
+      if (index === 0) {
+        sizeListItem.setAttribute('checked', 'checked');
+      }
+    });
+    return sizeList;
   }
 
   handleClickClose() {
     this.removeDescription();
+    this.removeSize();
     this.resetCounter();
+  }
+
+  removeSize() {
+    const sizeList = document.querySelector('.modal__size-list');
+    if (sizeList) {
+      sizeList.remove();
+    }
   }
 
   removeDescription() {

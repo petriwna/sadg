@@ -20,14 +20,16 @@ export class Basket {
     this.modal.open();
   }
 
-  addProductToBasket(img, name, code, price, quantity) {
+  addProductToBasket(img, name, strCode, price, size, quantity) {
     this.modal.open();
     this.basketFab.style.display = 'flex';
     this.counter = this.counter + quantity;
     this.counterFab.innerText = this.counter;
 
     const cost = parseFloat(price.replace(/\D/g, ''));
-    this.basket.push({ img, name, code, cost, quantity });
+    const code = strCode.match(/[a-zA-Z0-9-]+/)[0];
+
+    this.basket.push({ img, name, code, cost, size, quantity });
     this.renderOrderInBasket();
   }
 
@@ -43,6 +45,7 @@ export class Basket {
         <div class='basket__img' style='background-image: url("${product.img}")'></div>
         <div class='basket__description'>
            <h3 class='basket__name'>${product.name}</h3>
+           <p class='basket__size'
            <p class='basket__code'>${product.code}</p>
         </div>
       `;

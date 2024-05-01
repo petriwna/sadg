@@ -47,8 +47,9 @@ export class Catalog {
     const name = card.querySelector('.card__title').textContent;
     const code = card.querySelector('.card__code').textContent;
     const price = card.querySelector('.price__new').textContent;
+    const size = card.querySelector('.size');
     if (card) {
-      this.basketModal.openWithBasket(img, name, code, price, 1);
+      this.basketModal.openWithBasket(img, name, code, price, size, 1);
     }
   }
 }

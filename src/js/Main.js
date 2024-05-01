@@ -24,6 +24,16 @@ export class Main {
   }
 
   initSwiper() {
+    const swiperContainers = document.querySelectorAll('.swiper-container');
+    swiperContainers.forEach((container) => {
+      const slides = container.querySelectorAll('.swiper-slide');
+      const shouldEnablePagination = slides.length > 4;
+      if (shouldEnablePagination) {
+        const pagination = container.querySelector('.pagination');
+        pagination.style.display = 'flex';
+      }
+    });
+
     new Swiper('.swiper-container', {
       slidesPerView: 'auto',
       spaceBetween: 20,

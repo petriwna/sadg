@@ -59,6 +59,9 @@
 
   &__description {
     width: 50%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
   }
 
   &__title {
@@ -119,6 +122,17 @@
     }
   }
 
+  &__size-list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  &__size-item {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
 
   &__text {
     margin-bottom: 40px;

@@ -7,12 +7,12 @@ export class BasketModal extends Modal {
     this.basket = new Basket();
   }
 
-  openWithBasket(img, name, code, price, quantity) {
-    this.populateBasket(img, name, code, price, quantity);
+  openWithBasket(img, name, code, price, size, quantity) {
+    this.populateBasket(img, name, code, price, size, quantity);
     this.open();
   }
 
-  populateBasket(img, name, code, price, quantity) {
-    this.basket.addProductToBasket(img, name, code, price, quantity);
+  populateBasket(img, name, code, price, size, quantity) {
+    this.basket.addProductToBasket(img, name, code, price, size, quantity);
   }
 }

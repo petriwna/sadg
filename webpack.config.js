@@ -166,6 +166,9 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    minimize: true,
+  },
   plugins: [
     new CleanWebpackPlugin({ verbose: true }),
     !isDevMode && new MiniCssExtractPlugin(),

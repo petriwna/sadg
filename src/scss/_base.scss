@@ -65,3 +65,7 @@ input[type="number"]:focus {
   appearance: none;
   -moz-appearance: textfield;
 }
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}

@@ -5,8 +5,11 @@
   color: var(--color-primary-light);
 
   &__container {
-    width: 530px;
     margin-bottom: 38px;
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 530px;
+    }
   }
 
   &__title {

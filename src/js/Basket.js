@@ -42,11 +42,29 @@ export class Basket {
 
     this.basket.map((product) => {
       productItem.innerHTML = `
-        <div class='basket__img' style='background-image: url("${product.img}")'></div>
         <div class='basket__description'>
+           <div class='basket__img' style='background-image: url("${product.img}")'></div>
+           <div class='basket__text'>
            <h3 class='basket__name'>${product.name}</h3>
-           <p class='basket__size'
-           <p class='basket__code'>${product.code}</p>
+           <p class='basket__options'>${product.code}</p>
+           </div>
+        </div>
+        <div class='basket__settings'>
+          <div class='basket__counter'>
+            <button class='basket__plus-minus minus' type='button'>-</button>
+            <label for='order-counter' class='visually-hidden'></label>
+            <input type='number' name='order-counter' class='basket__value' min='1' step='1' size='4' max='999' maxlength='3'
+                 value='1'>
+            <button class='basket__plus-minus plus' type='button'>+</button>
+          </div>
+          <div>
+            <p class='basket__price'>${product.cost} грн.</p>
+          </div>
+          <button class='basket__delete' id='delete' type='button'>
+            <svg width='30' height='30'>
+              <use href='public/images/icons.svg#icon-close'></use>
+            </svg>
+          </button>
         </div>
       `;
     });

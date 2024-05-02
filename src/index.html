@@ -534,13 +534,19 @@
                   <h4 class='card__title'>Мангал розкладний 3мм на 8 шампурів</h4>
                   <p class='card__code visually-hidden'>Код товару: mgl-3-8</p>
                   <div class='product visually-hidden'>
-                    <p><span class='accent'>Мангал-валіза складаний 3 мм на 8 шампурів,</span> не замінимо для проведення відмінних вихідних, вилазок і свят.</p>
+                    <p><span class='accent'>Мангал-валіза складаний 3 мм на 8 шампурів,</span> не замінимо для
+                      проведення відмінних вихідних, вилазок і свят.</p>
 
-                    <p>Мангал-валіза виготовлена зі сталі товщиною 3 мм, методом дугового зварювання. Отримані таким методом шви, не тріснуть і будуть міцно тримати деталі навіть при термічній обробці під час смаження.</p>
+                    <p>Мангал-валіза виготовлена зі сталі товщиною 3 мм, методом дугового зварювання. Отримані таким
+                      методом шви, не тріснуть і будуть міцно тримати деталі навіть при термічній обробці під час
+                      смаження.</p>
 
-                    <p>Бічні вставки міцно кріпляться в пази і надають додаткову міцність мангалу. Їх легко зняти після користування мангалом. Завдяки зварному методом складання, позбавлений недоліку гнутого мангалу, такого як перекіс металу при нагріванні.</p>
+                    <p>Бічні вставки міцно кріпляться в пази і надають додаткову міцність мангалу. Їх легко зняти після
+                      користування мангалом. Завдяки зварному методом складання, позбавлений недоліку гнутого мангалу,
+                      такого як перекіс металу при нагріванні.</p>
 
-                    <p>Переносний Мангал має не великі габарити. Легко збирається і розбирається. В зібраному вигляді має вигляд трапеції.</p>
+                    <p>Переносний Мангал має не великі габарити. Легко збирається і розбирається. В зібраному вигляді
+                      має вигляд трапеції.</p>
 
                     <p><span class='accent'>Розміри у складеному стані</span> 47х28х6 см</p>
                     <p><span class='accent'>Розміри у розкладеному стані</span> 39х31х55см</p>
@@ -1275,43 +1281,43 @@
       <h2 class='review__title section__title section__title--centered'>Відгуки</h2>
     </div>
   </section>
-  <section class='order section' id='order'>
+  <section class='delivery section' id='delivery'>
     <div class='container'>
-      <h2 class='order__title section__title section__title--centered'>Простий процес
+      <h2 class='delivery__title section__title section__title--centered'>Простий процес
         щоб зробити замовлення</h2>
-      <ul class='order__list'>
+      <ul class='delivery__list'>
         <li>
-          <article class='order-card'>
-            <div class='order-card__img'></div>
-            <div class='order-card__description'>
-              <h4 class='order-card__title'>1. Заявка.</h4>
+          <article class='delivery-card'>
+            <div class='delivery-card__img'></div>
+            <div class='delivery-card__description'>
+              <h4 class='delivery-card__title'>1. Заявка.</h4>
               <p>Залишаєте заявку на нашому сайті.</p>
             </div>
           </article>
         </li>
         <li>
-          <article class='order-card'>
-            <div class='order-card__img'></div>
-            <div class='order-card__description'>
-              <h4 class='order-card__title'>2. Дзвінок.</h4>
+          <article class='delivery-card'>
+            <div class='delivery-card__img'></div>
+            <div class='delivery-card__description'>
+              <h4 class='delivery-card__title'>2. Дзвінок.</h4>
               <p>Ми уточнимо деталі замовлення.</p>
             </div>
           </article>
         </li>
         <li>
-          <article class='order-card'>
-            <div class='order-card__img'></div>
-            <div class='order-card__description'>
-              <h4 class='order-card__title'>3. Відправка.</h4>
+          <article class='delivery-card'>
+            <div class='delivery-card__img'></div>
+            <div class='delivery-card__description'>
+              <h4 class='delivery-card__title'>3. Відправка.</h4>
               <p>Доставляємо замовлення протягом 2-3 днів.</p>
             </div>
           </article>
         </li>
         <li>
-          <article class='order-card'>
-            <div class='order-card__img'></div>
-            <div class='order-card__description'>
-              <h4 class='order-card__title'>4. Отримання.</h4>
+          <article class='delivery-card'>
+            <div class='delivery-card__img'></div>
+            <div class='delivery-card__description'>
+              <h4 class='delivery-card__title'>4. Отримання.</h4>
               <p>Оплачуєте при отриманні.</p>
             </div>
           </article>
@@ -1488,8 +1494,97 @@
     </button>
     <h1>Ваше замовлення:</h1>
     <div class='basket-modal__basket basket'>
-
     </div>
+    <div class='basket__final-sum sum accent'><p>Сума:</p></div>
+    <form name='order' class='basket__form order' autocomplete='off'>
+      <div class='order__form-field input'>
+        <label class='input__label-order' for='order-first-name'
+        >Ваше Прізвище</label
+        >
+        <input
+          class='input__control'
+          type='text'
+          id='order-first-name'
+          name='order-first-name'
+          placeholder='Прізвище'
+          required
+        />
+      </div>
+      <div class='order__form-field input'>
+        <label class='input__label-order' for='order-name'
+        >Ваше Імя</label
+        >
+        <input
+          class='input__control'
+          type='text'
+          id='order-name'
+          name='order-name'
+          placeholder='Ім’я'
+          required
+        />
+      </div>
+      <div class='order__form-field input'>
+        <label class='input__label-order' for='order-tel'
+        >Ваш мобільний телефон</label
+        >
+        <input
+          class='input__control'
+          name='order-tel'
+          id='order-tel'
+          type='tel'
+          placeholder='Телефон'
+          required
+        />
+      </div>
+      <fieldset class='order__delivery-list'>
+        <legend>Доставка</legend>
+
+        <div>
+          <input type='radio' id='delivery-new-post' name='delivery' value='Самовивіз з Нової Пошти' />
+          <label for='delivery-new-post'>Самовивіз з Нової Пошти</label>
+        </div>
+
+        <div>
+          <input type='radio' id='delivery-courier-new-post' name='delivery'
+                 value='Курєр Нової Пошти' />
+          <label for='delivery-courier-new-post'>Курєр Нової Пошти</label>
+        </div>
+
+        <div>
+          <input type='radio' id='delivery-ukr-post' name='delivery' value='Укр пошта(повна оплата)' />
+          <label for='delivery-ukr-post'>Укр пошта(повна оплата)</label>
+        </div>
+      </fieldset>
+
+      <div class='order__form-field input'>
+        <label class='input__label-order' for='order-department'
+        >Місто та Відділення Нової пошти</label
+        >
+        <input
+          class='input__control'
+          name='contact-department'
+          type='text'
+          id='order-department'
+          placeholder='Відділення Нової пошти'
+          required
+        />
+      </div>
+      <div class='order__selected'>
+        <label for='payment'>Оплата</label>
+
+        <select name='payment' id='payment' class='order__payment'>
+          <option value='cash' class='order__options' selected>Оплата при отриманні товару</option>
+          <option value='card' class='order__options'>Оплата карткою Visa/MasterCard</option>
+        </select>
+      </div>
+    </form>
+
+    <div class='basket__final-sum'>
+      <div class='basket__sum sum'><p>Сума:</p></div>
+      <div class='basket__total-sum sum accent'><p>Загальна сума:</p></div>
+    </div>
+
+    <button type='button' class='basket__submit button'>Відправити заявку </button>
   </div>
 </div>
 

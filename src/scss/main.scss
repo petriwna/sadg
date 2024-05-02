@@ -4,9 +4,11 @@
 @import "components/basket";
 @import "components/button";
 @import "components/card";
+@import "components/counter";
 @import "components/input";
 @import "components/link";
-@import "components/order-card";
+@import "components/order";
+@import "components/delivery-card";
 @import "components/price";
 @import "components/pagination";
 @import "components/product";
@@ -23,7 +25,7 @@
 @import "layouts/info";
 @import "layouts/mobile-menu";
 @import "layouts/modal";
-@import "layouts/order";
+@import "layouts/delivery";
 @import "layouts/sale";
 @import "layouts/section";
 

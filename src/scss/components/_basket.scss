@@ -39,6 +39,11 @@
 
   &__name {
     margin-bottom: 0;
+    font-size: 14px;
+
+    @media screen and (min-width: $bp-tablet) {
+      font-size: 16px;
+    }
   }
 
   &__options {

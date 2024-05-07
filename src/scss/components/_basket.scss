@@ -117,17 +117,20 @@
   }
 
   &__final-sum {
-    text-align: right;
+    display: flex;
+    justify-content: end;
     color: #000;
+    gap: 5px;
+
+    &--total {
+      font-size: 22px;
+    }
   }
 
   &__sum {
     font-size: 16px;
   }
 
-  &__total-sum {
-    font-size: 22px;
-  }
 
   &__submit {
     background-color: var(--color-brand-normal);

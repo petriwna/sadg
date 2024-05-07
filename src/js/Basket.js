@@ -5,6 +5,7 @@ export class Basket {
 
     this.counter = 0;
     this.basket = [];
+    this.finallSum = 0;
   }
 
   addProductToBasket(img, name, strCode, price, size, quantity) {
@@ -61,5 +62,14 @@ export class Basket {
       `;
       basketList.appendChild(productItem);
     });
+  }
+
+  getSumBasket() {
+    let sum = 0;
+    this.basket.forEach((product) => {
+      const oneSum = product.cost * product.quantity;
+      sum += oneSum;
+    });
+    return sum;
   }
 }

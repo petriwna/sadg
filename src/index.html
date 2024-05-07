@@ -1495,7 +1495,7 @@
     <h1>Ваше замовлення:</h1>
     <div class='basket-modal__basket basket'>
     </div>
-    <div class='basket__final-sum sum accent'><p>Сума:</p></div>
+    <div class='basket__final-sum accent'><p>Сума: </p><p class='sum'></p></div>
     <form name='order' class='basket__form order' autocomplete='off'>
       <div class='order__form-field input'>
         <label class='input__label-order' for='order-first-name'
@@ -1579,9 +1579,9 @@
       </div>
     </form>
 
-    <div class='basket__final-sum'>
-      <div class='basket__sum sum'><p>Сума:</p></div>
-      <div class='basket__total-sum sum accent'><p>Загальна сума:</p></div>
+    <div class='basket__sum'>
+      <div class='basket__final-sum'><p>Сума: </p><p class='sum'></p></div>
+      <div class='basket__final-sum basket__final-sum--total accent'><p>Загальна сума: </p><p class='sum'></p></div>
     </div>
 
     <button type='button' class='basket__submit button'>Відправити заявку </button>

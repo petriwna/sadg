@@ -5,11 +5,10 @@ export class Modal {
   constructor(backdropSelector, closeBtnSelector) {
     this.backdrop = document.querySelector(backdropSelector);
     this.closeBtn = document.querySelector(closeBtnSelector);
-
-    this.setupEventListeners();
   }
 
   setupEventListeners() {
+    console.log('modal event');
     fromEvent(this.closeBtn, 'click').subscribe(() => this.close());
     fromEvent(this.backdrop, 'click')
       .pipe(

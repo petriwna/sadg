@@ -5,7 +5,6 @@ export class Basket {
 
     this.counter = 0;
     this.basket = [];
-    this.finallSum = 0;
   }
 
   addProductToBasket(img, name, strCode, price, size, quantity) {

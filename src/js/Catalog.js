@@ -12,8 +12,8 @@ export class Catalog {
 
     this.basket = new Basket();
 
-    this.productModal = new ProductModal(this.basket);
     this.basketModal = new BasketModal(this.basket);
+    this.productModal = new ProductModal(this.basket, this.basketModal);
 
     this.addClickListeners();
   }

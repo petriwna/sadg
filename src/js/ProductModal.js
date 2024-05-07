@@ -1,15 +1,14 @@
-import { BasketModal } from './BasketModal';
 import { Modal } from './Modal';
 import { ProductComponent } from './ProductComponent';
 
 export class ProductModal extends Modal {
-  constructor(basket) {
+  constructor(basket, basketModal) {
     super('#modal-product', '#close-product');
 
     this.productComponent = new ProductComponent();
     this.basket = basket;
 
-    this.basketModal = new BasketModal(this.basket);
+    this.basketModal = basketModal;
 
     this.product = {};
 
@@ -25,6 +24,7 @@ export class ProductModal extends Modal {
   }
 
   setupEventListeners() {
+    console.log('prod')
     super.setupEventListeners();
   }
 

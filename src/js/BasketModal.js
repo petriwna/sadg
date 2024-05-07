@@ -5,19 +5,32 @@ import { Modal } from './Modal';
 export class BasketModal extends Modal {
   constructor(basket) {
     super('#modal-basket', '#close-basket');
-    this.basketFab = document.querySelector('#basket');
+
     this.sumElement = document.querySelectorAll('.sum');
     this.basket = basket;
-    fromEvent(this.basketFab, 'click').subscribe(() => this.handleClickFab());
 
     this.setupEventListeners();
   }
 
   setupEventListeners() {
+    console.log('basket');
     super.setupEventListeners();
+
+    if (!this.basketFabClickSubscription) {
+      this.basketFabClickSubscription = fromEvent(document.querySelector('#basket'), 'click').subscribe(() =>
+        this.handleClickFab(),
+      );
+    }
+
+    if (!this.submitClickSubscription) {
+      this.submitClickSubscription = fromEvent(document.querySelector('.basket__submit'), 'click').subscribe(() =>
+        this.handleClickSubmit(),
+      );
+    }
   }
 
   handleClickFab() {
+    console.log('click fab');
     this.open();
   }
 
@@ -31,5 +44,9 @@ export class BasketModal extends Modal {
     this.sumElement.forEach((element) => {
       element.textContent = ` ${this.basket.getSumBasket()} грн`;
     });
+  }
+
+  handleClickSubmit() {
+    console.log('click submit');
   }
 }

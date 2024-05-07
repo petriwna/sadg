@@ -1,13 +1,25 @@
+import { fromEvent } from 'rxjs';
+import { tap } from 'rxjs/operators';
+
 export class Modal {
   constructor(backdropSelector, closeBtnSelector) {
     this.backdrop = document.querySelector(backdropSelector);
     this.closeBtn = document.querySelector(closeBtnSelector);
 
-    this.modalContent = document.querySelector('.modal');
-    this.modalContent.addEventListener('click', (event) => this.handleModalClick(event));
+    this.setupEventListeners();
+  }
 
-    this.closeBtn.addEventListener('click', () => this.close());
-    this.backdrop.addEventListener('click', (event) => this.handleClickOutside(event));
+  setupEventListeners() {
+    fromEvent(this.closeBtn, 'click').subscribe(() => this.close());
+    fromEvent(this.backdrop, 'click')
+      .pipe(
+        tap((event) => {
+          if (event.target === this.backdrop) {
+            this.close();
+          }
+        }),
+      )
+      .subscribe();
   }
 
   open() {
@@ -18,15 +30,5 @@ export class Modal {
   close() {
     this.backdrop.classList.add('is-hidden');
     document.body.classList.remove('is-scroll-disable');
-  }
-
-  handleClickOutside(event) {
-    if (event.target === this.backdrop) {
-      this.close();
-    }
-  }
-
-  handleModalClick(event) {
-    event.stopPropagation();
   }
 }

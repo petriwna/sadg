@@ -29,7 +29,10 @@ export class Basket {
     const cost = parseFloat(price.replace(/\D/g, ''));
     const code = strCode.match(/[a-zA-Z0-9-]+/)[0];
 
+    let isProduct = false;
+    this.basket.find((product) => (isProduct = product.code === code && product.size === size));
     this.basket.push({ img, name, code, cost, size, quantity });
+
     this.renderOrderInBasket();
   }
 
@@ -54,11 +57,11 @@ export class Basket {
             <button class='basket__plus-minus minus' type='button'>-</button>
             <label for='order-counter' class='visually-hidden'></label>
             <input type='number' name='order-counter' class='basket__value' min='1' step='1' size='4' max='999' maxlength='3'
-                 value='1'>
+                 value='${product.quantity}'>
             <button class='basket__plus-minus plus' type='button'>+</button>
           </div>
           <div>
-            <p class='basket__price'>${product.cost} грн.</p>
+            <p class='basket__price'>${product.cost * product.quantity} грн.</p>
           </div>
           <button class='basket__delete' id='delete' type='button'>
             <svg width='30' height='30'>

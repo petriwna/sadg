@@ -1,10 +1,12 @@
-import Swiper from 'swiper/bundle';
-
 import { Catalog } from './Catalog';
 import { MobileMenu } from './MobileMenu';
+import { SwiperComponent } from './SwiperComponent';
 
 export class Main {
   constructor() {
+    this.swiper = new SwiperComponent();
+    this.mobileMenu = new MobileMenu();
+
     this.init();
   }
 
@@ -15,8 +17,7 @@ export class Main {
   }
 
   initMobileMenu() {
-    const mobileMenu = new MobileMenu();
-    mobileMenu.addListener();
+    this.mobileMenu.addListener();
   }
 
   initCatalog() {
@@ -24,40 +25,6 @@ export class Main {
   }
 
   initSwiper() {
-    const swiperContainers = document.querySelectorAll('.swiper-container');
-    swiperContainers.forEach((container) => {
-      const slides = container.querySelectorAll('.swiper-slide');
-      const shouldEnablePagination = slides.length > 4;
-      if (shouldEnablePagination) {
-        const pagination = container.querySelector('.pagination');
-        pagination.style.display = 'flex';
-      }
-    });
-
-    new Swiper('.swiper-container', {
-      slidesPerView: 'auto',
-      spaceBetween: 20,
-      breakpoints: {
-        600: {
-          slidesPerView: 1,
-        },
-        768: {
-          slidesPerView: 2,
-        },
-        992: {
-          slidesPerView: 3,
-        },
-        1280: {
-          slidesPerView: 4,
-        },
-      },
-      loop: true,
-      pagination: {
-        el: '.pagination',
-        bulletClass: 'pagination__button',
-        bulletActiveClass: 'pagination__button--active',
-        clickable: true,
-      },
-    });
+    this.swiper.init();
   }
 }

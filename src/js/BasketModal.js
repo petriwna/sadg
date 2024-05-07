@@ -4,7 +4,14 @@ import { Modal } from './Modal';
 export class BasketModal extends Modal {
   constructor() {
     super('#modal-basket', '#close-basket');
+
     this.basket = new Basket();
+
+    this.setupEventListeners();
+  }
+
+  setupEventListeners() {
+    super.setupEventListeners();
   }
 
   openWithBasket(img, name, code, price, size, quantity) {

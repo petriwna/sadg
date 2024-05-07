@@ -1,11 +1,15 @@
+import { fromEvent } from 'rxjs';
+import { tap } from 'rxjs/operators';
+
 export class MobileMenu {
   constructor() {
+    this.menu = document.querySelector('.mobile-menu');
     this.menuBtnOpen = document.querySelector('.menu-btn-open');
     this.menuBtnClose = document.querySelector('.menu-btn-close');
   }
 
   toggleMenu() {
-    document.querySelector('.mobile-menu').classList.toggle('is-open');
+    this.menu.classList.toggle('is-open');
   }
 
   disableScroll() {
@@ -13,10 +17,21 @@ export class MobileMenu {
   }
 
   addListener() {
-    this.menuBtnOpen.addEventListener('click', this.toggleMenu);
-    this.menuBtnClose.addEventListener('click', this.toggleMenu);
+    const openMenu$ = fromEvent(this.menuBtnOpen, 'click').pipe(
+      tap(() => {
+        this.toggleMenu();
+        this.disableScroll();
+      }),
+    );
 
-    this.menuBtnOpen.addEventListener('click', this.disableScroll);
-    this.menuBtnClose.addEventListener('click', this.disableScroll);
+    const closeMenu$ = fromEvent(this.menuBtnClose, 'click').pipe(
+      tap(() => {
+        this.toggleMenu();
+        this.disableScroll();
+      }),
+    );
+
+    openMenu$.subscribe();
+    closeMenu$.subscribe();
   }
 }

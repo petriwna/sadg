@@ -1,5 +1,6 @@
 import { fromEvent } from 'rxjs';
 
+import { Basket } from './Basket';
 import { BasketModal } from './BasketModal';
 import { ProductModal } from './ProductModal';
 
@@ -9,8 +10,10 @@ export class Catalog {
     this.btnDetails = document.querySelectorAll('.details');
     this.btnBuy = document.querySelectorAll('.card__button-buy');
 
-    this.productModal = new ProductModal();
-    this.basketModal = new BasketModal();
+    this.basket = new Basket();
+
+    this.productModal = new ProductModal(this.basket);
+    this.basketModal = new BasketModal(this.basket);
 
     this.addClickListeners();
   }

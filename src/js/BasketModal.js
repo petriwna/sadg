@@ -1,11 +1,14 @@
-import { Basket } from './Basket';
+import { fromEvent } from 'rxjs';
+
 import { Modal } from './Modal';
 
 export class BasketModal extends Modal {
-  constructor() {
+  constructor(basket) {
     super('#modal-basket', '#close-basket');
+    this.basketFab = document.querySelector('#basket');
 
-    this.basket = new Basket();
+    this.basket = basket;
+    fromEvent(this.basketFab, 'click').subscribe(() => this.handleClickFab());
 
     this.setupEventListeners();
   }
@@ -14,12 +17,12 @@ export class BasketModal extends Modal {
     super.setupEventListeners();
   }
 
-  openWithBasket(img, name, code, price, size, quantity) {
-    this.populateBasket(img, name, code, price, size, quantity);
+  handleClickFab() {
     this.open();
   }
 
-  populateBasket(img, name, code, price, size, quantity) {
+  openWithBasket(img, name, code, price, size, quantity) {
     this.basket.addProductToBasket(img, name, code, price, size, quantity);
+    this.open();
   }
 }

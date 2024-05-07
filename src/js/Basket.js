@@ -1,27 +1,13 @@
-import { Modal } from './Modal';
-
 export class Basket {
   constructor() {
-    this.basketFab = document.querySelector('#basket');
     this.counterFab = document.getElementById('basket-count');
-
-    this.modal = new Modal('#modal-basket', '#close-basket');
+    this.basketFab = document.querySelector('#basket');
 
     this.counter = 0;
     this.basket = [];
-    this.addClickListeners();
-  }
-
-  addClickListeners() {
-    this.basketFab.addEventListener('click', () => this.handleClickFab());
-  }
-
-  handleClickFab() {
-    this.modal.open();
   }
 
   addProductToBasket(img, name, strCode, price, size, quantity) {
-    this.modal.open();
     this.basketFab.style.display = 'flex';
     this.counter = this.counter + quantity;
     this.counterFab.innerText = this.counter;
@@ -29,21 +15,24 @@ export class Basket {
     const cost = parseFloat(price.replace(/\D/g, ''));
     const code = strCode.match(/[a-zA-Z0-9-]+/)[0];
 
-    let isProduct = false;
-    this.basket.find((product) => (isProduct = product.code === code && product.size === size));
-    this.basket.push({ img, name, code, cost, size, quantity });
+    const existingProductIndex = this.basket.findIndex((product) => product.code === code && product.size === size);
 
-    this.renderOrderInBasket();
+    if (existingProductIndex !== -1) {
+      this.basket[existingProductIndex].quantity += quantity;
+    } else {
+      this.basket.push({ img, name, code, cost, size, quantity });
+    }
+
+    this.renderBasket();
   }
 
-  renderOrderInBasket() {
-    const basket = document.querySelector('.basket');
-    const productItem = document.createElement('article');
-
-    basket.appendChild(productItem);
-    productItem.classList.add('basket__item');
+  renderBasket() {
+    const basketList = document.querySelector('.basket');
+    basketList.innerHTML = '';
 
     this.basket.map((product) => {
+      const productItem = document.createElement('article');
+      productItem.classList.add('basket__item');
       productItem.innerHTML = `
         <div class='basket__description'>
            <div class='basket__img' style='background-image: url("${product.img}")'></div>
@@ -70,6 +59,7 @@ export class Basket {
           </button>
         </div>
       `;
+      basketList.appendChild(productItem);
     });
   }
 }

@@ -1,13 +1,15 @@
-import { Basket } from './Basket';
+import { BasketModal } from './BasketModal';
 import { Modal } from './Modal';
 import { ProductComponent } from './ProductComponent';
 
 export class ProductModal extends Modal {
-  constructor() {
+  constructor(basket) {
     super('#modal-product', '#close-product');
 
-    this.basket = new Basket();
     this.productComponent = new ProductComponent();
+    this.basket = basket;
+
+    this.basketModal = new BasketModal(this.basket);
 
     this.product = {};
 
@@ -88,7 +90,7 @@ export class ProductModal extends Modal {
   }
 
   handleClickOrderBtn() {
-    this.basket.addProductToBasket(
+    this.basketModal.openWithBasket(
       this.productComponent.modalImg.getAttribute('src'),
       this.productComponent.modalTitle.textContent,
       this.productComponent.modalCode.textContent,

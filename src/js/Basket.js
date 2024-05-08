@@ -36,7 +36,7 @@ export class Basket {
       productItem.innerHTML = `
         <div class='basket__info'>
           <div class='basket__description'>
-            <div class='basket__img' style='background-image: url("${product.img}")'></div>
+            <img class='basket__img' src='${product.img}' alt='${product.name}'>
             <div class='basket__text'>
             <h3 class='basket__name'>${product.name}</h3>
             <p class='basket__options'>${product.code}</p>

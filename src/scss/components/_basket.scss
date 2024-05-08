@@ -15,13 +15,14 @@
   }
 
   &__img {
-    width: 30%;
-    height: 70px;
-    background-size: cover;
+    width: 70px;
+    height: 90px;
     border-radius: 7px;
-    background-color: #eee;
-    background-position: center;
-    background-repeat: no-repeat;
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 90px;
+      height: 120px;
+    }
   }
 
   &__info {
@@ -29,6 +30,7 @@
     display: flex;
     flex-direction: column;
     padding: 15px 0;
+    gap: 8px;
 
     @media screen and (min-width: $bp-mobile) {
       align-items: center;
@@ -80,6 +82,7 @@
     align-items: center;
 
     @media screen and (min-width: $bp-mobile) {
+      margin-left: 0;
       width: 40%;
       justify-content: end;
     }

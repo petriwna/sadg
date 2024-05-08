@@ -1,29 +1,25 @@
 export class Basket {
   constructor() {
-    this.counterFab = document.getElementById('basket-count');
     this.basketFab = document.querySelector('#basket');
 
-    this.counter = 0;
     this.basket = [];
   }
 
   addProductToBasket(img, name, strCode, price, size, quantity) {
     this.basketFab.style.display = 'flex';
-    this.counter = this.counter + quantity;
-    this.counterFab.innerText = this.counter;
 
     const cost = parseFloat(price.replace(/\D/g, ''));
     const code = strCode.match(/[a-zA-Z0-9-]+/)[0];
 
-    const existingProductIndex = this.basket.findIndex((product) => product.code === code && product.size === size);
+    const existingProductIndex = this.basket.findIndex(
+      (product) => product.code === code && product.size === size,
+    );
 
     if (existingProductIndex !== -1) {
       this.basket[existingProductIndex].quantity += quantity;
     } else {
       this.basket.push({ img, name, code, cost, size, quantity });
     }
-
-    this.renderBasket();
   }
 
   renderBasket() {
@@ -44,14 +40,14 @@ export class Basket {
           </div>
           <div class='basket__settings'>
             <div class='basket__counter'>
-              <button class='basket__plus-minus minus' type='button'>-</button>
+              <button class='basket__plus-minus basket-minus' type='button'>-</button>
               <label for='order-counter' class='visually-hidden'></label>
               <input type='number' name='order-counter' class='basket__value' min='1' step='1' size='4' max='999' maxlength='3'
                  value='${product.quantity}'>
-              <button class='basket__plus-minus plus' type='button'>+</button>
+              <button class='basket__plus-minus basket-plus' type='button'>+</button>
             </div>
             <div>
-              <p class='basket__price'>${product.cost * product.quantity} грн.</p>
+              <p class='basket__price'></p>
             </div>
           </div>
         </div>
@@ -65,6 +61,10 @@ export class Basket {
     });
   }
 
+  getSumProduct(index) {
+    return this.basket[index].cost * this.basket[index].quantity;
+  }
+
   getSumBasket() {
     let sum = 0;
     this.basket.forEach((product) => {
@@ -72,5 +72,18 @@ export class Basket {
       sum += oneSum;
     });
     return sum;
+  }
+
+  changeQuantity(index, newQuantity) {
+    this.basket[index].quantity = newQuantity;
+  }
+
+  getQuantity() {
+    let counter = 0;
+    this.basket.forEach((product) => {
+      counter += product.quantity;
+    });
+
+    return counter;
   }
 }

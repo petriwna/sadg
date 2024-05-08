@@ -9,8 +9,8 @@ export class ProductComponent {
     this.modalImg = document.querySelector('.modal__img');
     this.price = document.querySelector('.price__new').textContent;
     this.counterInput = document.getElementById('order-counter');
-    this.incrementBtn = document.querySelector('.plus');
-    this.decrementBtn = document.querySelector('.minus');
+    this.incrementBtn = document.querySelector('.product-plus');
+    this.decrementBtn = document.querySelector('.product-minus');
     this.orderBtn = document.getElementById('order-modal');
 
     this.counterInputValue = 1;

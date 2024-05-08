@@ -10,11 +10,10 @@
   &__item {
     background-color: rgba(255, 255, 255, .8);
     border-radius: 50px;
-    width: 80px;
-    height: 80px;
+    width: 56px;
+    height: 56px;
     cursor: pointer;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
-    //display: none;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -23,27 +22,47 @@
       -webkit-transform: scale(1.1);
       transform: scale(1.1);
     }
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 80px;
+      height: 80px;
+    }
   }
 
   &__counter {
-    min-width: 30px;
+    min-width: 25px;
     width: initial;
-    height: 30px;
+    height: 25px;
     padding: 0 5px;
     background-color: red;
     color: #fff;
     border-radius: 30px;
     position: absolute;
-    right: -3px;
-    bottom: -3px;
+    right: -8px;
+    bottom: -8px;
     text-align: center;
-    line-height: 30px;
+    line-height: 25px;
     box-sizing: border-box;
+
+    @media screen and (min-width: $bp-tablet) {
+      right: -3px;
+      bottom: -3px;
+      line-height: 30px;
+      min-width: 30px;
+      height: 30px;
+    }
   }
 
   &__icon {
+    width: 24px;
+    height: 24px;
     fill: transparent;
     stroke: var(--color-brand-yellow-light);
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 34px;
+      height: 34px;
+    }
   }
 
 }

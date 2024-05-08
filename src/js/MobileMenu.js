@@ -44,7 +44,6 @@ export class MobileMenu {
   }
 
   handleClickOutsideMenu(event) {
-    console.log('click')
     if (!this.menu.contains(event.target) && event.target !== this.menuBtnOpen && event.target !== this.menuBtnClose) {
       if (this.menu.classList.contains('is-open')) {
         this.toggleMenu();

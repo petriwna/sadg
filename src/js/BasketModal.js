@@ -13,7 +13,6 @@ export class BasketModal extends Modal {
   }
 
   setupEventListeners() {
-    console.log('basket');
     super.setupEventListeners();
 
     if (!this.basketFabClickSubscription) {
@@ -30,7 +29,6 @@ export class BasketModal extends Modal {
   }
 
   handleClickFab() {
-    console.log('click fab');
     this.open();
   }
 

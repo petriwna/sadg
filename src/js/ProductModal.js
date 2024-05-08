@@ -24,7 +24,6 @@ export class ProductModal extends Modal {
   }
 
   setupEventListeners() {
-    console.log('prod')
     super.setupEventListeners();
   }
 

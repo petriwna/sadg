@@ -15,20 +15,40 @@
   }
 
   &__img {
-    width: 70px;
+    width: 30%;
     height: 70px;
     background-size: cover;
     border-radius: 7px;
     background-color: #eee;
     background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__info {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+
+    @media screen and (min-width: $bp-mobile) {
+      align-items: center;
+      flex-direction: row;
+      padding: 0;
+    }
   }
 
   &__description {
-    padding: 15px 0;
+    width: 90%;
+    padding: 5px 0;
     font-size: 16px;
     display: flex;
     gap: 15px;
     align-items: center;
+
+    @media screen and (min-width: $bp-mobile) {
+      padding: 15px 0;
+      width: 60%;
+    }
   }
 
   &__text {
@@ -56,7 +76,13 @@
     display: flex;
     height: 100%;
     gap: 15px;
+    margin-left: 90px;
     align-items: center;
+
+    @media screen and (min-width: $bp-mobile) {
+      width: 40%;
+      justify-content: end;
+    }
   }
 
   &__counter {

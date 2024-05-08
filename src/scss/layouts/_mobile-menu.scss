@@ -8,7 +8,8 @@
   padding: 16px 24px;
   background-color: var(--color-primary-light);
   transform: translateX(125%);
-  transition: transform .3s;
+  transition: transform 1s;
+  transition-timing-function: ease;
 
   &.is-open {
     transform: translateX(25%);

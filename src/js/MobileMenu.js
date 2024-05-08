@@ -6,6 +6,7 @@ export class MobileMenu {
     this.menu = document.querySelector('.mobile-menu');
     this.menuBtnOpen = document.querySelector('.menu-btn-open');
     this.menuBtnClose = document.querySelector('.menu-btn-close');
+    this.body = document.querySelector('body');
   }
 
   toggleMenu() {
@@ -33,5 +34,22 @@ export class MobileMenu {
 
     openMenu$.subscribe();
     closeMenu$.subscribe();
+
+    this.menuBtnOpen.addEventListener('click', this.handleClickInsideMenu.bind(this));
+    this.body.addEventListener('click', this.handleClickOutsideMenu.bind(this));
+  }
+
+  handleClickInsideMenu(event) {
+    event.stopPropagation();
+  }
+
+  handleClickOutsideMenu(event) {
+    console.log('click')
+    if (!this.menu.contains(event.target) && event.target !== this.menuBtnOpen && event.target !== this.menuBtnClose) {
+      if (this.menu.classList.contains('is-open')) {
+        this.toggleMenu();
+        this.disableScroll();
+      }
+    }
   }
 }

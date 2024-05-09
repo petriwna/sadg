@@ -5,21 +5,3 @@ export function toggleBtn(btn) {
     btn.style.display = 'flex';
   }
 }
-
-export function validationInputLength(input) {
-  input.addEventListener('input', () => {
-    if (input.value.length > 3) {
-      input.value = input.value.slice(0, 3);
-    }
-  });
-}
-
-export function validationInputEmpty(input) {
-  input.addEventListener('blur', () => {
-    if (input.value.trim() === '') {
-      input.value = '1';
-      return true;
-    }
-    return false;
-  });
-}

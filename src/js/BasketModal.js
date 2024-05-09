@@ -139,7 +139,11 @@ export class BasketModal extends Modal {
   removeItemProduct(index) {
     const item = document.querySelector(`.basket__item:nth-child(${index + 1})`);
     if (item) {
-      item.remove();
+      item.classList.add('fade-out');
+
+      setTimeout(() => {
+        item.remove();
+      }, 500);
     } else {
       this.close();
     }

@@ -24,3 +24,8 @@
   justify-content: end;
   gap: 5px;
 }
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}

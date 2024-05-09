@@ -48,6 +48,11 @@ export class ProductModal extends Modal {
     const priceNew = card.querySelector('.price__new').textContent;
     const size = card.querySelectorAll('.card__size');
     const img = card.querySelector('.card__image');
+    const imagesUrl = card.querySelectorAll('.url');
+    const urls = [];
+    imagesUrl.forEach((item) => {
+      urls.push(item.dataset.url);
+    });
     const imgSrc = img.getAttribute('src');
     this.productComponent.modalImg.setAttribute('src', imgSrc);
     this.productComponent.modalImg.setAttribute('alt', title);
@@ -59,6 +64,7 @@ export class ProductModal extends Modal {
           code: e.dataset.size,
           newCost: e.dataset.newCost,
           oldCost: e.dataset.oldCost,
+          images: urls,
         });
       });
     } else {
@@ -67,6 +73,7 @@ export class ProductModal extends Modal {
         code: code,
         newCost: priceNew,
         oldCost: priceOldElement ? priceOldElement.textContent.replace('грн.', '').trim() : '',
+        images: urls,
       });
     }
 

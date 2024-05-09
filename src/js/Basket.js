@@ -29,6 +29,7 @@ export class Basket {
     this.basket.map((product) => {
       const productItem = document.createElement('article');
       productItem.classList.add('basket__item');
+
       productItem.innerHTML = `
         <div class='basket__info'>
           <div class='basket__description'>

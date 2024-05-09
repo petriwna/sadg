@@ -63,10 +63,10 @@ export class ProductModal extends Modal {
       });
     } else {
       info.push({
-        size: title,
+        size: null,
         code: code,
         newCost: priceNew,
-        oldCost: priceOldElement.textContent,
+        oldCost: priceOldElement ? priceOldElement.textContent.replace('грн.', '').trim() : '',
       });
     }
 

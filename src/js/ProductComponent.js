@@ -1,4 +1,4 @@
-import { filter, fromEvent, map } from 'rxjs';
+import { fromEvent } from 'rxjs';
 
 export class ProductComponent {
   constructor() {
@@ -19,15 +19,32 @@ export class ProductComponent {
   setupEventListeners(handleClickOrderBtn, incrementCounter, decrementCounter) {
     this.orderBtn.addEventListener('click', handleClickOrderBtn.bind(this));
 
-    fromEvent(this.counterInput, 'input')
-      .pipe(
-        map((event) => parseInt(event.target.value)),
-        filter((value) => !isNaN(value) && value >= 1 && value <= 999),
-      )
-      .subscribe((value) => (this.counterInputValue = value));
+    this.counterInput.addEventListener('blur', () => {
+      if (this.counterInput.value.trim() === '' || this.counterInput.value.trim() === '0') {
+        this.counterInput.value = '1';
+      }
+    });
+
+    this.counterInput.addEventListener('input', () => {
+      if (this.counterInput.value.length > 3) {
+        this.counterInput.value = this.counterInput.value.slice(0, 3);
+      }
+      this.handleInputValue(parseInt(this.counterInput.value));
+      this.counterInputValue = parseInt(this.counterInput.value);
+    });
 
     fromEvent(this.incrementBtn, 'click').subscribe(() => incrementCounter());
     fromEvent(this.decrementBtn, 'click').subscribe(() => decrementCounter());
+  }
+
+  handleInputValue(value) {
+    if (value === '' || value < 1) {
+      this.counterInput.value = 1;
+      this.counterInputValue = 1;
+    } else if (value > 999) {
+      this.counterInput.value = 999;
+      this.counterInputValue = 999;
+    }
   }
 
   updateModalContent(product) {

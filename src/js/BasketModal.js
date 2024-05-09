@@ -36,7 +36,18 @@ export class BasketModal extends Modal {
 
   setupBasketItemListeners() {
     document.querySelectorAll('.basket__value').forEach((input, index) => {
-      fromEvent(input, 'input').subscribe(() => this.handleInputValue(index));
+      input.addEventListener('blur', () => {
+        if (input.value.trim() === '' || input.value.trim() === '0') {
+          input.value = '1';
+        }
+      });
+
+      input.addEventListener('input', () => {
+        if (input.value.length > 3) {
+          input.value = input.value.slice(0, 3);
+        }
+        this.handleInputValue(event, index, input.value);
+      });
     });
 
     document.querySelectorAll('.basket-plus').forEach((btn, index) => {
@@ -80,15 +91,12 @@ export class BasketModal extends Modal {
     price.innerText = `${this.basket.getSumProduct(index)} грн`;
   }
 
-  handleInputValue(index) {
-    const input = document.querySelectorAll('.basket__value')[index];
-    const newQuantity = parseInt(input.value);
-    if (!isNaN(newQuantity) && newQuantity >= 1 && newQuantity <= 999) {
-      this.basket.changeQuantity(index, newQuantity);
-      this.updateProductSum(index, input.parentNode.parentNode);
-      this.updateTotalSum();
-      this.updateFabCounter();
-    }
+  handleInputValue(event, index, value) {
+    const parent = event.target.parentNode;
+    this.basket.changeQuantity(index, parseInt(value));
+    this.updateProductSum(index, parent.parentNode);
+    this.updateTotalSum();
+    this.updateFabCounter();
   }
 
   handleIncrement(event, index) {
@@ -98,7 +106,7 @@ export class BasketModal extends Modal {
     newQuantity = Math.min(newQuantity, 999);
     this.basket.changeQuantity(index, newQuantity);
     input.value = newQuantity;
-    this.updateProductSum(index, input.parentNode.parentNode);
+    this.updateProductSum(index, parent.parentNode);
     this.updateTotalSum();
     this.updateFabCounter();
   }

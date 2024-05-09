@@ -61,6 +61,7 @@ export class ProductComponent {
 
     if (product.size.length > 1) {
       const sizeList = this.renderSizeList(product.size, product.title, product.info);
+
       this.modalDescription.appendChild(sizeList);
     }
 
@@ -68,19 +69,30 @@ export class ProductComponent {
   }
 
   renderSizeList(listSize, name, info) {
-    const sizeList = document.createElement('fieldset');
-    sizeList.classList.add('modal__size-list');
+    const sizeContainer = document.createElement('fieldset');
+    sizeContainer.setAttribute('class', 'modal__size-list');
+    const legend = document.createElement('legend');
+    legend.setAttribute('class', 'modal__size-title');
+    sizeContainer.appendChild(legend);
+
     const previousValue = info[0].size;
 
+    if (info[0].code.includes('Kaz')) {
+      legend.textContent = "Об'єм";
+    } else {
+      legend.textContent = 'Розмір';
+    }
+
     listSize.forEach((size, index) => {
-      const sizeContainer = document.createElement('div');
-      sizeContainer.classList.add('modal__size-item');
+      const sizeItem = document.createElement('div');
+      sizeItem.classList.add('modal__size-item');
 
       const contentSize = size.textContent;
       const data = size.dataset.size;
       const sizeListItem = document.createElement('input');
       sizeListItem.setAttribute('type', 'radio');
       sizeListItem.setAttribute('data-code', `${info[index].code}`);
+      sizeListItem.setAttribute('id', `${info[index].code}`);
       sizeListItem.setAttribute('data-new-cost', `${info[index].newCost}`);
       if (info[index].oldCost) {
         sizeListItem.setAttribute('data-old-cost', `${info[index].oldCost}`);
@@ -92,21 +104,21 @@ export class ProductComponent {
       label.setAttribute('for', `${data}`);
       label.innerText = contentSize;
 
-      sizeContainer.appendChild(sizeListItem);
-      sizeContainer.appendChild(label);
+      sizeItem.appendChild(sizeListItem);
+      sizeItem.appendChild(label);
 
-      sizeList.appendChild(sizeContainer);
+      sizeContainer.appendChild(sizeItem);
 
       if (index === 0) {
         sizeListItem.setAttribute('checked', 'checked');
       }
     });
 
-    sizeList.addEventListener('change', (event) => {
+    sizeContainer.addEventListener('change', (event) => {
       this.handleChangeSize(event, previousValue);
     });
 
-    return sizeList;
+    return sizeContainer;
   }
 
   handleChangeSize(event, previousValue) {

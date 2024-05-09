@@ -154,12 +154,18 @@
     }
   }
 
+  &__size-title {
+    margin: 0;
+    font-size: 28px;
+  }
+
   &__size-list {
     display: flex;
     flex-direction: column;
     align-items: start;
     border: none;
     padding-left: 0;
+    align-self: start;
   }
 
   &__size-item {

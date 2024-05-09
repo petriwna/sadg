@@ -14,22 +14,44 @@ export class BasketModal extends Modal {
     this.setupEventListeners();
   }
 
+  openWithBasket(img, name, code, price, size, quantity) {
+    this.basket.addProductToBasket(img, name, code, price, size, quantity);
+    this.updateFabCounter();
+
+    this.openBasket();
+  }
+
   setupEventListeners() {
     super.setupEventListeners();
 
-    if (!this.basketFabClickSubscription) {
-      this.basketFabClickSubscription = fromEvent(
-        document.querySelector('#basket'),
-        'click',
-      ).subscribe(() => this.handleClickFab());
-    }
+    this.setupBasketButtonListeners();
+  }
 
-    if (!this.submitClickSubscription) {
-      this.submitClickSubscription = fromEvent(
-        document.querySelector('.basket__submit'),
-        'click',
-      ).subscribe(() => this.handleClickSubmit());
-    }
+  setupBasketButtonListeners() {
+    fromEvent(document.querySelector('#basket'), 'click').subscribe(() => this.handleClickFab());
+    fromEvent(document.querySelector('.basket__submit'), 'click').subscribe(() =>
+      this.handleClickSubmit(),
+    );
+  }
+
+  setupBasketItemListeners() {
+    document.querySelectorAll('.basket__value').forEach((input, index) => {
+      fromEvent(input, 'input').subscribe(() => this.handleInputValue(index));
+    });
+
+    document.querySelectorAll('.basket-plus').forEach((btn, index) => {
+      btn.addEventListener('click', (event) => this.handleIncrement(event, index));
+    });
+    document.querySelectorAll('.basket-minus').forEach((btn, index) => {
+      btn.addEventListener('click', (event) => this.handleDecrement(event, index));
+    });
+    document.querySelectorAll('.basket__delete').forEach((btn, index) => {
+      btn.addEventListener('click', (event) => this.handleDeleteProduct(event, index));
+    });
+  }
+
+  handleClickFab() {
+    this.openBasket();
   }
 
   openBasket() {
@@ -37,11 +59,13 @@ export class BasketModal extends Modal {
     this.open();
     this.basket.renderBasket();
     this.updateProductSums();
-    this.clickButtonsBasket();
+    this.setupBasketItemListeners();
   }
 
-  updateFabCounter() {
-    this.counterFab.innerText = this.basket.getQuantity();
+  updateTotalSum() {
+    this.sumElement.forEach((element) => {
+      element.textContent = ` ${this.basket.getSumBasket()} грн`;
+    });
   }
 
   updateProductSums() {
@@ -51,50 +75,35 @@ export class BasketModal extends Modal {
     });
   }
 
-  clickButtonsBasket() {
-    document.querySelectorAll('.basket-plus').forEach((btn, index) => {
-      btn.addEventListener('click', (event) => this.increment(event, index));
-    });
-    document.querySelectorAll('.basket-minus').forEach((btn, index) => {
-      btn.addEventListener('click', (event) => this.decrement(event, index));
-    });
-  }
-
-  handleClickFab() {
-    this.openBasket();
-  }
-
-  openWithBasket(img, name, code, price, size, quantity) {
-    this.basket.addProductToBasket(img, name, code, price, size, quantity);
-    this.updateFabCounter();
-
-    this.openBasket();
-  }
-
-  updateTotalSum() {
-    this.sumElement.forEach((element) => {
-      element.textContent = ` ${this.basket.getSumBasket()} грн`;
-    });
-  }
-
   updateProductSum(index, parent) {
     const price = parent.querySelector('.basket__price');
     price.innerText = `${this.basket.getSumProduct(index)} грн`;
   }
 
-  increment(event, index) {
+  handleInputValue(index) {
+    const input = document.querySelectorAll('.basket__value')[index];
+    const newQuantity = parseInt(input.value);
+    if (!isNaN(newQuantity) && newQuantity >= 1 && newQuantity <= 999) {
+      this.basket.changeQuantity(index, newQuantity);
+      this.updateProductSum(index, input.parentNode.parentNode);
+      this.updateTotalSum();
+      this.updateFabCounter();
+    }
+  }
+
+  handleIncrement(event, index) {
     const parent = event.target.parentNode;
     const input = parent.querySelector('.basket__value');
     let newQuantity = (this.basket.basket[index].quantity += 1);
     newQuantity = Math.min(newQuantity, 999);
     this.basket.changeQuantity(index, newQuantity);
     input.value = newQuantity;
-    this.updateProductSum(index, parent.parentNode);
+    this.updateProductSum(index, input.parentNode.parentNode);
     this.updateTotalSum();
     this.updateFabCounter();
   }
 
-  decrement(event, index) {
+  handleDecrement(event, index) {
     const parent = event.target.parentNode;
     const input = parent.querySelector('.basket__value');
     let newQuantity = (this.basket.basket[index].quantity -= 1);
@@ -106,7 +115,43 @@ export class BasketModal extends Modal {
     this.updateFabCounter();
   }
 
+  handleDeleteProduct(event, index) {
+    this.basket.deleteProduct(index);
+    this.removeItemProduct(index);
+
+    if (this.basket.basket.length === 0) {
+      this.close();
+      this.updateFabCounter();
+      this.basket.basketFab.style.display = 'none';
+    } else {
+      this.updateBasketUI();
+    }
+  }
+
+  removeItemProduct(index) {
+    const item = document.querySelector(`.basket__item:nth-child(${index + 1})`);
+    if (item) {
+      item.remove();
+    } else {
+      this.close();
+    }
+  }
+
   handleClickSubmit() {
-    console.log('click submit');
+    this.close();
+    this.clearBasket();
+  }
+
+  clearBasket() {
+    this.basket.clearBasket();
+  }
+
+  updateFabCounter() {
+    this.counterFab.innerText = this.basket.getQuantity();
+  }
+
+  updateBasketUI() {
+    this.updateTotalSum();
+    this.updateFabCounter();
   }
 }

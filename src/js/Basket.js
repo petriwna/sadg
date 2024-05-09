@@ -86,4 +86,14 @@ export class Basket {
 
     return counter;
   }
+
+  clearBasket() {
+    this.basketFab.style.display = 'none';
+
+    this.basket = [];
+  }
+
+  deleteProduct(index) {
+    this.basket.splice(index, 1);
+  }
 }

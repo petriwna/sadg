@@ -52,7 +52,13 @@ export class Catalog {
     const name = card.querySelector('.card__title').textContent;
     const code = card.querySelector('.card__code').textContent;
     const price = card.querySelector('.price__new').textContent;
-    const size = card.querySelector('.size');
+    const sizeList = card.querySelectorAll('.card__size');
+    let size = null;
+
+    if (sizeList.length !== 0) {
+      size = sizeList[0].textContent;
+    }
+
     if (card) {
       this.basketModal.openWithBasket(img, name, code, price, size, 1);
     }

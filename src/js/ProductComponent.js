@@ -8,6 +8,7 @@ export class ProductComponent {
     this.modalDescription = document.querySelector('.modal__description');
     this.modalImg = document.querySelector('.modal__img');
     this.price = document.querySelector('.price__new').textContent;
+    this.size = 0;
     this.counterInput = document.getElementById('order-counter');
     this.incrementBtn = document.querySelector('.product-plus');
     this.decrementBtn = document.querySelector('.product-minus');
@@ -49,23 +50,27 @@ export class ProductComponent {
 
   updateModalContent(product) {
     this.modalTitle.textContent = product.title;
-    this.modalCode.textContent = product.code;
+    this.modalCode.textContent = product.info[0].code;
+    this.price = product.info[0].newCost;
+    this.size = product.info[0].size;
+
     this.modalPrice.innerHTML = `
-      <p class="price__new">${product.priceNew}</p>
-      ${product.priceOld ? `<p class="price__old">${product.priceOld}</p>` : ''}
+      <p class="price__new">${product.info[0].newCost} грн</p>
+      ${product.info[0].oldCost ? `<p class="price__old">${product.info[0].oldCost} грн</p>` : ''}
     `;
 
     if (product.size.length > 1) {
-      const sizeList = this.renderSizeList(product.size);
+      const sizeList = this.renderSizeList(product.size, product.title, product.info);
       this.modalDescription.appendChild(sizeList);
     }
 
     this.modalDescription.appendChild(product.description);
   }
 
-  renderSizeList(listSize) {
-    const sizeList = document.createElement('div');
+  renderSizeList(listSize, name, info) {
+    const sizeList = document.createElement('fieldset');
     sizeList.classList.add('modal__size-list');
+    const previousValue = info[0].size;
 
     listSize.forEach((size, index) => {
       const sizeContainer = document.createElement('div');
@@ -75,8 +80,13 @@ export class ProductComponent {
       const data = size.dataset.size;
       const sizeListItem = document.createElement('input');
       sizeListItem.setAttribute('type', 'radio');
+      sizeListItem.setAttribute('data-code', `${info[index].code}`);
+      sizeListItem.setAttribute('data-new-cost', `${info[index].newCost}`);
+      if (info[index].oldCost) {
+        sizeListItem.setAttribute('data-old-cost', `${info[index].oldCost}`);
+      }
       sizeListItem.setAttribute('value', `${contentSize}`);
-      sizeListItem.setAttribute('name', `${data}`);
+      sizeListItem.setAttribute('name', `${name}`);
 
       const label = document.createElement('label');
       label.setAttribute('for', `${data}`);
@@ -91,7 +101,28 @@ export class ProductComponent {
         sizeListItem.setAttribute('checked', 'checked');
       }
     });
+
+    sizeList.addEventListener('change', (event) => {
+      this.handleChangeSize(event, previousValue);
+    });
+
     return sizeList;
+  }
+
+  handleChangeSize(event, previousValue) {
+    if (event.target.type === 'radio') {
+      const selectedValue = event.target;
+
+      if (selectedValue !== previousValue) {
+        this.size = selectedValue.value;
+        this.modalCode.textContent = selectedValue.dataset.code;
+        this.price = selectedValue.dataset.newCost;
+        this.modalPrice.innerHTML = `
+          <p class="price__new">${selectedValue.dataset.newCost} грн</p>
+          ${selectedValue.dataset.oldCost ? `<p class="price__old">${selectedValue.dataset.oldCost} грн</p>` : ''}
+        `;
+      }
+    }
   }
 
   removeSize() {

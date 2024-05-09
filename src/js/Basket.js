@@ -35,7 +35,8 @@ export class Basket {
             <img class='basket__img' src='${product.img}' alt='${product.name}'>
             <div class='basket__text'>
             <h3 class='basket__name'>${product.name}</h3>
-            <p class='basket__options'>${product.code}</p>
+              ${product.size ? `<p class='basket__options'>${product.size}</p>` : ''}
+              <p class='basket__options'>${product.code}</p>
             </div>
           </div>
           <div class='basket__settings'>

@@ -41,6 +41,7 @@ export class ProductModal extends Modal {
   }
 
   extractProductDetails(card) {
+    const info = [];
     const title = card.querySelector('.card__title').textContent;
     const code = card.querySelector('.card__code').textContent;
     const priceOldElement = card.querySelector('.price__old');
@@ -50,18 +51,30 @@ export class ProductModal extends Modal {
     const imgSrc = img.getAttribute('src');
     this.productComponent.modalImg.setAttribute('src', imgSrc);
     this.productComponent.modalImg.setAttribute('alt', title);
-    this.size = null;
+
+    if (size.length !== 0) {
+      size.forEach((e) => {
+        info.push({
+          size: e.textContent,
+          code: e.dataset.size,
+          newCost: e.dataset.newCost,
+          oldCost: e.dataset.oldCost,
+        });
+      });
+    } else {
+      info.push({
+        size: title,
+        code: code,
+        newCost: priceNew,
+        oldCost: priceOldElement.textContent,
+      });
+    }
+
     const description = card.querySelector('.product').cloneNode(true);
     this.cardDescriptionCopy = description;
     description.classList.remove('visually-hidden');
 
-    let priceOld = '';
-
-    if (priceOldElement !== null) {
-      priceOld = priceOldElement.textContent;
-    }
-
-    return { title, code, priceNew, priceOld, size, description };
+    return { title, info, size, description };
   }
 
   close() {
@@ -94,7 +107,7 @@ export class ProductModal extends Modal {
       this.productComponent.modalTitle.textContent,
       this.productComponent.modalCode.textContent,
       this.productComponent.price,
-      this.size,
+      this.productComponent.size,
       this.productComponent.counterInputValue,
     );
   }

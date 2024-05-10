@@ -6,13 +6,17 @@ export class ProductComponent {
     this.modalCode = document.querySelector('.modal__code');
     this.modalPrice = document.querySelector('.modal__price');
     this.modalDescription = document.querySelector('.modal__description');
-    this.modalImg = document.querySelector('.modal__img');
+    this.modalImg = null;
+    this.gallery = document.querySelector('.gallery');
     this.price = document.querySelector('.price__new').textContent;
     this.size = 0;
     this.counterInput = document.getElementById('order-counter');
     this.incrementBtn = document.querySelector('.product-plus');
     this.decrementBtn = document.querySelector('.product-minus');
     this.orderBtn = document.getElementById('order-modal');
+    this.slideIndex = 1;
+    this.nextBtn = this.gallery.querySelector('.gallery__next');
+    this.prevBtn = this.gallery.querySelector('.gallery__prev');
 
     this.counterInputValue = 1;
   }
@@ -36,6 +40,9 @@ export class ProductComponent {
 
     fromEvent(this.incrementBtn, 'click').subscribe(() => incrementCounter());
     fromEvent(this.decrementBtn, 'click').subscribe(() => decrementCounter());
+
+    this.prevBtn.addEventListener('click', () => this.nextSlides(-1));
+    this.nextBtn.addEventListener('click', () => this.nextSlides(1));
   }
 
   handleInputValue(value) {
@@ -66,6 +73,77 @@ export class ProductComponent {
     }
 
     this.modalDescription.appendChild(product.description);
+    this.renderGallery(product);
+  }
+
+  renderGallery(product) {
+    const gallery = document.querySelector('.gallery');
+
+    const demo = document.createElement('div');
+    demo.classList.add('gallery__row');
+
+    product.info[0].images.forEach((url) => {
+      const slides = document.createElement('div');
+      slides.classList.add('gallery__slides');
+
+      const image = document.createElement('img');
+      image.setAttribute('src', `${url}`);
+      image.setAttribute('alt', `${product.title}`);
+      image.setAttribute('loading', 'lazy');
+
+      slides.appendChild(image);
+      gallery.appendChild(slides);
+    });
+
+    product.info[0].images.forEach((url) => {
+      const columnDemo = document.createElement('div');
+      columnDemo.classList.add('gallery__column');
+
+      const image = document.createElement('img');
+      image.setAttribute('src', `${url}`);
+      image.setAttribute('alt', `${product.title}`);
+      image.setAttribute('loading', 'lazy');
+      image.classList.add('gallery__demo');
+
+      columnDemo.appendChild(image);
+
+      demo.appendChild(columnDemo);
+    });
+
+    gallery.appendChild(demo);
+    this.modalImg = gallery.querySelectorAll('.gallery__demo')[0];
+    this.showSlides(this.slideIndex);
+    gallery.querySelectorAll('.gallery__demo').forEach((element, index) => {
+      element.addEventListener('click', () => this.currentSlide(index + 1));
+    });
+  }
+
+  showSlides(index) {
+    let i;
+    const slides = this.gallery.querySelectorAll('.gallery__slides');
+    const dots = this.gallery.querySelectorAll('.gallery__demo');
+    if (index > slides.length) {
+      this.slideIndex = 1;
+    }
+    if (index < 1) {
+      this.slideIndex = slides.length;
+    }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(' gallery__active', '');
+    }
+    slides[this.slideIndex - 1].style.display = 'block';
+    dots[this.slideIndex - 1].className += ' gallery__active';
+  }
+
+  currentSlide(index) {
+    this.showSlides((this.slideIndex = index));
+  }
+
+  nextSlides(index) {
+    this.showSlides((this.slideIndex += index));
   }
 
   renderSizeList(listSize, name, info) {
@@ -147,6 +225,13 @@ export class ProductComponent {
   removeDescription(cardDescription) {
     if (cardDescription) {
       cardDescription.remove();
+    }
+  }
+
+  removeGallery() {
+    if (this.gallery) {
+      this.gallery.querySelectorAll('.gallery__slides').forEach((item) => item.remove());
+      this.gallery.querySelectorAll('.gallery__row').forEach((item) => item.remove());
     }
   }
 

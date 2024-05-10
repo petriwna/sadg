@@ -47,15 +47,15 @@ export class ProductModal extends Modal {
     const priceOldElement = card.querySelector('.price__old');
     const priceNew = card.querySelector('.price__new').textContent;
     const size = card.querySelectorAll('.card__size');
-    const img = card.querySelector('.card__image');
+    // const img = card.querySelector('.card__image');
     const imagesUrl = card.querySelectorAll('.url');
     const urls = [];
     imagesUrl.forEach((item) => {
       urls.push(item.dataset.url);
     });
-    const imgSrc = img.getAttribute('src');
-    this.productComponent.modalImg.setAttribute('src', imgSrc);
-    this.productComponent.modalImg.setAttribute('alt', title);
+    // const imgSrc = img.getAttribute('src');
+    // this.productComponent.modalImg.setAttribute('src', imgSrc);
+    // this.productComponent.modalImg.setAttribute('alt', title);
 
     if (size.length !== 0) {
       size.forEach((e) => {
@@ -94,6 +94,7 @@ export class ProductModal extends Modal {
   removeDescription() {
     this.productComponent.removeDescription(this.cardDescriptionCopy);
     this.cardDescriptionCopy = null;
+    this.productComponent.removeGallery();
   }
 
   incrementCounter() {

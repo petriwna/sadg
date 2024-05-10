@@ -15,7 +15,7 @@
     <div class='header__container'>
       <nav class='header__nav'>
         <a href='/'>
-          <img class='header__logo' src='public/images/' alt='Логотип' />
+          <img class='header__logo' src='public/images/' alt='Логотип' loading='lazy' />
         </a>
 
         <ul class='header__menu'>
@@ -43,6 +43,7 @@
           <img
             src='public/images/'
             alt='Логотип'
+            loading='lazy'
           />
         </a>
         <ul class='mobile-menu__list'>
@@ -131,7 +132,7 @@
       <div>
         <h4 class='sale__second-title'>Замовляй повний комплект та отримуйте додаткову знижку на чозли та
           шампура</h4>
-        <img src='public' alt='Комплект з акцією'>
+        <img src='public' alt='Комплект з акцією' loading='lazy'>
       </div>
     </div>
   </section>
@@ -139,7 +140,7 @@
     <div class='container'>
       <h2 class='info__title section__title section__title--centered'>Розкладний мангал-валіза від українського
         виробника</h2>
-      <video id='info-video' controls autoplay muted loop class='info__video'>
+      <video id='info-video' controls preload='none' autoplay muted loop class='info__video'>
         <source src='public/videos/info-video.mp4' type='video/mp4'>
         Ваш браузер не підтримує відео.
       </video>
@@ -184,6 +185,7 @@
                   class='card__image'
                   src='public/images/two-mm/6/mgl-2-6.jpg'
                   alt='Mangal'
+                  loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Мангал розкладний 2мм на 6 шампурів</h4>
@@ -273,6 +275,7 @@
                   class='card__image'
                   src='public/images/two-mm/8/mgl-2-8.jpg'
                   alt='Mangal'
+                  loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Мангал розкладний 2мм на 8 шампурів</h4>
@@ -356,6 +359,7 @@
                   class='card__image'
                   src='public/images/two-mm/10/mgl-2-10.jpg'
                   alt='Mangal'
+                  loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Мангал розкладний 2мм на 10 шампурів</h4>
@@ -443,6 +447,7 @@
                   class='card__image'
                   src='public/images/two-mm/12/mgl-2-12.jpg'
                   alt='Mangal'
+                  loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Мангал розкладний 2мм на 12 шампурів</h4>
@@ -513,7 +518,6 @@
                         Місткість шампурів 1-12шт
                       </li>
                     </ul>
-                    </p>
                   </div>
                   <div class='card__buttons'>
                     <button type='button' class='button card__button-detail details'>Деталі</button>
@@ -541,6 +545,7 @@
                   class='card__image'
                   src='public/images/three-mm/6/mgl-3-6.JPG'
                   alt='Mangal'
+                  loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Мангал розкладний 3мм на 6 шампурів</h4>
@@ -617,6 +622,7 @@
                   class='card__image'
                   src='public/images/three-mm/8/mgl-3-8.JPG'
                   alt='Mangal'
+                  loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Мангал розкладний 3мм на 8 шампурів</h4>
@@ -685,6 +691,7 @@
                   class='card__image'
                   src='public/images/three-mm/10/mgl-3-10.JPG'
                   alt='Mangal'
+                  loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Мангал розкладний 3мм на 10 шампурів</h4>
@@ -757,6 +764,7 @@
                   class='card__image'
                   src='public/images/three-mm/12/mgl-3-12.jpg'
                   alt='Mangal'
+                  loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Мангал розкладний 3мм на 12 шампурів</h4>
@@ -843,12 +851,17 @@
                   class='card__image'
                   src='public/images/accessories/mgl-bag1.jpg'
                   alt='Mangal'
+                  loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Чохол для мангалу</h4>
                   <p class='card__code visually-hidden'>Код товару: mgl-bag1</p>
+
+                  <ul class='visually-hidden'>
+                    <li class='url' data-url='public/images/accessories/mgl-bag1.jpg'></li>
+                  </ul>
+
                   <div class='product visually-hidden'>
-                    <!--                    <p class='product__title'>Чохол для мангалу</p>-->
                     <p><span class='accent'>Матеріал:</span> 600D, (водонепроникна тканина для сумок);</p>
                     <p><span class='accent'>Колір:</span> камуфляж(забарвлення може бути іншого кольору).</p>
 
@@ -886,10 +899,16 @@
                   class='card__image'
                   src='public/images/accessories/skwr-bag-1.jpg'
                   alt='Mangal'
+                  loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Чохол для шампурів</h4>
                   <p class='card__code visually-hidden'>Код товару: skwr-bag-1</p>
+
+                  <ul class='visually-hidden'>
+                    <li class='url' data-url='public/images/accessories/skwr-bag-1.jpg'></li>
+                  </ul>
+
                   <div class='product visually-hidden'>
                     <p>Чохол для шампурів з водонепроникної тканини пвх, щільність 600 D.</p>
 
@@ -922,11 +941,17 @@
                   class='card__image'
                   src='public/images/accessories/grille-cast-iron.jpg'
                   alt='Mangal'
+                  loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Чавунна Решітка гриль двостороння<span class='visually-hidden'> 355х255 1см товщина 4,7 кг</span>
                   </h4>
                   <p class='card__code visually-hidden'>Код товару: grille-cast-iron</p>
+
+                  <ul class='visually-hidden'>
+                    <li class='url' data-url='public/images/accessories/grille-cast-iron.jpg'></li>
+                  </ul>
+
                   <div class='product visually-hidden'>
                     <p>Решітка гриль чавунна двостороння 355x255 мм ТМ BRIZOLL GR3626</p>
 
@@ -976,11 +1001,17 @@
                   class='card__image'
                   src='public/images/accessories/stand-kasan.jpg'
                   alt='Mangal'
+                  loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Підставка під казанок для мангалу<span class='visually-hidden'> 1кг</span>
                   </h4>
                   <p class='card__code visually-hidden'>Код товару: Stand-kasan</p>
+
+                  <ul class='visually-hidden'>
+                    <li class='url' data-url='public/images/accessories/stand-kasan.jpg'></li>
+                  </ul>
+
                   <div class='product visually-hidden'>
                     <p>Підставка під казан на мангал призначена для приготування їжі на мангалі в казані котелку
                       каструлі
@@ -1015,10 +1046,16 @@
                   class='card__image'
                   src='public/images/accessories/Kaz_1.jpg'
                   alt='Mangal'
+                  loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Казан алюмінієвий<span class='visually-hidden'> 1.5-12 л Вогнищний</span></h4>
                   <p class='card__code visually-hidden'>Код товару: Kaz_1</p>
+
+                  <ul class='visually-hidden'>
+                    <li class='url' data-url='public/images/accessories/Kaz_1.jpg'></li>
+                  </ul>
+
                   <div class='product visually-hidden'>
                     <p><span class='accent'>Казанок казан алюмінієвий Вогнищний.</span> Казанок легкий, зручний,
                       транспортабельний, міцний, можна сміливо не хвилюватися, якщо раптом впаде. У разі падіння не
@@ -1076,11 +1113,17 @@
                   class='card__image'
                   src='public/images/accessories/skwr-2-60tr.jpg'
                   alt='Mangal'
+                  loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Шампура для мангалу <span class='visually-hidden'> 2мм 60 см </span>світле
                     дерево</h4>
                   <p class='card__code visually-hidden'>Код товару: skwr-2-60tr</p>
+
+                  <ul class='visually-hidden'>
+                    <li class='url' data-url='public/images/accessories/skwr-2-60tr.jpg'></li>
+                  </ul>
+
                   <div class='product visually-hidden'>
                     <p class='product__title'>Шампур з дерев'яною ручкою</p>
 
@@ -1138,10 +1181,16 @@
                   class='card__image'
                   src='public/images/accessories/opaxalo.jpg'
                   alt='Mangal'
+                  loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Опахало для мангалу</h4>
                   <p class='card__code visually-hidden'>Код товару: opaxalo</p>
+
+                  <ul class='visually-hidden'>
+                    <li class='url' data-url='public/images/accessories/opaxalo.jpg'></li>
+                  </ul>
+
                   <div class='product visually-hidden'>
                     <p class='accent'>Призначено для роздування вогню в мангалі, багаття у печі тощо.</p>
 
@@ -1168,10 +1217,16 @@
                   class='card__image'
                   src='public/images/accessories/skwr-2-60.jpg'
                   alt='Mangal'
+                  loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Шампура для мангалу<span class='visually-hidden'> 2мм 60 см</span></h4>
                   <p class='card__code visually-hidden'>Код товару: skwr-2-60</p>
+
+                  <ul class='visually-hidden'>
+                    <li class='url' data-url='public/images/accessories/skwr-2-60.jpg'></li>
+                  </ul>
+
                   <div class='product visually-hidden'>
                     <p>Найсмачніша їжа – їжа, приготована на відкритому вогні. І кожен виїзд на природу, на дачу
                       незмінно супроводжується приготуванням шашликів, овочів або риби гриль. Ну, а якщо ви живете в
@@ -1222,12 +1277,17 @@
                 <img
                   class='card__image'
                   src='public/images/accessories/skwr-3-80-cev.jpg'
-                  alt='Mangal'
+                  alt='Mangal' loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Шампура для мангалу<span class='visually-hidden'> СЕВ із червоною дерев'яною ручкою 74 см</span>
                   </h4>
                   <p class='card__code visually-hidden'>Код товару: skwr-3-80-cev</p>
+
+                  <ul class='visually-hidden'>
+                    <li class='url' data-url='public/images/accessories/skwr-3-80-cev.jpg'></li>
+                  </ul>
+
                   <div class='product visually-hidden'>
                     <p class='product__title'>Шампура СЕВ із дерев'яною ручкою.</p>
 
@@ -1262,12 +1322,17 @@
                 <img
                   class='card__image'
                   src='public/images/accessories/skwr-3-68.jpg'
-                  alt='Mangal'
+                  alt='Mangal' loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Шампур із нержавіючої сталі для люля-кебаб <span
                     class='visually-hidden'>СЕВ 68см.</span></h4>
                   <p class='card__code visually-hidden'>Код товару: skwr-3-68</p>
+
+                  <ul class='visually-hidden'>
+                    <li class='url' data-url='public/images/accessories/skwr-3-68.jpg'></li>
+                  </ul>
+
                   <div class='product visually-hidden'>
                     <p>Шампур — спеціальне металеве пристосування з неіржавкої сталі або покритого антикорозійним
                       покриттям металу, яким користуються туристи та прихильники активного відпочинку для приготування
@@ -1314,12 +1379,17 @@
                 <img
                   class='card__image'
                   src='public/images/accessories/skwr-3-93.jpg'
-                  alt='Mangal'
+                  alt='Mangal' loading='lazy'
                 />
                 <div class='card__container'>
                   <h4 class='card__title'>Шампур плоский для люля-кебаб<span class='visually-hidden'>, товщина 3мм довжина 93 см</span>
                   </h4>
                   <p class='card__code visually-hidden'>Код товару: skwr-3-93</p>
+
+                  <ul class='visually-hidden'>
+                    <li class='url' data-url='public/images/accessories/skwr-3-93.jpg'></li>
+                  </ul>
+
                   <div class='product visually-hidden'>
                     <p>Шампур — це загострений металевий стрижень, призначений для смаження м'яса, риби, овочів на грилі
                       або вугіллі.</p>
@@ -1387,7 +1457,7 @@
           Компактний, відмнно підійде для походів, рибілок, на дачу, відпочинку з друзями і не тільки
         </li>
       </ul>
-      <img src='public' alt='photo'>
+      <img src='public' alt='photo' loading='lazy'>
     </div>
   </section>
   <section class='reviews section' id='reviews'>
@@ -1494,13 +1564,13 @@
           <a href='#'>
             <img
               src='public/images/'
-              alt='Логотип'
+              alt='Логотип' loading='lazy'
             />
           </a>
         </div>
         <ul class='footer__menu'>
           <li><a class='link' href='#advantages'>Переваги</a></li>
-          <li><a class='link' href='#description'>Опис</a></li>
+<!--          <li><a class='link' href='#description'>Опис</a></li>-->
           <li><a class='link' href='#sale'>Акції</a></li>
           <li><a class='link' href='#catalog'>Каталог</a></li>
           <li><a class='link' href='#features'>Особливості</a></li>
@@ -1573,9 +1643,8 @@
       </svg>
     </button>
     <div class='modal__images gallery'>
-
-      <img class='modal__img'>
-
+      <a class="gallery__prev">❮</a>
+      <a class="gallery__next">❯</a>
     </div>
     <div class='modal__description'>
       <h4 class='modal__title'></h4>

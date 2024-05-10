@@ -1,4 +1,5 @@
 import { Catalog } from './Catalog';
+import { Form } from './Form';
 import { MobileMenu } from './MobileMenu';
 import { SwiperComponent } from './SwiperComponent';
 
@@ -14,6 +15,7 @@ export class Main {
     this.initMobileMenu();
     this.initCatalog();
     this.initSwiper();
+    this.initForm();
   }
 
   initMobileMenu() {
@@ -26,5 +28,10 @@ export class Main {
 
   initSwiper() {
     this.swiper.init();
+  }
+
+  initForm() {
+    const form = document.querySelector('.contacts__form');
+    new Form(form);
   }
 }

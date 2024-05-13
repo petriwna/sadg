@@ -13,32 +13,62 @@ export class Form {
 
   setupEventListeners() {
     this.inputs.forEach((input) => {
-      input.addEventListener('input', (event) => this.handleInput(event));
+      input.addEventListener('input', (event) => this.handleInputTel(event));
     });
 
     this.btnSubmit.addEventListener('click', (event) => this.handleSubmit(event));
   }
 
-  handleInput(event) {
+  handleInputTel(event) {
     if (event.target.type === 'tel') {
-      this.formatPhoneNumber(event.target.value, event);
+      this.formatPhoneNumber(event);
+      const cursorPos = event.target.selectionStart;
+      const formatInput = this.formatPhoneNumber(event.target);
+      event.target.value = String(formatInput);
+      const isBackspace = event?.data === null;
+      const nextCusPos = this.nextDigit(formatInput, cursorPos, isBackspace);
+
+      event.target.setSelectionRange(nextCusPos + 1, nextCusPos + 1);
     }
   }
 
-  formatPhoneNumber(phoneNumber, event) {
-    if (event.target.value === '+') {
-      event.target.value = '';
-    } else if (phoneNumber.length === 1 || event.target.value === '+') {
-      event.target.value = `+${phoneNumber}`;
-    } else if (
-      phoneNumber.length === 3 ||
-      phoneNumber.length === 7 ||
-      phoneNumber.length === 11 ||
-      phoneNumber.length === 14
-    ) {
-      event.target.value = phoneNumber + ' ';
-    } else if (phoneNumber.length > 17) {
-      event.target.value = phoneNumber.slice(0, 17);
+  nextDigit(input, cursorPos, isBackspace) {
+    if (isBackspace) {
+      for (let i = cursorPos - 1; i > 0; i--) {
+        if (/\d/.test(input[i])) {
+          return i;
+        }
+      }
+    } else {
+      for (let i = cursorPos - 1; i < input.length; i++) {
+        if (/\d/.test(input[i])) {
+          return i;
+        }
+      }
+    }
+
+    return cursorPos;
+  }
+
+  formatPhoneNumber(ref) {
+    try {
+      const phoneNumberString = ref.value;
+      const cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+      const match = cleaned.match(/^(\d{0,2})?(\d{0,3})?(\d{0,2})?(\d{0,2})?(\d{0,3})?/);
+      return [
+        match[1] ? '+' : '',
+        match[1],
+        match[2] ? ' ' : '',
+        match[2],
+        match[3] ? ' ' : '',
+        match[3],
+        match[4] ? ' ' : '',
+        match[4],
+        match[5] ? ' ' : '',
+        match[5],
+      ].join('');
+    } catch (err) {
+      return '';
     }
   }
 
@@ -62,7 +92,7 @@ export class Form {
         isError = true;
       } else if (input.type === 'tel') {
         if (!this.isValidationNumber(input.value)) {
-          this.handleInputError(input, 'Введіть дійсний номер телефону у форматі +380XXXXXXXXX');
+          this.handleInputError(input, 'Будь ласка введіть дійсний номер телефону!');
 
           isError = true;
         }
@@ -81,7 +111,7 @@ export class Form {
   isValidationNumber(phoneNumber) {
     const phoneRegex = /^\+380\d{9}$/;
 
-    return phoneRegex.test(phoneNumber.trim());
+    return phoneRegex.test(phoneNumber.replace(/\s/g, ''));
   }
 
   isValidationName(name) {

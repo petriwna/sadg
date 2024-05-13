@@ -64,6 +64,7 @@ export class Basket {
   }
 
   getSumProduct(index) {
+    console.log(this.basket[index].cost * this.basket[index].quantity);
     return this.basket[index].cost * this.basket[index].quantity;
   }
 
@@ -77,7 +78,11 @@ export class Basket {
   }
 
   changeQuantity(index, newQuantity) {
-    this.basket[index].quantity = newQuantity;
+    if (newQuantity >= 1) {
+      this.basket[index].quantity = newQuantity;
+    } else {
+      this.basket[index].quantity = 1;
+    }
   }
 
   getQuantity() {

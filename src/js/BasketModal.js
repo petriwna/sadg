@@ -1,5 +1,6 @@
 import { fromEvent } from 'rxjs';
 
+import { Form } from './Form';
 import { Modal } from './Modal';
 
 export class BasketModal extends Modal {
@@ -29,9 +30,6 @@ export class BasketModal extends Modal {
 
   setupBasketButtonListeners() {
     fromEvent(document.querySelector('#basket'), 'click').subscribe(() => this.handleClickFab());
-    fromEvent(document.querySelector('.basket__submit'), 'click').subscribe(() =>
-      this.handleClickSubmit(),
-    );
   }
 
   setupBasketItemListeners() {
@@ -71,6 +69,7 @@ export class BasketModal extends Modal {
     this.basket.renderBasket();
     this.updateProductSums();
     this.setupBasketItemListeners();
+    new Form(document.querySelector('.order'), this);
   }
 
   updateTotalSum() {
@@ -147,11 +146,6 @@ export class BasketModal extends Modal {
     } else {
       this.close();
     }
-  }
-
-  handleClickSubmit() {
-    this.close();
-    this.clearBasket();
   }
 
   clearBasket() {

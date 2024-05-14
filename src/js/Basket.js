@@ -64,7 +64,6 @@ export class Basket {
   }
 
   getSumProduct(index) {
-    console.log(this.basket[index].cost * this.basket[index].quantity);
     return this.basket[index].cost * this.basket[index].quantity;
   }
 
@@ -92,6 +91,10 @@ export class Basket {
     });
 
     return counter;
+  }
+
+  getBasket() {
+    return this.basket;
   }
 
   clearBasket() {

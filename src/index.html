@@ -1571,7 +1571,7 @@
         </div>
         <ul class='footer__menu'>
           <li><a class='link' href='#advantages'>Переваги</a></li>
-<!--          <li><a class='link' href='#description'>Опис</a></li>-->
+          <!--          <li><a class='link' href='#description'>Опис</a></li>-->
           <li><a class='link' href='#sale'>Акції</a></li>
           <li><a class='link' href='#catalog'>Каталог</a></li>
           <li><a class='link' href='#features'>Особливості</a></li>
@@ -1644,8 +1644,8 @@
       </svg>
     </button>
     <div class='modal__images gallery'>
-      <a class="gallery__prev">❮</a>
-      <a class="gallery__next">❯</a>
+      <a class='gallery__prev'>❮</a>
+      <a class='gallery__next'>❯</a>
     </div>
     <div class='modal__description'>
       <h4 class='modal__title'></h4>
@@ -1679,6 +1679,8 @@
     <div class='basket__final-sum accent'><p>Сума: </p>
       <p class='sum'></p></div>
     <form name='order' class='basket__form order' autocomplete='off'>
+      <p class='error'></p>
+
       <div class='order__form-field input'>
         <label class='input__label-order' for='order-first-name'
         >Ваше Прізвище</label
@@ -1722,7 +1724,7 @@
         <legend>Доставка</legend>
 
         <div>
-          <input type='radio' id='delivery-new-post' name='delivery' value='Самовивіз з Нової Пошти' />
+          <input type='radio' id='delivery-new-post' checked name='delivery' value='Самовивіз з Нової Пошти' />
           <label for='delivery-new-post'>Самовивіз з Нової Пошти</label>
         </div>
 
@@ -1755,20 +1757,20 @@
         <label for='payment'>Оплата</label>
 
         <select name='payment' id='payment' class='order__payment'>
-          <option value='cash' class='order__options' selected>Оплата при отриманні товару</option>
-          <option value='card' class='order__options'>Оплата карткою Visa/MasterCard</option>
+          <option value='Оплата при отриманні товару' class='order__options' selected>Оплата при отриманні товару</option>
+          <option value='Оплата карткою Visa/MasterCard' class='order__options'>Оплата карткою Visa/MasterCard</option>
         </select>
       </div>
+
+      <div class='basket__sum'>
+        <div class='basket__final-sum'><p>Сума: </p>
+          <p class='sum'></p></div>
+        <div class='basket__final-sum basket__final-sum--total accent'><p>Загальна сума: </p>
+          <p class='sum'></p></div>
+      </div>
+
+      <button type='button' class='basket__submit button'>Відправити заявку</button>
     </form>
-
-    <div class='basket__sum'>
-      <div class='basket__final-sum'><p>Сума: </p>
-        <p class='sum'></p></div>
-      <div class='basket__final-sum basket__final-sum--total accent'><p>Загальна сума: </p>
-        <p class='sum'></p></div>
-    </div>
-
-    <button type='button' class='basket__submit button'>Відправити заявку</button>
   </div>
 </div>
 

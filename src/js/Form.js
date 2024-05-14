@@ -1,8 +1,9 @@
 import { addClassToElement, removeClassFromElement } from './utils';
 
 export class Form {
-  constructor(form) {
+  constructor(form, modal) {
     this.form = form;
+    this.modal = modal;
 
     this.inputs = this.form.querySelectorAll('input');
     this.btnSubmit = this.form.querySelector('button');
@@ -13,63 +14,44 @@ export class Form {
 
   setupEventListeners() {
     this.inputs.forEach((input) => {
-      input.addEventListener('input', (event) => this.handleInputTel(event));
+      input.addEventListener('input', () => this.handleInput(input));
     });
 
     this.btnSubmit.addEventListener('click', (event) => this.handleSubmit(event));
   }
 
-  handleInputTel(event) {
-    if (event.target.type === 'tel') {
-      this.formatPhoneNumber(event);
-      const cursorPos = event.target.selectionStart;
-      const formatInput = this.formatPhoneNumber(event.target);
-      event.target.value = String(formatInput);
-      const isBackspace = event?.data === null;
-      const nextCusPos = this.nextDigit(formatInput, cursorPos, isBackspace);
-
-      event.target.setSelectionRange(nextCusPos + 1, nextCusPos + 1);
+  handleInput(input) {
+    if (input.type === 'tel') {
+      this.handleInputTel(input);
     }
   }
 
-  nextDigit(input, cursorPos, isBackspace) {
-    if (isBackspace) {
-      for (let i = cursorPos - 1; i > 0; i--) {
-        if (/\d/.test(input[i])) {
-          return i;
-        }
-      }
-    } else {
-      for (let i = cursorPos - 1; i < input.length; i++) {
-        if (/\d/.test(input[i])) {
-          return i;
-        }
-      }
-    }
+  handleInputTel(input) {
+    input.value = this.formatPhoneNumber(input.value);
 
-    return cursorPos;
+    this.moveCursor(input);
   }
 
-  formatPhoneNumber(ref) {
-    try {
-      const phoneNumberString = ref.value;
-      const cleaned = ('' + phoneNumberString).replace(/\D/g, '');
-      const match = cleaned.match(/^(\d{0,2})?(\d{0,3})?(\d{0,2})?(\d{0,2})?(\d{0,3})?/);
-      return [
-        match[1] ? '+' : '',
-        match[1],
-        match[2] ? ' ' : '',
-        match[2],
-        match[3] ? ' ' : '',
-        match[3],
-        match[4] ? ' ' : '',
-        match[4],
-        match[5] ? ' ' : '',
-        match[5],
-      ].join('');
-    } catch (err) {
-      return '';
-    }
+  moveCursor(input) {
+    const cursorPosition = input.selectionStart;
+    input.setSelectionRange(cursorPosition + 1, cursorPosition + 1);
+  }
+
+  formatPhoneNumber(phoneNumber) {
+    const cleaned = phoneNumber.replace(/\D/g, '');
+    const match = cleaned.match(/^(\d{0,2})?(\d{0,3})?(\d{0,2})?(\d{0,2})?(\d{0,3})?/);
+    return [
+      match[1] ? '+' : '',
+      match[1],
+      match[2] ? ' ' : '',
+      match[2],
+      match[3] ? ' ' : '',
+      match[3],
+      match[4] ? ' ' : '',
+      match[4],
+      match[5] ? ' ' : '',
+      match[5],
+    ].join('');
   }
 
   handleSubmit(event) {
@@ -77,10 +59,104 @@ export class Form {
     const isError = this.validateInputs();
 
     if (!isError) {
-      this.inputs.forEach((input) => {
-        console.log(input.value);
-      });
+      const selectedDelivery = this.getSelectedRadioValue();
+      const payment = this.getPaymentValue();
+
+      if (this.modal) {
+        const orderData = this.getOrderData();
+        const basketText = this.getBasketText();
+
+        this.handleModalOrder(orderData, basketText);
+      } else {
+        const contactData = this.getContactData();
+        this.handleNonModalOrder(contactData);
+      }
     }
+  }
+
+  getPaymentValue() {
+    const paymentSelect = this.form.querySelector('#payment');
+    return paymentSelect ? paymentSelect.value : '';
+  }
+
+  getContactData() {
+    return {
+      name: this.inputs[0].value,
+      phone: this.inputs[1].value,
+    };
+  }
+
+  getOrderData() {
+    return {
+      firstName: this.inputs[0].value,
+      name: this.inputs[1].value,
+      phone: this.inputs[2].value,
+      delivery: this.getSelectedRadioValue(),
+      address: this.inputs[6].value,
+      payment: this.getPaymentValue(),
+    };
+  }
+
+  getBasketText() {
+    const basket = this.modal ? this.modal.basket.getBasket() : [];
+    return basket
+      .map((product, index) => {
+        return `
+        Товар ${index + 1}:
+        Назва: ${product.name},
+        Код товара: ${product.code},
+        Розмір: ${product.size},
+        Кількість: ${product.quantity},
+        Сума за товар ${index}: ${product.cost * product.quantity} грн.
+      `;
+      })
+      .join('');
+  }
+
+  getSelectedRadioValue() {
+    const selectedRadio = this.form.querySelector('input[type="radio"]:checked');
+    return selectedRadio ? selectedRadio.value : '';
+  }
+
+  generateOrderDataText(orderData) {
+    return `
+      Замовлення! 
+      ${orderData.firstName} ${orderData.name},
+      телефон: ${orderData.phone}, 
+      спосіб доставки: ${orderData.delivery},
+      адрес: ${orderData.address},
+      спосіб оплати: ${orderData.payment}.
+    `;
+  }
+
+  handleModalOrder(orderData, basketText) {
+    const orderDataText = this.generateOrderDataText(orderData);
+    console.log(orderDataText, basketText);
+
+    this.modal.close();
+    this.modal.clearBasket();
+    this.clearForm();
+  }
+
+  handleNonModalOrder(contactData) {
+    console.log(`
+      Заявка на дзвінок! 
+      Ім'я: ${contactData.name}, 
+      телефон: ${contactData.phone}.
+    `);
+    this.clearForm();
+  }
+
+  clearForm() {
+    this.inputs.forEach((input) => {
+      if (input.type === 'radio') {
+        if (input.value === this.form.querySelector('input[type="radio"]:checked')) {
+          input.checked = true;
+        }
+      } else {
+        input.value = '';
+      }
+    });
   }
 
   validateInputs() {
@@ -127,7 +203,7 @@ export class Form {
     setTimeout(() => {
       removeClassFromElement(inputId, 'bounce');
       this.error.innerText = '';
-    }, 1100);
+    }, 2000);
   }
 
   isEmpty(value) {

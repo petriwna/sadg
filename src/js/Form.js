@@ -56,22 +56,7 @@ export class Form {
 
   handleSubmit(event) {
     event.preventDefault();
-    const isError = this.validateInputs();
-
-    if (!isError) {
-      const selectedDelivery = this.getSelectedRadioValue();
-      const payment = this.getPaymentValue();
-
-      if (this.modal) {
-        const orderData = this.getOrderData();
-        const basketText = this.getBasketText();
-
-        this.handleModalOrder(orderData, basketText);
-      } else {
-        const contactData = this.getContactData();
-        this.handleNonModalOrder(contactData);
-      }
-    }
+    this.modal ? this.handleModalOrder() : this.handleNonModalOrder();
   }
 
   getPaymentValue() {
@@ -129,22 +114,32 @@ export class Form {
     `;
   }
 
-  handleModalOrder(orderData, basketText) {
+  handleModalOrder() {
+    const orderData = this.getOrderData();
+    const basketText = this.getBasketText();
     const orderDataText = this.generateOrderDataText(orderData);
     const text = `${orderDataText}\n ${basketText}`;
+    const isError = this.validateInputs();
 
-    this.sendMessageTelegram(text);
-
-    this.modal.close();
-    this.modal.clearBasket();
-    this.clearForm();
+    if (!isError) {
+      this.sendMessageTelegram(text);
+      this.modal.close();
+      this.modal.clearBasket();
+      this.clearForm();
+    }
   }
 
-  handleNonModalOrder(contactData) {
+  handleNonModalOrder() {
+    const isError = this.validateInputs();
+
+    const contactData = this.getContactData();
+
     const text = `Заявка на дзвінок!\n Ім'я: ${contactData.name},\n Телефон: ${contactData.phone}`;
 
-    this.sendMessageTelegram(text);
-    this.clearForm();
+    if (!isError) {
+      this.sendMessageTelegram(text);
+      this.clearForm();
+    }
   }
 
   async sendMessageTelegram(text) {
@@ -157,6 +152,7 @@ export class Form {
         body: JSON.stringify({
           chat_id: process.env.TELEGRAM_CHAT_ID,
           text,
+          disable_notification: true,
         }),
       });
 
@@ -190,21 +186,19 @@ export class Form {
       if (!this.isEmpty(input.value)) {
         this.handleInputError(input, 'Заповніть всі поля!');
         isError = true;
-      } else if (input.type === 'tel') {
+      } else if (input.classList.contains('phone')) {
         if (!this.isValidationNumber(input.value)) {
           this.handleInputError(input, 'Будь ласка введіть дійсний номер телефону!');
-
           isError = true;
         }
-      } else if (input.id === 'contact-name') {
+      } else if (input.type === 'text') {
         if (!this.isValidationName(input.value)) {
-          this.handleInputError(input, "Ім'я недійсне!");
+          this.handleInputError(input, 'Недійсні дані!');
           isError = true;
         }
-      } else {
-        isError = false;
       }
     });
+
     return isError;
   }
 

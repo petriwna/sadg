@@ -13,6 +13,7 @@
     "clear": "yarn cmd clean"
   },
   "dependencies": {
+    "cross-env": "7.0.3",
     "del": "6.1.1",
     "rxjs": "^7.8.1",
     "sass": "1.69.7",
@@ -26,11 +27,11 @@
     "@babel/plugin-transform-modules-amd": "7.24.1",
     "@babel/preset-env": "7.24.4",
     "@types/jest": "29.5.12",
+    "axios": "^1.6.8",
     "babel-jest": "29.7.0",
     "babel-loader": "9.1.3",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^12.0.2",
-    "cross-env": "7.0.3",
     "css-loader": "7.1.1",
     "dotenv": "^16.4.5",
     "dotenv-expand": "^11.0.6",

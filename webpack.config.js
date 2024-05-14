@@ -3,9 +3,13 @@ const path = require('node:path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const dotenv = require('dotenv');
+// const dotenv = require('dotenv').config({
+//   path: path.join(__dirname, '.env'),
+// });
 const dotenvExpand = require('dotenv-expand');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 const envs = dotenv.config();
@@ -170,6 +174,12 @@ module.exports = {
     minimize: true,
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': dotenv.parsed,
+      'process.env.TELEGRAM_BOT_TOKEN': JSON.stringify(process.env.TELEGRAM_BOT_TOKEN),
+      'process.env.TELEGRAM_CHAT_ID': JSON.stringify(process.env.TELEGRAM_CHAT_ID),
+      'process.env.API': JSON.stringify(process.env.API),
+    }),
     new CleanWebpackPlugin({ verbose: true }),
     !isDevMode && new MiniCssExtractPlugin(),
     new CopyPlugin({

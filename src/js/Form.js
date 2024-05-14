@@ -107,7 +107,7 @@ export class Form {
         Код товара: ${product.code},
         Розмір: ${product.size},
         Кількість: ${product.quantity},
-        Сума за товар ${index}: ${product.cost * product.quantity} грн.
+        Сума за товар ${index + 1}: ${product.cost * product.quantity} грн.
       `;
       })
       .join('');
@@ -131,7 +131,9 @@ export class Form {
 
   handleModalOrder(orderData, basketText) {
     const orderDataText = this.generateOrderDataText(orderData);
-    console.log(orderDataText, basketText);
+    const text = `${orderDataText}\n ${basketText}`;
+
+    this.sendMessageTelegram(text);
 
     this.modal.close();
     this.modal.clearBasket();
@@ -139,12 +141,34 @@ export class Form {
   }
 
   handleNonModalOrder(contactData) {
-    console.log(`
-      Заявка на дзвінок! 
-      Ім'я: ${contactData.name}, 
-      телефон: ${contactData.phone}.
-    `);
+    const text = `Заявка на дзвінок!\n Ім'я: ${contactData.name},\n Телефон: ${contactData.phone}`;
+
+    this.sendMessageTelegram(text);
     this.clearForm();
+  }
+
+  async sendMessageTelegram(text) {
+    try {
+      const response = await fetch(process.env.API, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+        },
+        body: JSON.stringify({
+          chat_id: process.env.TELEGRAM_CHAT_ID,
+          text,
+        }),
+      });
+
+      if (response.ok) {
+        console.log('Дякуємо за вашу заявку!');
+      } else {
+        throw new Error(response.statusText);
+      }
+    } catch (error) {
+      console.log(error);
+      console.log('Заявка не відправлена! Спробуйте пізніше.');
+    }
   }
 
   clearForm() {

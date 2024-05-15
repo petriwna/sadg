@@ -2,6 +2,7 @@ import { Catalog } from './Catalog';
 import { Form } from './Form';
 import { MobileMenu } from './MobileMenu';
 import { SwiperComponent } from './SwiperComponent';
+import { Video } from './Video';
 
 export class Main {
   constructor() {
@@ -16,6 +17,7 @@ export class Main {
     this.initCatalog();
     this.initSwiper();
     this.initForm();
+    this.initVideo();
   }
 
   initMobileMenu() {
@@ -33,5 +35,9 @@ export class Main {
   initForm() {
     const form = document.querySelector('.contacts__form');
     new Form(form);
+  }
+
+  initVideo() {
+    new Video();
   }
 }

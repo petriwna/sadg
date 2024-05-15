@@ -1,5 +1,5 @@
 import { Catalog } from './Catalog';
-import { Form } from './Form';
+import { FormHandler } from './FormHandler';
 import { MobileMenu } from './MobileMenu';
 import { SwiperComponent } from './SwiperComponent';
 import { Video } from './Video';
@@ -34,7 +34,7 @@ export class Main {
 
   initForm() {
     const form = document.querySelector('.contacts__form');
-    new Form(form);
+    new FormHandler(form);
   }
 
   initVideo() {

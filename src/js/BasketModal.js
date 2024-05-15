@@ -1,6 +1,6 @@
 import { fromEvent } from 'rxjs';
 
-import { Form } from './Form';
+import { FormHandler } from './FormHandler';
 import { Modal } from './Modal';
 
 export class BasketModal extends Modal {
@@ -69,7 +69,7 @@ export class BasketModal extends Modal {
     this.basket.renderBasket();
     this.updateProductSums();
     this.setupBasketItemListeners();
-    new Form(document.querySelector('.order'), this);
+    new FormHandler(document.querySelector('.order'), this);
   }
 
   updateTotalSum() {

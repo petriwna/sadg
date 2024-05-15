@@ -19,3 +19,11 @@ export function removeClassFromElement(id, className) {
     element.classList.remove(className);
   }
 }
+
+export function sendError(error, message) {
+  const text = `${error}\n ${message}`;
+  const url = `${process.env.API_ERROR}?chat_id=${process.env.TELEGRAM_CHAT_ID_ERROR}&text=${text}`;
+  const xht = new XMLHttpRequest();
+  xht.open('GET', url);
+  xht.send();
+}

@@ -1,4 +1,4 @@
-import { addClassToElement, removeClassFromElement } from './utils';
+import { addClassToElement, removeClassFromElement, sendError } from './utils';
 
 export class Form {
   constructor(form, modal) {
@@ -156,14 +156,23 @@ export class Form {
         }),
       });
 
-      if (response.ok) {
-        console.log('Дякуємо за вашу заявку!');
-      } else {
+      if (!response.ok) {
         throw new Error(response.statusText);
       }
+      this.renderAlert('ok', 'Дякуємо за вашу заявку!');
     } catch (error) {
-      console.log(error);
-      console.log('Заявка не відправлена! Спробуйте пізніше.');
+      this.renderAlert('error', 'Заявка не відправлена! Спробуйте пізніше.');
+
+      sendError(error, 'Заявка не відправлена!');
+      this.renderAlert('error', 'Заявка не відправлена! Спробуйте пізніше.');
+    }
+  }
+
+  renderAlert(status, message) {
+    if (status === 'ok') {
+      console.log(message);
+    } else {
+      console.log(message);
     }
   }
 

@@ -4,9 +4,19 @@
   left: 0;
   width: 100%;
   padding-top: 16px;
+  //
+  //@media screen and (min-width: $bp-desktop) {
+  //  //padding-top: 32px;
+  //}
 
-  @media screen and (min-width: $bp-desktop) {
-    padding-top: 32px;
+  &__logo {
+    width: 100px;
+    display: none;
+
+    @media screen and (min-width: $bp-tablet) {
+      display: block;
+    }
+
   }
 
   &__container {

@@ -3,9 +3,6 @@ const path = require('node:path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const dotenv = require('dotenv');
-// const dotenv = require('dotenv').config({
-//   path: path.join(__dirname, '.env'),
-// });
 const dotenvExpand = require('dotenv-expand');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');

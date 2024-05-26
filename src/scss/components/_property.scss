@@ -1,0 +1,43 @@
+.property {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+
+  &--active {
+    background-color: #28a745;
+  }
+
+  &--active &__icon {
+    stroke: var(--color-primary-light);
+  }
+
+  //&:hover {
+  //  background-color: var(--color-secondary-hover);
+  //}
+
+  &:active {
+    background-color: #28a745;
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    font-size: 25px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    fill: transparent;
+    rotate: -90deg;
+    stroke: var(--color-splide);
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 34px;
+      height: 34px;
+    }
+  }
+}

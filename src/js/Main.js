@@ -2,6 +2,7 @@ import { Catalog } from './Catalog';
 import { DeliverySection } from './DeliverySection';
 import { FormHandler } from './FormHandler';
 import { MobileMenu } from './MobileMenu';
+import { Property } from './Property';
 import { SwiperComponent } from './SwiperComponent';
 import { Video } from './Video';
 
@@ -20,6 +21,7 @@ export class Main {
     this.initForm();
     this.initVideo();
     this.initDeliverySection();
+    this.initProperty();
   }
 
   initMobileMenu() {
@@ -41,6 +43,10 @@ export class Main {
 
   initVideo() {
     new Video();
+  }
+
+  initProperty() {
+    new Property();
   }
 
   initDeliverySection() {

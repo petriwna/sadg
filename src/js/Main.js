@@ -1,4 +1,5 @@
 import { Catalog } from './Catalog';
+import { DeliverySection } from './DeliverySection';
 import { FormHandler } from './FormHandler';
 import { MobileMenu } from './MobileMenu';
 import { SwiperComponent } from './SwiperComponent';
@@ -18,6 +19,7 @@ export class Main {
     this.initSwiper();
     this.initForm();
     this.initVideo();
+    this.initDeliverySection();
   }
 
   initMobileMenu() {
@@ -39,5 +41,9 @@ export class Main {
 
   initVideo() {
     new Video();
+  }
+
+  initDeliverySection() {
+    new DeliverySection();
   }
 }

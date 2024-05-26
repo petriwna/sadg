@@ -16,8 +16,8 @@
   <meta name='theme-color' content='#ffffff'>
   <link rel='stylesheet' href='https://unpkg.com/swiper/swiper-bundle.min.css'>
   <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/css/themes/splide-skyblue.min.css"
+    rel='stylesheet'
+    href='https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/css/themes/splide-skyblue.min.css'
   />
 
 </head>
@@ -643,7 +643,7 @@
                   <ul class='visually-hidden'>
                     <li class='url' data-url='public/images/three-mm/8/1.jpg'></li>
                     <li class='url' data-url='public/images/three-mm/8/2.jpg'></li>
-<!--                    <li class='url' data-url='public/images/three-mm/8/3.jpg'></li>-->
+                    <!--                    <li class='url' data-url='public/images/three-mm/8/3.jpg'></li>-->
                     <li class='url' data-url='public/images/three-mm/8/4.jpg'></li>
                     <li class='url' data-url='public/images/three-mm/8/mgl-3-8.jpg'></li>
                   </ul>
@@ -1478,47 +1478,49 @@
     </div>
   </section>
   <section class='delivery section' id='delivery'>
-    <div class='container'>
-      <h2 class='delivery__title section__title section__title--centered'>Простий процес
+    <div class='container splide' role='group' aria-labelledby='carousel-heading' id='delivery-slider'>
+      <h2 class='delivery__title section__title section__title--centered' id='carousel-heading'>Простий процес
         щоб зробити замовлення</h2>
-      <ul class='delivery__list'>
-        <li>
-          <article class='delivery-card'>
-            <div class='delivery-card__img delivery-card__img--application'></div>
-            <div class='delivery-card__description'>
-              <h4 class='delivery-card__title'>1. Заявка.</h4>
-              <p>Залишаєте заявку на нашому сайті.</p>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article class='delivery-card'>
-            <div class='delivery-card__img delivery-card__img--called'></div>
-            <div class='delivery-card__description'>
-              <h4 class='delivery-card__title'>2. Дзвінок.</h4>
-              <p>Ми уточнимо деталі замовлення.</p>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article class='delivery-card'>
-            <div class='delivery-card__img delivery-card__img--sending'></div>
-            <div class='delivery-card__description'>
-              <h4 class='delivery-card__title'>3. Відправка.</h4>
-              <p>Доставляємо замовлення протягом 2-3 днів.</p>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article class='delivery-card'>
-            <div class='delivery-card__img delivery-card__img--receiving'></div>
-            <div class='delivery-card__description--'>
-              <h4 class='delivery-card__title'>4. Отримання.</h4>
-              <p>Оплачуєте при отриманні.</p>
-            </div>
-          </article>
-        </li>
-      </ul>
+      <div class='splide__track'>
+        <ul class='delivery__list splide__list'>
+          <li class='splide__slide delivery__slide'>
+            <article class='delivery-card'>
+              <div class='delivery-card__img delivery-card__img--application'></div>
+              <div class='delivery-card__description'>
+                <h4 class='delivery-card__title'>1. Заявка.</h4>
+                <p>Залишаєте заявку на нашому сайті.</p>
+              </div>
+            </article>
+          </li>
+          <li class='splide__slide delivery__slide'>
+            <article class='delivery-card'>
+              <div class='delivery-card__img delivery-card__img--called'></div>
+              <div class='delivery-card__description'>
+                <h4 class='delivery-card__title'>2. Дзвінок.</h4>
+                <p>Ми уточнимо деталі замовлення.</p>
+              </div>
+            </article>
+          </li>
+          <li class='splide__slide delivery__slide'>
+            <article class='delivery-card'>
+              <div class='delivery-card__img delivery-card__img--sending'></div>
+              <div class='delivery-card__description'>
+                <h4 class='delivery-card__title'>3. Відправка.</h4>
+                <p>Доставляємо замовлення протягом 2-3 днів.</p>
+              </div>
+            </article>
+          </li>
+          <li class='splide__slide delivery__slide'>
+            <article class='delivery-card'>
+              <div class='delivery-card__img delivery-card__img--receiving'></div>
+              <div class='delivery-card__description--'>
+                <h4 class='delivery-card__title'>4. Отримання.</h4>
+                <p>Оплачуєте при отриманні.</p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
   <section class='contacts section' id='contacts'>
@@ -1788,7 +1790,8 @@
 
 <script src='https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js'></script>
 <script
-  type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/js/splide.min.js"
-></script></body>
+  type='text/javascript'
+  src='https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/js/splide.min.js'
+></script>
+</body>
 </html>

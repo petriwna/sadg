@@ -14,11 +14,7 @@ export class ProductModal extends Modal {
 
     this.cardDescriptionCopy = null;
 
-    this.productComponent.setupEventListeners(
-      this.handleClickOrderBtn.bind(this),
-      this.incrementCounter.bind(this),
-      this.decrementCounter.bind(this),
-    );
+    this.productComponent.setupEventListeners(this.handleClickOrderBtn.bind(this));
 
     this.setupEventListeners();
   }
@@ -47,15 +43,11 @@ export class ProductModal extends Modal {
     const priceOldElement = card.querySelector('.price__old');
     const priceNew = card.querySelector('.price__new').textContent;
     const size = card.querySelectorAll('.card__size');
-    // const img = card.querySelector('.card__image');
     const imagesUrl = card.querySelectorAll('.url');
     const urls = [];
     imagesUrl.forEach((item) => {
       urls.push(item.dataset.url);
     });
-    // const imgSrc = img.getAttribute('src');
-    // this.productComponent.modalImg.setAttribute('src', imgSrc);
-    // this.productComponent.modalImg.setAttribute('alt', title);
 
     if (size.length !== 0) {
       size.forEach((e) => {
@@ -89,24 +81,12 @@ export class ProductModal extends Modal {
     this.removeDescription();
     this.productComponent.removeSize();
     this.productComponent.resetCounter();
+    this.productComponent.removeGallery();
   }
 
   removeDescription() {
     this.productComponent.removeDescription(this.cardDescriptionCopy);
     this.cardDescriptionCopy = null;
-    this.productComponent.removeGallery();
-  }
-
-  incrementCounter() {
-    if (this.productComponent.counterInputValue < 999) {
-      this.productComponent.counterInput.value = ++this.productComponent.counterInputValue;
-    }
-  }
-
-  decrementCounter() {
-    if (this.productComponent.counterInputValue > 1) {
-      this.productComponent.counterInput.value = --this.productComponent.counterInputValue;
-    }
   }
 
   handleClickOrderBtn() {
@@ -116,7 +96,7 @@ export class ProductModal extends Modal {
       this.productComponent.modalCode.textContent,
       this.productComponent.price,
       this.productComponent.size,
-      this.productComponent.counterInputValue,
+      this.productComponent.getCounter(),
     );
   }
 }

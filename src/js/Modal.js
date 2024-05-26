@@ -12,6 +12,8 @@ export class Modal {
     fromEvent(this.backdrop, 'click')
       .pipe(
         tap((event) => {
+          event.preventDefault();
+
           if (event.target === this.backdrop) {
             this.close();
           }

@@ -13,4 +13,16 @@
     justify-content: center;
     padding: 0 3em;
   }
+
+  &__arrow svg {
+    fill: var(--color-splide);
+  }
+
+  &__arrow:hover:not(:disabled) svg {
+    fill: var(--color-splide-hover);
+  }
+
+  &__slide.is-active{
+    border: 3px solid var(--color-splide) !important;
+  }
 }

@@ -42,6 +42,10 @@ export class Gallery {
   createGallerySlide(url, title, container) {
     const slides = document.createElement('li');
     slides.classList.add('splide__slide');
+    const parent = container.parentNode.parentNode;
+    if (parent.getAttribute('id') === 'thumbnail-carousel') {
+      slides.classList.add('gallery__slide');
+    }
 
     const image = document.createElement('img');
     image.src = url;

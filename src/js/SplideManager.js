@@ -6,6 +6,12 @@ export class SplideManager {
       rewind: true,
       pagination: false,
       arrows: true,
+      classes: {
+        arrows: 'splide__arrows gallery__arrows',
+        arrow: 'splide__arrow gallery__arrow',
+        prev: 'splide__arrow--prev gallery__prev',
+        next: 'splide__arrow--next gallery__next',
+      },
     });
 
     // eslint-disable-next-line no-undef
@@ -16,6 +22,7 @@ export class SplideManager {
       rewind: true,
       pagination: false,
       isNavigation: true,
+      arrows: false,
       breakpoints: {
         600: {
           fixedWidth: 60,

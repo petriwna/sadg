@@ -26,7 +26,7 @@ export class SplideManager {
       breakpoints: {
         600: {
           fixedWidth: 60,
-          fixedHeight: 60,
+          // fixedHeight: 60,
         },
       },
     });

@@ -1,10 +1,10 @@
-import { Catalog } from './Catalog';
-import { DeliverySection } from './DeliverySection';
+import { Catalog } from './catalog/Catalog';
+import { SwiperComponent } from './catalog/SwiperComponent';
+import { DeliverySection } from './dlivery/DeliverySection';
+import { Property } from './feature/Property';
 import { FormHandler } from './FormHandler';
-import { MobileMenu } from './MobileMenu';
-import { Property } from './Property';
-import { SwiperComponent } from './SwiperComponent';
-import { Video } from './Video';
+import { MobileMenu } from './modal/MobileMenu';
+// import { Video } from './Video';
 
 export class Main {
   constructor() {
@@ -19,7 +19,7 @@ export class Main {
     this.initCatalog();
     this.initSwiper();
     this.initForm();
-    this.initVideo();
+    // this.initVideo();
     this.initDeliverySection();
     this.initProperty();
   }
@@ -41,9 +41,9 @@ export class Main {
     new FormHandler(form);
   }
 
-  initVideo() {
-    new Video();
-  }
+  // initVideo() {
+  //   new Video();
+  // }
 
   initProperty() {
     new Property();

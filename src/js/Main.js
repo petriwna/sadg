@@ -1,3 +1,4 @@
+import { AdvantagesComponent } from './advantages/AdvantagesComponent';
 import { Catalog } from './catalog/Catalog';
 import { SwiperComponent } from './catalog/SwiperComponent';
 import { DeliverySection } from './dlivery/DeliverySection';
@@ -22,6 +23,7 @@ export class Main {
     // this.initVideo();
     this.initDeliverySection();
     this.initProperty();
+    new AdvantagesComponent();
   }
 
   initMobileMenu() {

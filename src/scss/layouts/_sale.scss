@@ -1,4 +1,6 @@
 .sale {
+  background: #A8BCA1;
+
   &__prop {
     display: flex;
     justify-content: center;
@@ -6,7 +8,6 @@
   }
 
   &__price {
-    //width: 50%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -53,5 +54,11 @@
     text-align: center;
     font-size: 30px;
     font-weight: 600;
+  }
+
+  &__kit {
+    height: 400px;
+    display: flex;
+    justify-content: center;
   }
 }

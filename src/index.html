@@ -32,7 +32,7 @@
 
         <ul class='header__menu'>
           <li><a class='link' href='#advantages'>Переваги</a></li>
-          <li><a class='link' href='#sale'>Акції</a></li>
+          <!--          <li><a class='link' href='#sale'>Акції</a></li>-->
           <!--          <li><a class='link' href='#info'>Опис</a></li>-->
           <li><a class='link' href='#catalog'>Каталог</a></li>
           <li><a class='link' href='#features'>Особливості</a></li>
@@ -61,8 +61,7 @@
         </a>
         <ul class='mobile-menu__list'>
           <li><a class='mobile-menu__link' href='#advantages'>Переваги</a></li>
-          <li><a class='mobile-menu__link' href='#sale'>Акції</a></li>
-          <!--          <li><a class='mobile-menu__link' href='#info'>Опис</a></li>-->
+          <!--          <li><a class='mobile-menu__link' href='#sale'>Акції</a></li>-->
           <li><a class='mobile-menu__link' href='#catalog'>Каталог</a></li>
           <li><a class='mobile-menu__link' href='#features'>Особливості</a></li>
           <li><a class='mobile-menu__link' href='#reviews'>Відгуки</a></li>
@@ -89,7 +88,7 @@
           </div>
           <div class='hero-section__buttons'>
             <a class='button hero-section__button link' href='#catalog'>Вибрати мангал</a>
-            <a class='hero-section__video-btn link' href='#info'>
+            <a class='hero-section__video-btn link' href='#video'>
               <div class='hero-section__btn'>
                 <svg class='hero-section__icon-btn' width='11' height='11'>
                   <use href='public/images/icons.svg#icon-play'></use>
@@ -144,7 +143,7 @@
             купувати у нас зручно. Тут все, що Вам потрібно! Приємних покупок, завжди раді вашим дзвінкам та
             замовленням!</p>
         </div>
-        <div class='advantages__video-container splide'>
+        <div class='advantages__video-container splide' id='video'>
           <div class='splide__track'>
             <ul class='splide__list'>
               <li class='splide__slide advantages__slide' data-splide-interval='17000'>
@@ -176,71 +175,37 @@
       </div>
     </div>
   </section>
-  <section class='sale section' id='sale'>
-    <div class='container'>
-      <h2 class='visually-hidden'>Акції</h2>
-      <div class='sale__prop'>
-        <div class='sale__price old-price'>
-          <span>Звичайна ціна від:</span>
-          <p class='sale__old'>1349 грн</p>
-        </div>
-        <div class='sale__price'>
-          <span>Акційна ціна від:</span><span class='sale__promotion'>-45%</span>
-          <p class='sale__new'>690 грн</p>
-        </div>
-      </div>
-      <!--            <p>Залишилось по акції: <span>6</span></p>-->
-      <div class='sale__bottom'>
-        <p>Всього замовлень: <span id='counter'>648</span></p>
-        <a class='button hero-section__button link' href='#catalog'>Вибрати мангал</a>
-      </div>
-      <div>
-        <h4 class='sale__second-title'>Замовляй повний комплект та отримуйте додаткову знижку на чохли та
-          шампура</h4>
-        <img alt='Комплект з акцією' loading='lazy'>
-      </div>
-    </div>
-  </section>
-  <!--  <section class='info section' id='info'>-->
+  <!--  <section class='sale section' id='sale'>-->
   <!--    <div class='container'>-->
-  <!--      <h2 class='info__title section__title section__title&#45;&#45;centered'>Розкладний мангал-валіза від українського-->
-  <!--        виробника</h2>-->
-  <!--      <video id='info-video' controls preload='none' autoplay muted loop class='info__video'>-->
-  <!--        <source src='public/videos/info-video.mp4' type='video/mp4'>-->
-  <!--        Ваш браузер не підтримує відео.-->
-  <!--      </video>-->
-  <!--      <ul class='info__list'>-->
-  <!--        <li class='info__item'>-->
-  <!--          <svg class='info__icon' width='34' height='34'>-->
-  <!--            <use href='public/images/icons.svg#icon-done'></use>-->
-  <!--          </svg>-->
-  <!--          Жаростійка сталь X25T-->
-  <!--        </li>-->
-  <!--        <li class='info__item'>-->
-  <!--          <svg class='info__icon' width='34' height='34'>-->
-  <!--            <use href='public/images/icons.svg#icon-done'></use>-->
-  <!--          </svg>-->
-  <!--          Мангал не "веде" та не прогарає-->
-  <!--        </li>-->
-  <!--        <li class='info__item'>-->
-  <!--          <svg class='info__icon' width='34' height='34'>-->
-  <!--            <use href='public/images/icons.svg#icon-done'></use>-->
-  <!--          </svg>-->
-  <!--          Два рівні прожарювання для повного контролю-->
-  <!--        </li>-->
-  <!--        <li class='info__item'>-->
-  <!--          <svg class='info__icon' width='34' height='34'>-->
-  <!--            <use href='public/images/icons.svg#icon-done'></use>-->
-  <!--          </svg>-->
-  <!--          В наявності різні розміри шампура та чохли-->
-  <!--        </li>-->
-  <!--      </ul>-->
+  <!--      <h2 class='visually-hidden'>Акції</h2>-->
+  <!--      <div class='sale__prop'>-->
+  <!--        <div class='sale__price old-price'>-->
+  <!--          <span>Звичайна ціна від:</span>-->
+  <!--          <p class='sale__old'>1349 грн</p>-->
+  <!--        </div>-->
+  <!--        <div class='sale__price'>-->
+  <!--          <span>Акційна ціна від:</span><span class='sale__promotion'>-45%</span>-->
+  <!--          <p class='sale__new'>690 грн</p>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--      &lt;!&ndash;            <p>Залишилось по акції: <span>6</span></p>&ndash;&gt;-->
+  <!--      <div class='sale__bottom'>-->
+  <!--        <p>Всього замовлень: <span id='counter'>648</span></p>-->
+  <!--        <a class='button hero-section__button link' href='#catalog'>Вибрати мангал</a>-->
+  <!--      </div>-->
+  <!--      <div>-->
+  <!--        <h4 class='sale__second-title'>Замовляй повний комплект та отримуйте додаткову знижку на чохли та-->
+  <!--          шампура</h4>-->
+  <!--        <div class='sale__kit'>-->
+  <!--          <img alt='Комплект з акцією' loading='lazy' src='public/images/three-mm/8/1.JPG'>-->
+  <!--        </div>-->
+  <!--      </div>-->
   <!--    </div>-->
   <!--  </section>-->
   <section class='catalog section' id='catalog'>
     <div class='container'>
       <h2 class='section__title section__title--centered'>Каталог</h2>
-      <h3>Мангали 2мм</h3>
+      <h3 class='catalog__title'>Мангали 2мм</h3>
       <div class='catalog__slider'>
         <div class='catalog__container swiper-container'>
           <ul class='catalog__list swiper-wrapper' aria-live='polite'>
@@ -600,7 +565,7 @@
           </div>
         </div>
       </div>
-      <h3>Мангали 3мм</h3>
+      <h3 class='catalog__title'>Мангали 3мм</h3>
       <div class='catalog__slider'>
         <div class='catalog__container swiper-container'>
           <ul class='catalog__list swiper-wrapper' aria-live='polite'>
@@ -906,7 +871,7 @@
           </div>
         </div>
       </div>
-      <h3>Комплектуючі до мангалу</h3>
+      <h3 class='catalog__title catalog__title--components'>Комплектуючі до мангалу</h3>
       <div class='catalog__slider'>
         <div class='catalog__container swiper-container'>
           <ul class='catalog__list swiper-wrapper' aria-live='polite'>
@@ -1507,7 +1472,7 @@
       <h2 class='features__title section__title section__title--centered'>Особливості</h2>
       <div class='features__content'>
         <div class='features__images'>
-          <img class='features__img' src='public/images/mangal.jpg' alt='photo' loading='lazy'>
+          <img class='features__img' src='' alt='photo' loading='lazy'>
         </div>
         <ul class='features__description'>
           <li class='features__property property property--active'>

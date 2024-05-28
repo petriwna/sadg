@@ -34,6 +34,11 @@
 
   &__paragraph {
     text-align: left;
+    width: 100%;
+
+    @media screen and (min-width: $bp-desktop) {
+      width: 85%;
+    }
   }
 
   &__list {

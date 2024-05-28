@@ -2,7 +2,7 @@ import { AdvantagesComponent } from './advantages/AdvantagesComponent';
 import { Catalog } from './catalog/Catalog';
 import { SwiperComponent } from './catalog/SwiperComponent';
 import { DeliverySection } from './dlivery/DeliverySection';
-import { Property } from './feature/Property';
+import { FeaturesComponent } from './feature/FeaturesComponent';
 import { FormHandler } from './FormHandler';
 import { MobileMenu } from './modal/MobileMenu';
 // import { Video } from './Video';
@@ -48,7 +48,7 @@ export class Main {
   // }
 
   initProperty() {
-    new Property();
+    new FeaturesComponent();
   }
 
   initDeliverySection() {

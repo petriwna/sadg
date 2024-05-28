@@ -1,6 +1,16 @@
 .features {
   &__content {
     display: flex;
+    height: 566px;
+    overflow: hidden;
+
+    @media screen and (min-width: $bp-desktop) {
+      height: 566px;
+    }
+
+    @media screen and (min-width: $bp-large-desktop) {
+      height: 566px;
+    }
   }
 
   &__images {
@@ -12,11 +22,9 @@
   }
 
   &__img {
-    height: 485px;
-
-    @media screen and (min-width: $bp-tablet) {
-      height: 600px;
-    }
+    height: 100%;
+    width: 100%;
+    object-position: center;
   }
 
   &__description {

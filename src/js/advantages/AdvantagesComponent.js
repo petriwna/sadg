@@ -9,10 +9,13 @@ export class AdvantagesComponent {
     // eslint-disable-next-line no-undef
     const splide = new Splide('.splide', {
       type: 'loop',
+      lazyLoad: true,
       pagination: false,
+      perPage: 1,
       arrows: false,
       interval: 17000,
       pauseOnHover: false,
+      gap: 0,
       pauseOnFocus: false,
       autoplay: 'pause',
       intersection: {

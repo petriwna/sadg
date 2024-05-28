@@ -33,7 +33,7 @@
         <ul class='header__menu'>
           <li><a class='link' href='#advantages'>Переваги</a></li>
           <li><a class='link' href='#sale'>Акції</a></li>
-<!--          <li><a class='link' href='#info'>Опис</a></li>-->
+          <!--          <li><a class='link' href='#info'>Опис</a></li>-->
           <li><a class='link' href='#catalog'>Каталог</a></li>
           <li><a class='link' href='#features'>Особливості</a></li>
           <li><a class='link' href='#reviews'>Відгуки</a></li>
@@ -62,7 +62,7 @@
         <ul class='mobile-menu__list'>
           <li><a class='mobile-menu__link' href='#advantages'>Переваги</a></li>
           <li><a class='mobile-menu__link' href='#sale'>Акції</a></li>
-<!--          <li><a class='mobile-menu__link' href='#info'>Опис</a></li>-->
+          <!--          <li><a class='mobile-menu__link' href='#info'>Опис</a></li>-->
           <li><a class='mobile-menu__link' href='#catalog'>Каталог</a></li>
           <li><a class='mobile-menu__link' href='#features'>Особливості</a></li>
           <li><a class='mobile-menu__link' href='#reviews'>Відгуки</a></li>
@@ -171,11 +171,34 @@
           <!--            </li>-->
           <!--          </ul>-->
         </div>
-        <div class='advantages__video-container'>
-          <video preload='none' autoplay muted loop class='advantages__video'>
-            <source src='public/videos/mangal.mp4'>
-            Ваш браузер не підтримує відео.
-          </video>
+        <div class='advantages__video-container splide'>
+          <div class='splide__track'>
+            <ul class='splide__list'>
+              <li class='splide__slide' data-splide-interval='17000'>
+                <video preload='none' autoplay muted loop class='advantages__video'>
+                  <source src='public/videos/mangal.mp4'>
+                  Ваш браузер не підтримує відео.
+                </video>
+              </li>
+              <li class='splide__slide' data-splide-interval='16000'>
+                <video preload='none' autoplay loop muted class='advantages__video'>
+                  <source src='public/videos/dvs.mp4'>
+                  Ваш браузер не підтримує відео.
+                </video>
+              </li>
+              <li class='splide__slide' data-splide-interval='24000'>
+                <video preload='none' autoplay muted loop class='advantages__video'>
+                  <source src='public/videos/simple.mp4'>
+                  Ваш браузер не підтримує відео.
+                </video>
+              </li>
+            </ul>
+          </div>
+
+          <div class='splide__progress'>
+            <div class='splide__progress__bar advantages__progress'>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -205,42 +228,42 @@
       </div>
     </div>
   </section>
-<!--  <section class='info section' id='info'>-->
-<!--    <div class='container'>-->
-<!--      <h2 class='info__title section__title section__title&#45;&#45;centered'>Розкладний мангал-валіза від українського-->
-<!--        виробника</h2>-->
-<!--      <video id='info-video' controls preload='none' autoplay muted loop class='info__video'>-->
-<!--        <source src='public/videos/info-video.mp4' type='video/mp4'>-->
-<!--        Ваш браузер не підтримує відео.-->
-<!--      </video>-->
-<!--      <ul class='info__list'>-->
-<!--        <li class='info__item'>-->
-<!--          <svg class='info__icon' width='34' height='34'>-->
-<!--            <use href='public/images/icons.svg#icon-done'></use>-->
-<!--          </svg>-->
-<!--          Жаростійка сталь X25T-->
-<!--        </li>-->
-<!--        <li class='info__item'>-->
-<!--          <svg class='info__icon' width='34' height='34'>-->
-<!--            <use href='public/images/icons.svg#icon-done'></use>-->
-<!--          </svg>-->
-<!--          Мангал не "веде" та не прогарає-->
-<!--        </li>-->
-<!--        <li class='info__item'>-->
-<!--          <svg class='info__icon' width='34' height='34'>-->
-<!--            <use href='public/images/icons.svg#icon-done'></use>-->
-<!--          </svg>-->
-<!--          Два рівні прожарювання для повного контролю-->
-<!--        </li>-->
-<!--        <li class='info__item'>-->
-<!--          <svg class='info__icon' width='34' height='34'>-->
-<!--            <use href='public/images/icons.svg#icon-done'></use>-->
-<!--          </svg>-->
-<!--          В наявності різні розміри шампура та чохли-->
-<!--        </li>-->
-<!--      </ul>-->
-<!--    </div>-->
-<!--  </section>-->
+  <!--  <section class='info section' id='info'>-->
+  <!--    <div class='container'>-->
+  <!--      <h2 class='info__title section__title section__title&#45;&#45;centered'>Розкладний мангал-валіза від українського-->
+  <!--        виробника</h2>-->
+  <!--      <video id='info-video' controls preload='none' autoplay muted loop class='info__video'>-->
+  <!--        <source src='public/videos/info-video.mp4' type='video/mp4'>-->
+  <!--        Ваш браузер не підтримує відео.-->
+  <!--      </video>-->
+  <!--      <ul class='info__list'>-->
+  <!--        <li class='info__item'>-->
+  <!--          <svg class='info__icon' width='34' height='34'>-->
+  <!--            <use href='public/images/icons.svg#icon-done'></use>-->
+  <!--          </svg>-->
+  <!--          Жаростійка сталь X25T-->
+  <!--        </li>-->
+  <!--        <li class='info__item'>-->
+  <!--          <svg class='info__icon' width='34' height='34'>-->
+  <!--            <use href='public/images/icons.svg#icon-done'></use>-->
+  <!--          </svg>-->
+  <!--          Мангал не "веде" та не прогарає-->
+  <!--        </li>-->
+  <!--        <li class='info__item'>-->
+  <!--          <svg class='info__icon' width='34' height='34'>-->
+  <!--            <use href='public/images/icons.svg#icon-done'></use>-->
+  <!--          </svg>-->
+  <!--          Два рівні прожарювання для повного контролю-->
+  <!--        </li>-->
+  <!--        <li class='info__item'>-->
+  <!--          <svg class='info__icon' width='34' height='34'>-->
+  <!--            <use href='public/images/icons.svg#icon-done'></use>-->
+  <!--          </svg>-->
+  <!--          В наявності різні розміри шампура та чохли-->
+  <!--        </li>-->
+  <!--      </ul>-->
+  <!--    </div>-->
+  <!--  </section>-->
   <section class='catalog section' id='catalog'>
     <div class='container'>
       <h2 class='section__title section__title--centered'>Каталог</h2>

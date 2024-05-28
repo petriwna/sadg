@@ -5,42 +5,6 @@ export class AdvantagesComponent {
     this.initSplide();
   }
 
-  setupEventListeners(video) {
-    const playPauseHandler = () => this.playPauseVideo(video);
-
-    window.addEventListener('scroll', playPauseHandler);
-    window.addEventListener('resize', playPauseHandler);
-
-    video._playPauseHandler = playPauseHandler;
-  }
-
-  removeEventListeners(video) {
-    if (video._playPauseHandler) {
-      window.removeEventListener('scroll', video._playPauseHandler);
-      window.removeEventListener('resize', video._playPauseHandler);
-      delete video._playPauseHandler;
-    }
-  }
-
-  isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-
-  playPauseVideo(video) {
-    if (this.isElementInViewport(video)) {
-      video.play();
-    } else {
-      video.pause();
-      video.currentTime = 0;
-    }
-  }
-
   initSplide() {
     // eslint-disable-next-line no-undef
     const splide = new Splide('.splide', {
@@ -71,14 +35,29 @@ export class AdvantagesComponent {
       videos.forEach((video) => {
         video.pause();
         video.currentTime = 0;
-        this.removeEventListeners(video);
       });
 
       const activeVideo = activeSlide.querySelector('video');
-      if (activeVideo) {
-        this.setupEventListeners(activeVideo);
-        activeVideo.play();
+      if (activeVideo && splide.options.autoplay) {
+        activeVideo.pause();
       }
+
+      splide.on('autoplay:playing', () => {
+        const activeSlide = splide.Components.Elements.slides[splide.index];
+        const activeVideo = activeSlide.querySelector('video');
+        if (activeVideo) {
+          activeVideo.play();
+        }
+      });
+
+      splide.on('autoplay:pause', () => {
+        const activeSlide = splide.Components.Elements.slides[splide.index];
+        const activeVideo = activeSlide.querySelector('video');
+        if (activeVideo) {
+          activeVideo.pause();
+          activeVideo.currentTime = 0;
+        }
+      });
     });
 
     splide.mount({ Intersection });

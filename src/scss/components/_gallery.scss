@@ -17,6 +17,10 @@
     }
   }
 
+  &__arrow {
+    height: 100%;
+  }
+
   &__arrow svg {
     fill: var(--color-splide);
   }

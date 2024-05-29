@@ -17,7 +17,6 @@ export class SplideManager {
     // eslint-disable-next-line no-undef
     const thumbnails = new Splide(thumbnailsContainer, {
       fixedWidth: 100,
-      // fixedHeight: 100,
       gap: 10,
       rewind: true,
       pagination: false,

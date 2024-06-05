@@ -20,26 +20,11 @@ export class FeaturesComponent {
     }
   }
 
-  // setDisplayBlock(index) {
-  //   this.removeDisplayBlock();
-  //
-  //   const imgContainer = document.querySelectorAll('.features__img-container');
-  //   imgContainer[index].style.display = 'block';
-  // }
-  //
-  // removeDisplayBlock() {
-  //   const imgContainer = document.querySelectorAll('.features__img-container');
-  //   imgContainer.forEach((el) => {
-  //     el.style.display = 'none';
-  //   });
-  // }
-
   setInitialImageHeight() {
     this.setHeight(0);
 
     const breakpointTable = window.matchMedia('(min-width: 768px)');
     const breakpointDesktop = window.matchMedia('(min-width: 992px)');
-    // const breakpointLargeDesktop = window.matchMedia('(min-width: 992px)');
 
     breakpointTable.addEventListener('change', () => this.setHeight(0));
     breakpointDesktop.addEventListener('change', () => {

@@ -7,10 +7,11 @@ export class SplideComponent {
     this.splideContainers.forEach((container) => {
       const slides = container.querySelectorAll('.splide__slide');
       const shouldEnablePagination = slides.length > 4;
+      const type = shouldEnablePagination ? 'loop' : 'slide';
 
       // eslint-disable-next-line no-undef
       new Splide(container, {
-        type: 'loop',
+        type: type,
         arrows: false,
         gap: 8,
         perPage: 4,

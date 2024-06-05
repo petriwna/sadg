@@ -1,4 +1,5 @@
 import { fromEvent } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 import { Modal } from './Modal';
 import { FormHandler } from '../FormHandler';
@@ -9,6 +10,7 @@ export class BasketModal extends Modal {
 
     this.counterFab = document.getElementById('basket-count');
     this.sumElement = document.querySelectorAll('.sum');
+    this.modalContent = document.getElementById('modal-basket').childNodes;
 
     this.basket = basket;
 
@@ -29,6 +31,13 @@ export class BasketModal extends Modal {
   }
 
   setupBasketButtonListeners() {
+    fromEvent(this.modalContent, 'click')
+      .pipe(
+        tap((event) => {
+          event.stopPropagation();
+        }),
+      )
+      .subscribe();
     fromEvent(document.querySelector('#basket'), 'click').subscribe(() => this.handleClickFab());
   }
 

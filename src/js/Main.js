@@ -6,7 +6,6 @@ import { FeaturesComponent } from './feature/FeaturesComponent';
 import { FormHandler } from './FormHandler';
 import { MobileMenu } from './modal/MobileMenu';
 import { ReviewsComponent } from './reviews/ReviewsComponent';
-// import { Video } from './Video';
 
 export class Main {
   constructor() {
@@ -21,7 +20,6 @@ export class Main {
     this.initCatalog();
     this.initSwiper();
     this.initForm();
-    // this.initVideo();
     this.initDeliverySection();
     this.initProperty();
     new AdvantagesComponent();
@@ -44,10 +42,6 @@ export class Main {
     const form = document.querySelector('.contacts__form');
     new FormHandler(form);
   }
-
-  // initVideo() {
-  //   new Video();
-  // }
 
   initProperty() {
     new FeaturesComponent();

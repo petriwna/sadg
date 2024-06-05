@@ -1,9 +1,13 @@
+import { fromEvent } from 'rxjs';
+import { tap } from 'rxjs/operators';
+
 import { Modal } from './Modal';
 import { ProductComponent } from '../catalog/ProductComponent';
 
 export class ProductModal extends Modal {
   constructor(basket, basketModal) {
     super('#modal-product', '#close-product');
+    this.modalContent = document.getElementById('modal-product').childNodes;
 
     this.productComponent = new ProductComponent();
     this.basket = basket;
@@ -21,6 +25,14 @@ export class ProductModal extends Modal {
 
   setupEventListeners() {
     super.setupEventListeners();
+
+    fromEvent(this.modalContent, 'click')
+      .pipe(
+        tap((event) => {
+          event.stopPropagation();
+        }),
+      )
+      .subscribe();
   }
 
   openWithProduct(card) {

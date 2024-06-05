@@ -4,9 +4,9 @@
   justify-content: center;
   gap: 14px;
 
-  @media screen and (min-width: $bp-large-desktop) {
-    display: none;
-  }
+  //@media screen and (min-width: $bp-large-desktop) {
+  //  //display: none;
+  //}
 
   &__button {
     width: 12px;

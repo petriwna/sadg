@@ -1,15 +1,16 @@
 import { AdvantagesComponent } from './advantages/AdvantagesComponent';
 import { Catalog } from './catalog/Catalog';
-import { SwiperComponent } from './catalog/SwiperComponent';
+import { SplideComponent } from './catalog/SplideComponent';
 import { DeliverySection } from './dlivery/DeliverySection';
 import { FeaturesComponent } from './feature/FeaturesComponent';
 import { FormHandler } from './FormHandler';
 import { MobileMenu } from './modal/MobileMenu';
+import { ReviewsComponent } from './reviews/ReviewsComponent';
 // import { Video } from './Video';
 
 export class Main {
   constructor() {
-    this.swiper = new SwiperComponent();
+    this.slide = new SplideComponent();
     this.mobileMenu = new MobileMenu();
 
     this.init();
@@ -24,6 +25,7 @@ export class Main {
     this.initDeliverySection();
     this.initProperty();
     new AdvantagesComponent();
+    new ReviewsComponent();
   }
 
   initMobileMenu() {
@@ -35,7 +37,7 @@ export class Main {
   }
 
   initSwiper() {
-    this.swiper.init();
+    this.slide.init();
   }
 
   initForm() {

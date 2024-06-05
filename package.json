@@ -13,9 +13,9 @@
     "clear": "yarn cmd clean"
   },
   "dependencies": {
-    "@splidejs/splide": "^4.1.4",
-    "@splidejs/splide-extension-intersection": "^0.2.0",
-    "@splidejs/splide-extension-video": "^0.8.0",
+    "@splidejs/splide": "4.1.4",
+    "@splidejs/splide-extension-auto-scroll": "0.5.3",
+    "@splidejs/splide-extension-intersection": "0.2.0",
     "cross-env": "7.0.3",
     "del": "6.1.1",
     "rxjs": "^7.8.1",

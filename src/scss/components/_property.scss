@@ -15,30 +15,16 @@
 
   @media screen and (min-width: $bp-desktop) {
     font-size: 20px;
-    gap: 10px;
-    flex-direction: row;
   }
 
   &--active {
     background-color: var(--color-brand-light-active);
   }
 
-  &--active &__icon {
-    //stroke: var(--color-primary-light);
-  }
-  //
-  //&:active {
-  //  background-color: #28a745;
-  //}
-
   &__img-container {
     width: 100%;
     transition: height 2s;
     height: 0;
-
-    @media screen and (min-width: $bp-desktop) {
-      display: none;
-    }
   }
 
   &__img {
@@ -68,10 +54,6 @@
     fill: transparent;
     rotate: 180deg;
     stroke: var(--color-splide);
-
-    @media screen and (min-width: $bp-desktop) {
-      rotate: -90deg;
-    }
 
     @media screen and (min-width: $bp-tablet) {
       width: 34px;

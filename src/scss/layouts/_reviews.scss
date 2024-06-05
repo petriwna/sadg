@@ -1,0 +1,14 @@
+.reviews {
+  &__content {
+    position: relative;
+  }
+
+  &__design {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 148px;
+    width: 203px;
+    background-image: url("../../public/images/dots.png");
+  }
+}

@@ -12,10 +12,10 @@
   z-index: 2;
   transition: opacity 0.3s,
   visibility 0.3s;
-  cursor: pointer;
 
   @media screen and (min-width: $bp-tablet) {
     padding: 20px;
+    cursor: pointer;
   }
 
   &.is-hidden {

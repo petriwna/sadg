@@ -6,7 +6,7 @@ export class ProductGallery {
     this.gallery = document.querySelector('.gallery');
     this.splideManager = new SplideManager();
     this.galleryRenderer = new Gallery(this.gallery);
-    this.modalImg = null;
+    this.modalImg = this.galleryRenderer.imagesUrl;
   }
 
   renderGallery(product) {

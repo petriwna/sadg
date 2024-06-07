@@ -1,6 +1,7 @@
 export class Gallery {
   constructor(gallery) {
     this.gallery = gallery;
+    this.imagesUrl = [];
   }
 
   renderGallery(product) {
@@ -8,6 +9,7 @@ export class Gallery {
     const thumbnailsContainer = this.createContainerSlides('thumbnail-carousel');
 
     product.info[0].images.forEach((url) => {
+      this.imagesUrl.push(url);
       this.createGallerySlide(url, product.title, splideContainer.querySelector('.splide__list'));
       this.createGallerySlide(
         url,

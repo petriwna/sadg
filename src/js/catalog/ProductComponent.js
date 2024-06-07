@@ -42,7 +42,7 @@ export class ProductComponent {
 
     this.modalDescription.appendChild(product.description);
     this.productGallery.renderGallery(product);
-    this.modalImg = this.productGallery.modalImg;
+    this.modalImg = this.productGallery.modalImg[0];
   }
 
   renderSizeList(listSize, name, info) {

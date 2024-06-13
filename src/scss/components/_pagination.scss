@@ -2,11 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 8px;
 
-  //@media screen and (min-width: $bp-large-desktop) {
-  //  //display: none;
-  //}
+  @media screen and (min-width: $bp-tablet) {
+    gap: 14px;
+  }
 
   &__button {
     width: 12px;

@@ -188,6 +188,7 @@ module.exports = {
       ),
       'process.env.FIREBASE_APP_ID': JSON.stringify(process.env.FIREBASE_APP_ID),
       'process.env.FIREBASE_MEASUREMENT_ID': JSON.stringify(process.env.FIREBASE_MEASUREMENT_ID),
+      'process.env.FIREBASE_DATABASE_URL': JSON.stringify(process.env.FIREBASE_DATABASE_URL),
     }),
     new CleanWebpackPlugin({ verbose: true }),
     !isDevMode && new MiniCssExtractPlugin(),

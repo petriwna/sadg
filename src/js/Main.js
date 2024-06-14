@@ -3,26 +3,20 @@ import { Catalog } from './catalog/Catalog';
 import { SplideComponent } from './catalog/SplideComponent';
 import { DeliverySection } from './dlivery/DeliverySection';
 import { FeaturesComponent } from './feature/FeaturesComponent';
-import { analytics, app } from './Firebase';
 import { FormHandler } from './FormHandler';
 import { MobileMenu } from './modal/MobileMenu';
 import { ReviewsComponent } from './reviews/ReviewsComponent';
 
 export class Main {
   constructor() {
-    this.slide = new SplideComponent();
     this.mobileMenu = new MobileMenu();
 
     this.init();
   }
 
   init() {
-    console.log('Firebase App:', app);
-    console.log('Firebase Analytics:', analytics);
-
     this.initMobileMenu();
     this.initCatalog();
-    this.initSwiper();
     this.initForm();
     this.initDeliverySection();
     this.initProperty();
@@ -36,10 +30,6 @@ export class Main {
 
   initCatalog() {
     new Catalog();
-  }
-
-  initSwiper() {
-    this.slide.init();
   }
 
   initForm() {

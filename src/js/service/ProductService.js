@@ -14,4 +14,14 @@ export class ProductService {
       return [];
     }
   }
+
+  async getProduct(category, id) {
+    try {
+      const product = await this.database.getProduct(category, id);
+      return product || [];
+    } catch (error) {
+      console.error(`Error fetching product for ${category} ${id}:`, error);
+      return [];
+    }
+  }
 }

@@ -1,9 +1,12 @@
 import { Modal } from './Modal';
 import { ProductComponent } from '../catalog/ProductComponent';
+import { ProductService } from '../service/ProductService';
 
 export class ProductModal extends Modal {
   constructor(basket, basketModal) {
     super('#modal-product', '#close-product');
+
+    this.productService = new ProductService();
 
     this.productComponent = new ProductComponent();
     this.basket = basket;
@@ -23,17 +26,20 @@ export class ProductModal extends Modal {
     super.setupEventListeners();
   }
 
-  openWithProduct(card) {
-    this.getProductDescription(card);
+  async openWithProduct(category, id) {
+    const product = await this.productService.getProduct(category, id);
+
+    this.productComponent.updateModalContent(product);
     this.open();
   }
 
-  getProductDescription(card) {
-    this.product = this.extractProductDetails(card);
-
-    this.cardDescriptionCopy = this.product.description;
-
-    this.productComponent.updateModalContent(this.product);
+  getProductDescription(product) {
+    console.log(product);
+    // this.product = this.extractProductDetails(card);
+    //
+    // this.cardDescriptionCopy = this.product.description;
+    //
+    // this.productComponent.updateModalContent(this.product);
   }
 
   extractProductDetails(card) {
@@ -78,9 +84,9 @@ export class ProductModal extends Modal {
 
   close() {
     super.close();
-    this.removeDescription();
+    // this.removeDescription();
     this.productComponent.removeSize();
-    this.productComponent.resetCounter();
+    // this.productComponent.resetCounter();
     this.productComponent.removeGallery();
   }
 

@@ -8,12 +8,12 @@ export class Gallery {
     const splideContainer = this.createContainerSlides('main-carousel');
     const thumbnailsContainer = this.createContainerSlides('thumbnail-carousel');
 
-    product.info[0].images.forEach((url) => {
+    product.imgsUrl.forEach((url) => {
       this.imagesUrl.push(url);
-      this.createGallerySlide(url, product.title, splideContainer.querySelector('.splide__list'));
+      this.createGallerySlide(url, product.name, splideContainer.querySelector('.splide__list'));
       this.createGallerySlide(
         url,
-        product.title,
+        product.name,
         thumbnailsContainer.querySelector('.splide__list'),
       );
     });

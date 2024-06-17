@@ -3,7 +3,7 @@ import { fromEvent } from 'rxjs';
 import { SplideComponent } from './SplideComponent';
 import { Basket } from '../basket/Basket';
 // import { BasketModal } from '../modal/BasketModal';
-// import { ProductModal } from '../modal/ProductModal';
+import { ProductModal } from '../modal/ProductModal';
 import { ProductService } from '../service/ProductService';
 
 export class Catalog {
@@ -16,7 +16,7 @@ export class Catalog {
 
     this.basket = new Basket();
     // this.basketModal = new BasketModal(this.basket);
-    // this.productModal = new ProductModal(this.basket, this.basketModal);
+    this.productModal = new ProductModal(this.basket, this.basketModal);
   }
 
   async initialize() {
@@ -27,32 +27,33 @@ export class Catalog {
     const promises = Array.from(this.containers).map(async (container) => {
       const category = container.dataset.category;
       const productList = await this.productService.getProductList(category);
-      this.renderProducts(container, productList);
+      this.renderProducts(container, productList, category);
       this.addClickListeners(container);
     });
     await Promise.all(promises);
   }
 
-  renderProducts(container, productList) {
+  renderProducts(container, productList, category) {
     container.innerHTML = '';
     productList.forEach((product) => {
-      const productElement = this.createProductElement(product);
+      const productElement = this.createProductElement(product, category);
       container.appendChild(productElement);
     });
 
     new SplideComponent(container.parentNode);
   }
 
-  createProductElement(product) {
+  createProductElement(product, category) {
     const newCost = this.formatPrice(product.sizeList[0].newCost);
     const oldCost = product.sizeList[0].oldCost
       ? `${this.formatPrice(product.sizeList[0].oldCost)} грн.`
       : '';
     const li = document.createElement('li');
     li.classList.add('splide__slide');
-    li.setAttribute('data-id', product.id);
 
     const card = document.createElement('article');
+    card.setAttribute('data-id', product.id);
+    card.setAttribute('data-category', category);
     card.classList.add('card');
 
     card.innerHTML = `
@@ -101,9 +102,10 @@ export class Catalog {
   }
 
   handleCardClick(event) {
-    // const card = event.currentTarget.closest('.card');
-    // this.productModal.openWithProduct(card);
-    console.log('card');
+    const id = event.currentTarget.closest('.card').dataset.id;
+    const category = event.currentTarget.closest('.card').dataset.category;
+
+    this.productModal.openWithProduct(category, id);
   }
 
   handleClickDetails(event) {

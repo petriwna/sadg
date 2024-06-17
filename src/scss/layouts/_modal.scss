@@ -36,6 +36,7 @@
   flex-direction: column;
   gap: 30px;
   overflow-y: auto;
+  cursor: auto;
 
   @media screen and (min-width: $bp-tablet) {
     padding: 64px 48px;
@@ -101,6 +102,8 @@
 
   &__code {
     color: var(--color-secondary-text);
+    display: flex;
+    gap: 10px;
   }
 
   &__buttons {
@@ -164,6 +167,10 @@
     display: flex;
     gap: 5px;
     align-items: center;
+
+    &--label {
+      cursor: pointer;
+    }
   }
 
   &__text {

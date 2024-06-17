@@ -21,4 +21,19 @@ export class DataBase {
       throw error;
     }
   }
+
+  async getProduct(category, id) {
+    const dbRef = ref(this.database, `product/${category}/${id}`);
+    try {
+      const snapshot = await get(dbRef);
+      if (snapshot.exists()) {
+        return snapshot.val();
+      }
+      console.log('No data available');
+      return null;
+    } catch (error) {
+      console.error('Error getting data: ', error);
+      throw error;
+    }
+  }
 }

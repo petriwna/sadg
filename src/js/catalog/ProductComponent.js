@@ -145,25 +145,17 @@ export class ProductComponent {
     return description;
   }
 
-  createMangalDescription(product) {
-    const description = document.createElement('div');
-
-    this.description = description;
-
-    description.classList.add('product');
-    console.log('mangal');
-
-    return description;
-  }
-
   renderCompectationContent(description, productDescription) {
     if (productDescription) {
       this.appendTitle(description, productDescription.title);
       this.appendText(description, productDescription.text);
+      this.appendFeatures(description, productDescription.features);
       this.appendDescriptionElement(description, productDescription.matter, 'Матеріал');
       this.appendDescriptionElement(description, productDescription.color, 'Колір');
       this.appendDescriptionElement(description, productDescription.application, 'Застосування');
       this.appendAdvantages(description, productDescription.advantages);
+      this.appendList(description, productDescription.size);
+      this.appendInstruction(description, productDescription.construction);
       this.appendCharacteristics(
         description,
         productDescription.dimensionsFolded,
@@ -177,6 +169,64 @@ export class ProductComponent {
       this.appendText(description, productDescription.secondText);
       this.appendCharacteristics(description, productDescription.characteristics, 'ХАРАКТЕРИСТИКИ');
       this.appendTable(description, productDescription.general);
+    }
+  }
+
+  appendFeatures(description, features) {
+    if (features) {
+      const p = document.createElement('p');
+      p.innerText = 'Особливості:';
+      description.appendChild(p);
+
+      const ul = document.createElement('ul');
+
+      features.forEach((item) => {
+        const li = document.createElement('li');
+        li.innerText = `${item}`;
+
+        ul.appendChild(li);
+      });
+
+      description.appendChild(ul);
+    }
+  }
+
+  appendInstruction(description, instruction) {
+    if (instruction) {
+      const firstParagraph = document.createElement('p');
+      firstParagraph.innerText =
+        'Конструкція мангалу дозволяє швидко скласти його у вигляді валізи.';
+      description.appendChild(firstParagraph);
+
+      const secondParagraph = document.createElement('p');
+      secondParagraph.innerText = 'Для цього необхідно:';
+      description.appendChild(secondParagraph);
+
+      const ol = document.createElement('ol');
+
+      instruction.forEach((item) => {
+        const li = document.createElement('li');
+        li.innerText = `${item}`;
+
+        ol.appendChild(li);
+      });
+
+      description.appendChild(ol);
+    }
+  }
+
+  appendList(description, items) {
+    if (items) {
+      const ul = document.createElement('ul');
+
+      items.forEach((item) => {
+        const li = document.createElement('li');
+        li.innerHTML = `<p><span class='accent'>${item.name}: </span>${item.value}</p>`;
+
+        ul.appendChild(li);
+      });
+
+      description.appendChild(ul);
     }
   }
 
@@ -195,7 +245,6 @@ export class ProductComponent {
       if (title.length > 1) {
         p.innerHTML = ` <span class='accent'>${title[0]}</span> ${title[1]}`;
       } else {
-        console.log('ssss');
         p.classList.add('accent');
         p.innerText = title;
       }
@@ -206,7 +255,6 @@ export class ProductComponent {
 
   appendAdvantages(description, advantages) {
     if (advantages) {
-      console.log(advantages.length);
       const advantagesElement = document.createElement('p');
       advantagesElement.innerHTML = `<span class='accent'>Переваги: </span>${advantages} `;
       description.appendChild(advantagesElement);
@@ -257,7 +305,6 @@ export class ProductComponent {
       });
       table.appendChild(tr);
 
-      console.log(info);
       info.forEach((item) => {
         const tr = document.createElement('tr');
 

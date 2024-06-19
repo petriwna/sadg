@@ -15,7 +15,7 @@ export class ProductModal extends Modal {
 
     this.product = {};
 
-    this.cardDescriptionCopy = null;
+    this.description = document.querySelector('.product');
 
     this.productComponent.setupEventListeners(this.handleClickOrderBtn.bind(this));
 
@@ -29,12 +29,11 @@ export class ProductModal extends Modal {
   async openWithProduct(category, id) {
     const product = await this.productService.getProduct(category, id);
 
-    this.productComponent.updateModalContent(product);
+    this.productComponent.updateModalContent(product, category);
     this.open();
   }
 
   getProductDescription(product) {
-    console.log(product);
     // this.product = this.extractProductDetails(card);
     //
     // this.cardDescriptionCopy = this.product.description;
@@ -75,24 +74,17 @@ export class ProductModal extends Modal {
       });
     }
 
-    const description = card.querySelector('.product').cloneNode(true);
-    this.cardDescriptionCopy = description;
-    description.classList.remove('visually-hidden');
+    // description.classList.remove('visually-hidden');
 
     return { title, info, size, description };
   }
 
   close() {
     super.close();
-    // this.removeDescription();
+    this.productComponent.removeDescription();
     this.productComponent.removeSize();
     // this.productComponent.resetCounter();
     this.productComponent.removeGallery();
-  }
-
-  removeDescription() {
-    this.productComponent.removeDescription(this.cardDescriptionCopy);
-    this.cardDescriptionCopy = null;
   }
 
   handleClickOrderBtn() {

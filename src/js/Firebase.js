@@ -13,7 +13,6 @@ const firebaseConfig = {
   databaseURL: process.env.FIREBASE_DATABASE_URL,
 };
 
-
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 

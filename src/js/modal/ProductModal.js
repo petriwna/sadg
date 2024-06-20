@@ -29,16 +29,8 @@ export class ProductModal extends Modal {
   async openWithProduct(category, id) {
     const product = await this.productService.getProduct(category, id);
 
-    this.productComponent.updateModalContent(product, category);
+    this.productComponent.updateModalContent(product);
     this.open();
-  }
-
-  getProductDescription(product) {
-    // this.product = this.extractProductDetails(card);
-    //
-    // this.cardDescriptionCopy = this.product.description;
-    //
-    // this.productComponent.updateModalContent(this.product);
   }
 
   extractProductDetails(card) {

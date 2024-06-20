@@ -13,7 +13,11 @@ export class ProductComponent {
 
     this.productCounter = new ProductCounter();
     this.productGallery = new ProductGallery();
-    this.sizeList = new SizeList(this.modalCode, this.modalPrice);
+    this.sizeList = new SizeList(
+      this.modalCode,
+      this.modalPrice,
+      this.updateSizeAndPrice.bind(this),
+    );
     this.productDescription = new ProductDescription();
 
     this.eventHandler = new EventHandler();
@@ -30,6 +34,7 @@ export class ProductComponent {
 
   updateModalContent(product) {
     this.modalTitle.textContent = product.title || product.name;
+    this.size = product.sizeList[0].name;
     this.updateSizeAndPrice(product.sizeList[0]);
 
     if (product.sizeList.length > 1) {
@@ -60,15 +65,14 @@ export class ProductComponent {
     this.productDescription.remove();
   }
 
-  //
-  // getCounter() {
-  //   return this.productCounter.counterInputValue;
-  // }
-  //
-  // resetCounter() {
-  //   this.productCounter.resetCounter();
-  // }
-  //
+  getCounter() {
+    return this.productCounter.counterInputValue;
+  }
+
+  resetCounter() {
+    this.productCounter.resetCounter();
+  }
+
   removeGallery() {
     this.productGallery.removeGallery();
   }

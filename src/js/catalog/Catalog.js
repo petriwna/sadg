@@ -2,7 +2,7 @@ import { fromEvent } from 'rxjs';
 
 import { SplideComponent } from './SplideComponent';
 import { Basket } from '../basket/Basket';
-// import { BasketModal } from '../modal/BasketModal';
+import { BasketModal } from '../modal/BasketModal';
 import { ProductModal } from '../modal/ProductModal';
 import { ProductService } from '../service/ProductService';
 
@@ -15,7 +15,7 @@ export class Catalog {
     this.initialize();
 
     this.basket = new Basket();
-    // this.basketModal = new BasketModal(this.basket);
+    this.basketModal = new BasketModal(this.basket);
     this.productModal = new ProductModal(this.basket, this.basketModal);
   }
 
@@ -110,32 +110,28 @@ export class Catalog {
 
   handleClickDetails(event) {
     event.stopPropagation();
-    // const card = event.currentTarget.closest('.card');
-    // if (card) {
-    //   this.productModal.openWithProduct(card);
-    // }
+    const id = event.currentTarget.closest('.card').dataset.id;
+    const category = event.currentTarget.closest('.card').dataset.category;
 
-    console.log('detail');
+    this.productModal.openWithProduct(category, id);
   }
 
-  handleClickBuy(event) {
-    console.log('buy');
-
+  async handleClickBuy(event) {
     event.stopPropagation();
-    // const card = event.currentTarget.closest('.card');
-    // const img = card.querySelector('.card__image').getAttribute('src');
-    // const name = card.querySelector('.card__title').textContent;
-    // const code = card.querySelector('.card__code').textContent;
-    // const price = card.querySelector('.price__new').textContent;
-    // const sizeList = card.querySelectorAll('.card__size');
-    // let size = null;
-    //
-    // if (sizeList.length !== 0) {
-    //   size = sizeList[0].textContent;
-    // }
-    //
-    // if (card) {
-    //   this.basketModal.openWithBasket(img, name, code, price, size, 1);
-    // }
+    const card = event.currentTarget.closest('.card');
+    const id = event.currentTarget.closest('.card').dataset.id;
+    const category = event.currentTarget.closest('.card').dataset.category;
+    const product = await this.productService.getProduct(category, id);
+
+    if (card) {
+      this.basketModal.openWithBasket(
+        product.imgsUrl[0],
+        product.name,
+        product.sizeList[0].code,
+        product.sizeList[0].newCost,
+        product.sizeList[0].name,
+        1,
+      );
+    }
   }
 }

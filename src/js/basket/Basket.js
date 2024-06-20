@@ -5,11 +5,8 @@ export class Basket {
     this.basket = [];
   }
 
-  addProductToBasket(img, name, strCode, price, size, quantity) {
+  addProductToBasket(img, name, code, price, size, quantity) {
     this.basketFab.style.display = 'flex';
-
-    const cost = parseFloat(price.replace(/\D/g, ''));
-    const code = strCode.match(/[a-zA-Z0-9-]+/)[0];
 
     const existingProductIndex = this.basket.findIndex(
       (product) => product.code === code && product.size === size,
@@ -18,7 +15,7 @@ export class Basket {
     if (existingProductIndex !== -1) {
       this.basket[existingProductIndex].quantity += quantity;
     } else {
-      this.basket.push({ img, name, code, cost, size, quantity });
+      this.basket.push({ img, name, code, price, size, quantity });
     }
   }
 
@@ -64,13 +61,13 @@ export class Basket {
   }
 
   getSumProduct(index) {
-    return this.basket[index].cost * this.basket[index].quantity;
+    return this.basket[index].price * this.basket[index].quantity;
   }
 
   getSumBasket() {
     let sum = 0;
     this.basket.forEach((product) => {
-      const oneSum = product.cost * product.quantity;
+      const oneSum = product.price * product.quantity;
       sum += oneSum;
     });
     return sum;

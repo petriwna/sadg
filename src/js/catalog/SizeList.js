@@ -1,7 +1,8 @@
 export class SizeList {
-  constructor(modalCodeElement, modalPriceElement) {
+  constructor(modalCodeElement, modalPriceElement, onSizeChange) {
     this.modalCodeElement = modalCodeElement;
     this.modalPriceElement = modalPriceElement;
+    this.onSizeChange = onSizeChange;
   }
 
   render(sizeList) {
@@ -77,6 +78,13 @@ export class SizeList {
         <p class="price__new">${selectedValue.dataset.newCost} грн</p>
         ${selectedValue.dataset.oldCost ? `<p class="price__old">${selectedValue.dataset.oldCost} грн</p>` : ''}
       `;
+
+      this.onSizeChange({
+        code: selectedValue.dataset.code,
+        newCost: selectedValue.dataset.newCost,
+        oldCost: selectedValue.dataset.oldCost,
+        name: selectedValue.value,
+      });
     }
   }
 

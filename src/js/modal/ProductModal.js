@@ -5,20 +5,16 @@ import { ProductService } from '../service/ProductService';
 export class ProductModal extends Modal {
   constructor(basket, basketModal) {
     super('#modal-product', '#close-product');
+    this.basket = basket;
+    this.basketModal = basketModal;
 
     this.productService = new ProductService();
-
     this.productComponent = new ProductComponent();
-    this.basket = basket;
-
-    this.basketModal = basketModal;
 
     this.product = {};
 
     this.description = document.querySelector('.product');
-
     this.productComponent.setupEventListeners(this.handleClickOrderBtn.bind(this));
-
     this.setupEventListeners();
   }
 

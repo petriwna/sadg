@@ -138,6 +138,7 @@ export class FormHandler {
 
   getBasketText() {
     const basket = this.modal ? this.modal.basket.getBasket() : [];
+    console.log(basket[0]);
     return basket
       .map((product, index) => {
         return `
@@ -146,7 +147,7 @@ export class FormHandler {
         Код товара: ${product.code},
         Розмір: ${product.size},
         Кількість: ${product.quantity},
-        Сума за товар ${index + 1}: ${product.cost * product.quantity} грн.
+        Сума за товар ${index + 1}: ${product.price * product.quantity} грн.
       `;
       })
       .join('');

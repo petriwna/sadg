@@ -20,7 +20,38 @@ export class Catalog {
   }
 
   async initialize() {
+    this.renderSkeleton();
     await this.getProductsList();
+  }
+
+  renderSkeleton() {
+    this.containers.forEach((container) => {
+      for (let i = 0; i < 4; i++) {
+        const li = document.createElement('li');
+        li.classList.add('splide__slide');
+
+        const card = document.createElement('article');
+        card.classList.add('card');
+
+        card.innerHTML = `
+      <div class='card__image skeleton skeleton__img'></div>
+      <div class='card__container'>
+        <h4 class='card__title skeleton skeleton__text'></h4>
+        <div class='card__price-container price'>
+          <p class='price__new skeleton skeleton__text'></p>
+          <p class='price__old skeleton skeleton__text'></p>
+        </div>
+        <div class='card__buttons'>
+          <button type='button' class='button card__button-detail details' value='Деталі'>Деталі</button>
+          <button type='button' class='button card__button-buy buy' value='Замовити'>Замовити</button>
+        </div>
+      </div>`;
+
+        li.appendChild(card);
+        container.appendChild(li);
+      }
+      new SplideComponent(container.parentNode);
+    });
   }
 
   async getProductsList() {
@@ -57,7 +88,7 @@ export class Catalog {
     card.classList.add('card');
 
     card.innerHTML = `
-      <img class='card__image' src=${product.imgsUrl[0]} alt='${product.alt}'/>
+      <img class='card__image' src='${product.imgsUrl[0]}' alt='${product.alt}'/>
       <div class='card__container'>
         <h4 class='card__title'>${product.name}</h4>
         <div class='card__price-container price'>

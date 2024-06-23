@@ -91,6 +91,7 @@ export class Basket {
   }
 
   getBasket() {
+    console.log(this.basket);
     return this.basket;
   }
 

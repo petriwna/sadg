@@ -39,16 +39,51 @@ export class ProductComponent {
 
     const product = await this.productService.getProduct(category, id);
 
-    setTimeout(() => {
-      this.renderModalContent(product);
-    }, 1000);
+    this.renderModalContent(product);
   }
 
   renderSkeletonContent() {
-    console.log('s');
+    const parent = this.modalTitle.parentElement;
+    parent.classList.add('skeleton__container');
+
+    const imgContainer = document.querySelector('.modal__images');
+    imgContainer.classList.add('skeleton', 'skeleton__img--container');
+
+    this.modalTitle.classList.add('skeleton', 'skeleton__text');
+    this.modalCode.classList.add('skeleton', 'skeleton__text', 'skeleton__text--width');
+    this.modalPrice.innerHTML = `<p class='skeleton skeleton__text'></p><p class='skeleton skeleton__text'></p>`;
+
+    const skeletonDescription = document.createElement('div');
+    skeletonDescription.classList.add('skeleton__container--flex');
+    skeletonDescription.innerHTML = `
+      <p class='skeleton skeleton__text'></p>
+      <p class='skeleton skeleton__text'></p>
+      <p class='skeleton skeleton__text'></p>
+      <p class='skeleton skeleton__text'></p>
+      <p class='skeleton skeleton__text'></p>
+      <p class='skeleton skeleton__text'></p>
+      <p class='skeleton skeleton__text'></p>
+      <p class='skeleton skeleton__text'></p>
+    `;
+    parent.appendChild(skeletonDescription);
+  }
+
+  removeSkeleton() {
+    const parent = this.modalTitle.parentElement;
+    parent.classList.remove('skeleton__container');
+
+    const imgContainer = document.querySelector('.modal__images');
+    imgContainer.classList.remove('skeleton', 'skeleton__img--container');
+
+    this.modalTitle.classList.remove('skeleton', 'skeleton__text');
+    this.modalCode.classList.remove('skeleton', 'skeleton__text', 'skeleton__text--width');
+    this.modalPrice.innerHTML = ``;
+    parent.lastChild.remove();
   }
 
   renderModalContent(product) {
+    this.removeSkeleton();
+
     this.modalTitle.textContent = product.title || product.name;
     this.size = product.sizeList[0].name;
     const p = document.createElement('p');
@@ -83,13 +118,14 @@ export class ProductComponent {
   removePrice() {
     const items = Array.from(this.modalPrice.children);
     items.forEach((item) => {
-      console.log(item);
       item.remove();
     });
   }
 
   removeCode() {
-    this.modalCode.firstChild.remove();
+    if (this.modalCode.firstChild) {
+      this.modalCode.firstChild.remove();
+    }
   }
 
   removeDescription() {

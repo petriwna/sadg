@@ -72,7 +72,7 @@ export class SizeList {
     if (event.target.type === 'radio') {
       const selectedValue = event.target;
 
-      this.modalCodeElement.textContent = selectedValue.dataset.code;
+      // this.modalCodeElement.firstChild.innerText = `Код товару: ${selectedValue.dataset.code}`;
 
       this.modalPriceElement.innerHTML = `
         <p class="price__new">${selectedValue.dataset.newCost} грн</p>

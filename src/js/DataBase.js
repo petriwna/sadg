@@ -14,10 +14,8 @@ export class DataBase {
       if (snapshot.exists()) {
         return snapshot.val();
       }
-      console.log('No data available');
       return null;
     } catch (error) {
-      console.error('Error getting data: ', error);
       throw error;
     }
   }
@@ -29,10 +27,8 @@ export class DataBase {
       if (snapshot.exists()) {
         return snapshot.val();
       }
-      console.log('No data available');
       return null;
     } catch (error) {
-      console.error('Error getting data: ', error);
       throw error;
     }
   }

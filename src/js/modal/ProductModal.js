@@ -1,6 +1,5 @@
 import { Modal } from './Modal';
 import { ProductComponent } from '../catalog/ProductComponent';
-import { ProductService } from '../service/ProductService';
 
 export class ProductModal extends Modal {
   constructor(basket, basketModal) {
@@ -8,7 +7,6 @@ export class ProductModal extends Modal {
     this.basket = basket;
     this.basketModal = basketModal;
 
-    this.productService = new ProductService();
     this.productComponent = new ProductComponent();
 
     this.product = {};
@@ -23,18 +21,13 @@ export class ProductModal extends Modal {
   }
 
   async openWithProduct(category, id) {
-    const product = await this.productService.getProduct(category, id);
-
-    this.productComponent.updateModalContent(product);
+    this.productComponent.updateModalContent(category, id);
     this.open();
   }
 
   close() {
     super.close();
-    this.productComponent.removeDescription();
-    this.productComponent.removeSize();
-    this.productComponent.resetCounter();
-    this.productComponent.removeGallery();
+    this.productComponent.clearContent();
   }
 
   handleClickOrderBtn() {

@@ -32,7 +32,7 @@ module.exports = {
         endOfLine: 'lf',
       },
     ],
-
+    'no-useless-catch': 'off',
     'no-console': 'error',
     'no-unused-vars': 'error',
     'no-undef': 'error',

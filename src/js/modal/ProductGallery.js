@@ -1,4 +1,4 @@
-import { Gallery } from './Gallery';
+import { Gallery } from '../catalog/Gallery';
 import { SplideManager } from '../SplideManager';
 
 export class ProductGallery {

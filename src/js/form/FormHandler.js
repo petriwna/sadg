@@ -1,6 +1,6 @@
-import { AlertRenderer } from './AlertRenderer';
+import { AlertRenderer } from '../AlertRenderer';
 import { InputValidator } from './InputValidator';
-import { addClassToElement, removeClassFromElement, sendError } from './utils';
+import { addClassToElement, removeClassFromElement, sendError } from '../utils/utils';
 
 export class FormHandler {
   constructor(form, modal) {

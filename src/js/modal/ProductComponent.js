@@ -2,7 +2,7 @@ import { ProductCounter } from './ProductCounter';
 import { ProductDescription } from './ProductDescription';
 import { ProductGallery } from './ProductGallery';
 import { SizeList } from './SizeList';
-import { EventHandler } from '../EventHandler';
+import { EventHandler } from '../utils/EventHandler';
 import { ProductService } from '../service/ProductService';
 
 export class ProductComponent {

@@ -1,7 +1,7 @@
 import '../scss/main.scss';
 
 import { Main } from './Main';
-import { toggleBtn } from './utils';
+import { toggleBtn } from './utils/utils';
 
 export function init() {
   const moveTopBtn = document.getElementById('up');

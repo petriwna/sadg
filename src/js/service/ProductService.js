@@ -1,4 +1,4 @@
-import { DataBase } from '../DataBase';
+import { DataBase } from '../database/DataBase';
 
 export class ProductService {
   constructor() {

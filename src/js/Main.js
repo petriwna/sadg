@@ -1,9 +1,8 @@
 import { AdvantagesComponent } from './advantages/AdvantagesComponent';
 import { Catalog } from './catalog/Catalog';
-import { SplideComponent } from './catalog/SplideComponent';
 import { DeliverySection } from './dlivery/DeliverySection';
 import { FeaturesComponent } from './feature/FeaturesComponent';
-import { FormHandler } from './FormHandler';
+import { FormHandler } from './form/FormHandler';
 import { MobileMenu } from './modal/MobileMenu';
 import { ReviewsComponent } from './reviews/ReviewsComponent';
 

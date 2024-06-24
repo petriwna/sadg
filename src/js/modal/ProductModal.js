@@ -1,5 +1,5 @@
 import { Modal } from './Modal';
-import { ProductComponent } from '../catalog/ProductComponent';
+import { ProductComponent } from './ProductComponent';
 
 export class ProductModal extends Modal {
   constructor(basket, basketModal) {

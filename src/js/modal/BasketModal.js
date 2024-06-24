@@ -2,7 +2,7 @@ import { fromEvent } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 import { Modal } from './Modal';
-import { FormHandler } from '../FormHandler';
+import { FormHandler } from '../form/FormHandler';
 
 export class BasketModal extends Modal {
   constructor(basket) {

@@ -1,21 +1,15 @@
 .features {
-  &__content {
-    display: flex;
-    overflow: hidden;
-
-    @media screen and (min-width: $bp-desktop) {
-      justify-content: end;
-    }
-  }
-
-  &__img {
-    width: 504px;
-    height: 100%;
-  }
-
   &__description {
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+
+    @media screen and (min-width: $bp-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
   }
 }

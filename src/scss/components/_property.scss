@@ -1,51 +1,73 @@
 .property {
-  padding-top: 25px;
-  cursor: pointer;
   display: flex;
-  justify-content: center;
   align-items: center;
   font-size: 18px;
-  flex-direction: column-reverse;
-  border-top: 2px solid var(--color-brand-light);
-  transition: background-color 2s, height 2s;
+  padding: 10px;
+  flex-direction: column;
 
-  &:last-child {
-    border-bottom: 2px solid var(--color-brand-light);
+  @media screen and (min-width: $bp-mobile) {
+    flex-direction: row;
+  }
+
+  @media screen and (min-width: $bp-tablet) {
+    flex-direction: column;
   }
 
   @media screen and (min-width: $bp-desktop) {
     font-size: 20px;
-  }
-
-  &--active {
-    background-color: var(--color-brand-light-active);
+    flex-direction: row;
   }
 
   &__img-container {
     width: 100%;
-    transition: height 2s;
-    height: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    @media screen and (min-width: $bp-mobile) {
+      width: 30%;
+    }
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 100%;
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      width: 30%;
+    }
   }
 
   &__img {
-    height: 100%;
-    width: 100%;
+    height: 150px;
+    width: 150px;
     object-position: top;
+    border-radius: 50%;
+    border: 1.34px solid #e7eaec;
   }
 
   &__text {
-    width: 90%;
     align-items: center;
     display: flex;
     flex-direction: column;
     text-align: center;
+    width: 100%;
+
+    @media screen and (min-width: $bp-mobile) {
+      width: 70%;
+    }
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 100%;
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      width: 70%;
+    }
   }
 
   &__title {
     margin-bottom: 5px;
     font-size: 24px;
-    @media screen and (min-width: $bp-desktop) {
-    }
   }
 
   &__icon {

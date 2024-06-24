@@ -1,7 +1,6 @@
 import { AdvantagesComponent } from './advantages/AdvantagesComponent';
 import { Catalog } from './catalog/Catalog';
 import { DeliverySection } from './dlivery/DeliverySection';
-import { FeaturesComponent } from './feature/FeaturesComponent';
 import { FormHandler } from './form/FormHandler';
 import { MobileMenu } from './modal/MobileMenu';
 import { ReviewsComponent } from './reviews/ReviewsComponent';
@@ -18,7 +17,6 @@ export class Main {
     this.initCatalog();
     this.initForm();
     this.initDeliverySection();
-    this.initProperty();
     new AdvantagesComponent();
     new ReviewsComponent();
   }
@@ -34,10 +32,6 @@ export class Main {
   initForm() {
     const form = document.querySelector('.contacts__form');
     new FormHandler(form);
-  }
-
-  initProperty() {
-    new FeaturesComponent();
   }
 
   initDeliverySection() {

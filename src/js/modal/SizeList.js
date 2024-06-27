@@ -38,9 +38,10 @@ export class SizeList {
 
   createSizeItemElement(size, index) {
     const sizeItem = document.createElement('div');
-    sizeItem.classList.add('modal__size-item');
+    sizeItem.classList.add('modal__size-item', 'input', 'input__control');
 
     const sizeListItem = document.createElement('input');
+    sizeListItem.classList.add('input__radio');
     sizeListItem.type = 'radio';
     sizeListItem.dataset.code = size.code;
     sizeListItem.id = size.code;
@@ -72,11 +73,9 @@ export class SizeList {
     if (event.target.type === 'radio') {
       const selectedValue = event.target;
 
-      // this.modalCodeElement.firstChild.innerText = `Код товару: ${selectedValue.dataset.code}`;
-
       this.modalPriceElement.innerHTML = `
-        <p class="price__new">${selectedValue.dataset.newCost} грн</p>
-        ${selectedValue.dataset.oldCost ? `<p class="price__old">${selectedValue.dataset.oldCost} грн</p>` : ''}
+        <p class="price__new price__new--modal margin--bottom">${selectedValue.dataset.newCost} грн</p>
+        ${selectedValue.dataset.oldCost ? `<p class="price__old price__old--modal margin--bottom">${selectedValue.dataset.oldCost} грн</p>` : ''}
       `;
 
       this.onSizeChange({

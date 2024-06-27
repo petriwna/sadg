@@ -2,8 +2,8 @@ import { ProductCounter } from './ProductCounter';
 import { ProductDescription } from './ProductDescription';
 import { ProductGallery } from './ProductGallery';
 import { SizeList } from './SizeList';
-import { EventHandler } from '../utils/EventHandler';
 import { ProductService } from '../service/ProductService';
+import { EventHandler } from '../utils/EventHandler';
 
 export class ProductComponent {
   constructor() {
@@ -97,7 +97,7 @@ export class ProductComponent {
 
     this.productDescription.render(product);
     this.productGallery.renderGallery(product);
-    this.modalImg = this.productGallery.modalImg[0];
+    this.modalImg = product.imgsUrl[0];
   }
 
   updateSizeAndPrice(selectedSize) {
@@ -106,8 +106,8 @@ export class ProductComponent {
     this.price = selectedSize.newCost;
 
     this.modalPrice.innerHTML = `
-      <p class="price__new">${selectedSize.newCost} грн</p>
-      ${selectedSize.oldCost ? `<p class="price__old">${selectedSize.oldCost} грн</p>` : ''}
+      <p class="price__new price__new--modal margin--bottom">${selectedSize.newCost} грн</p>
+      ${selectedSize.oldCost ? `<p class="price__old price__old--modal margin--bottom">${selectedSize.oldCost} грн</p>` : ''}
     `;
   }
 

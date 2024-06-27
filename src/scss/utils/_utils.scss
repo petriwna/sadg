@@ -17,7 +17,24 @@
 
 .accent {
   font-weight: 600;
+
+  &--color-green {
+    color: var(--color-brand-normal-light);
+  }
+
+  &--color-red {
+    color: var(--error);
+  }
 }
+
+.margin {
+  margin: 0;
+
+  &--bottom {
+    margin-bottom: 8px;
+  }
+}
+
 
 .sum {
   display: flex;

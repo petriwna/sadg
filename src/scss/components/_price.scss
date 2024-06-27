@@ -1,6 +1,6 @@
 .price {
   display: flex;
-  gap: 8px;
+  gap: 15px;
   justify-content: center;
   align-items: baseline;
   width: 100%;
@@ -9,11 +9,14 @@
     justify-content: left;
   }
 
-
   &__new {
     font-weight: 600;
     font-size: 18px;
     text-align: center;
+
+    &--modal {
+      font-size: 28px;
+    }
   }
 
   &__old {
@@ -22,5 +25,9 @@
     font-size: 14px;
     text-decoration: line-through;
     text-align: center;
+
+    &--modal {
+      font-size: 24px;
+    }
   }
 }

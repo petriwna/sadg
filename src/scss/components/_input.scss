@@ -39,4 +39,17 @@
       padding: 16px 42px;
     }
   }
+
+  &__radio {
+    display: none;
+
+    &:checked + label {
+      color: var(--color-brand-normal);
+
+      &:before {
+        background: var(--color-brand-normal);
+        border-color: var(--color-brand-normal);
+      }
+    }
+  }
 }

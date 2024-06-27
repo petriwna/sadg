@@ -55,9 +55,11 @@ export class ProductDescription {
 
   appendFeatures(description, features) {
     if (features) {
+      const div = document.createElement('div');
       const p = document.createElement('p');
+      p.classList.add('margin', 'accent');
       p.innerText = 'Особливості:';
-      description.appendChild(p);
+      div.appendChild(p);
 
       const ul = document.createElement('ul');
 
@@ -68,22 +70,26 @@ export class ProductDescription {
         ul.appendChild(li);
       });
 
-      description.appendChild(ul);
+      div.appendChild(ul);
+      description.appendChild(div);
     }
   }
 
   appendInstruction(description, instruction) {
     if (instruction) {
       const firstParagraph = document.createElement('p');
+      firstParagraph.classList.add('margin');
       firstParagraph.innerText =
         'Конструкція мангалу дозволяє швидко скласти його у вигляді валізи.';
       description.appendChild(firstParagraph);
 
       const secondParagraph = document.createElement('p');
+      secondParagraph.classList.add('margin');
       secondParagraph.innerText = 'Для цього необхідно:';
       description.appendChild(secondParagraph);
 
       const ol = document.createElement('ol');
+      ol.classList.add('margin');
 
       instruction.forEach((item) => {
         const li = document.createElement('li');
@@ -102,7 +108,7 @@ export class ProductDescription {
 
       items.forEach((item) => {
         const li = document.createElement('li');
-        li.innerHTML = `<p><span class='accent'>${item.name}: </span>${item.value}</p>`;
+        li.innerHTML = `<p class='margin'><span class='accent'>${item.name}: </span>${item.value}</p>`;
 
         ul.appendChild(li);
       });
@@ -114,6 +120,7 @@ export class ProductDescription {
   appendDescriptionElement(description, propertyName, label) {
     if (propertyName) {
       const element = document.createElement('p');
+      element.classList.add('margin');
       element.innerHTML = `<span class='accent'>${label}: </span>${propertyName}`;
       description.appendChild(element);
     }
@@ -122,6 +129,7 @@ export class ProductDescription {
   appendTitle(description, title) {
     if (title) {
       const p = document.createElement('p');
+      p.classList.add('margin');
 
       if (title.length > 1) {
         p.innerHTML = ` <span class='accent'>${title[0]}</span> ${title[1]}`;
@@ -137,6 +145,7 @@ export class ProductDescription {
   appendAdvantages(description, advantages) {
     if (advantages) {
       const advantagesElement = document.createElement('p');
+      advantagesElement.classList.add('margin');
       advantagesElement.innerHTML = `<span class='accent'>Переваги: </span>${advantages} `;
       description.appendChild(advantagesElement);
     }
@@ -144,31 +153,51 @@ export class ProductDescription {
 
   appendText(description, textList) {
     if (textList) {
+      const div = document.createElement('div');
+
       textList.forEach((text) => {
         const textElement = document.createElement('p');
-        textElement.textContent = text;
-        description.appendChild(textElement);
+
+        textElement.classList.add('margin');
+        textElement.innerHTML = this.highlightAttention(text);
+        div.appendChild(textElement);
       });
+
+      description.appendChild(div);
     }
+  }
+
+  highlightAttention(text) {
+    if (text.includes('Є можливість')) {
+      return `<span class="accent accent--color-green">${text}</span>`;
+    }
+    const words = text.split(' ');
+    return words
+      .map((word) =>
+        word === 'Увага!' ? `<span class="accent accent--color-red">${word}</span>` : word,
+      )
+      .join(' ');
   }
 
   appendCharacteristics(description, characteristics, label) {
     if (characteristics) {
+      const div = document.createElement('div');
       const p = document.createElement('p');
-      p.classList.add('accent');
+      p.classList.add('accent', 'margin');
       p.innerText = `${label}:`;
-      description.appendChild(p);
+      div.appendChild(p);
 
       const characteristicsList = document.createElement('ul');
 
       characteristics.forEach((item) => {
         const characteristicItem = document.createElement('li');
-        characteristicItem.innerHTML = `<p><span class='accent'>${item.name}: </span>${item.value}</p>`;
+        characteristicItem.innerHTML = `<p class='margin'><span class='accent'>${item.name}: </span>${item.value}</p>`;
 
         characteristicsList.appendChild(characteristicItem);
       });
 
-      description.appendChild(characteristicsList);
+      div.appendChild(characteristicsList);
+      description.appendChild(div);
     }
   }
 

@@ -5,16 +5,12 @@
   gap: 10px;
 
   @media screen and (min-width: $bp-tablet) {
-    width: 50%;
+    width: 40%;
   }
 
   &__splide {
     display: flex;
     justify-content: center;
-
-    @media screen and (min-width: $bp-tablet) {
-      padding: 0 3em;
-    }
   }
 
   &__arrow {

@@ -21,6 +21,7 @@ export class ProductGallery {
       const thumbnailCarousel = this.gallery.querySelector('#thumbnail-carousel');
       if (mainCarousel) mainCarousel.remove();
       if (thumbnailCarousel) thumbnailCarousel.remove();
+      this.galleryRenderer.imagesUrl = [];
     }
   }
 }

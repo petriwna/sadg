@@ -27,6 +27,8 @@ export class Basket {
       const productItem = document.createElement('article');
       productItem.classList.add('basket__item');
 
+      const code = product.code.split(':')[1].trim();
+
       productItem.innerHTML = `
         <div class='basket__info'>
           <div class='basket__description'>
@@ -34,7 +36,7 @@ export class Basket {
             <div class='basket__text'>
             <h3 class='basket__name'>${product.name}</h3>
               ${product.size ? `<p class='basket__options'>${product.size}</p>` : ''}
-              <p class='basket__options'>${product.code}</p>
+              <p class='basket__options'>${code}</p>
             </div>
           </div>
           <div class='basket__settings'>
@@ -91,7 +93,6 @@ export class Basket {
   }
 
   getBasket() {
-    console.log(this.basket);
     return this.basket;
   }
 

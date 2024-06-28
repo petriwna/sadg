@@ -24,6 +24,10 @@ export class Catalog {
     await this.getProductsList();
   }
 
+  initializeSplide(parentNode) {
+    new SplideComponent(parentNode);
+  }
+
   renderSkeleton() {
     this.containers.forEach((container) => {
       for (let i = 0; i < 4; i++) {
@@ -50,7 +54,7 @@ export class Catalog {
         li.appendChild(card);
         container.appendChild(li);
       }
-      new SplideComponent(container.parentNode);
+      this.initializeSplide(container.parentNode);
     });
   }
 
@@ -65,13 +69,24 @@ export class Catalog {
   }
 
   renderProducts(container, productList, category) {
-    container.innerHTML = '';
+    this.removeSkeleton(container);
+
     productList.forEach((product) => {
       const productElement = this.createProductElement(product, category);
       container.appendChild(productElement);
     });
 
-    new SplideComponent(container.parentNode);
+    this.initializeSplide(container.parentNode);
+  }
+
+  removeSkeleton(container) {
+    const pagination = container.parentNode.parentNode.querySelector('.splide__pagination');
+
+    if (pagination) {
+      pagination.remove();
+    }
+
+    container.innerHTML = '';
   }
 
   createProductElement(product, category) {

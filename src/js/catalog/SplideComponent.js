@@ -11,12 +11,12 @@ export class SplideComponent {
     const type = shouldEnablePagination ? 'loop' : 'slide';
 
     // eslint-disable-next-line no-undef
-    new Splide(this.splideContainers, {
+    const splide = new Splide(this.splideContainers, {
       type: type,
       arrows: false,
       gap: 8,
       perPage: 4,
-      pagination: shouldEnablePagination,
+      pagination: false,
       classes: {
         pagination: 'splide__pagination pagination',
         page: 'splide__pagination__page pagination__button',
@@ -39,6 +39,8 @@ export class SplideComponent {
           pagination: shouldEnablePagination,
         },
       },
-    }).mount();
+    });
+
+    splide.mount();
   }
 }

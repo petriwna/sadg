@@ -34,7 +34,7 @@ export class ProductModal extends Modal {
     this.basketModal.openWithBasket(
       this.productComponent.modalImg,
       this.productComponent.modalTitle.textContent,
-      this.productComponent.modalCode.textContent,
+      this.productComponent.modalCode.textContent.split(':')[1].trim(),
       this.productComponent.price,
       this.productComponent.size.name,
       this.productComponent.getCounter(),

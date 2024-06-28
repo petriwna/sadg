@@ -9,6 +9,7 @@
 
   &__label-order {
     color: var(--color-secondary-dark);
+    margin: 0;
   }
 
   &__control {
@@ -49,6 +50,45 @@
       &:before {
         background: var(--color-brand-normal);
         border-color: var(--color-brand-normal);
+      }
+    }
+
+    &--label {
+      width: 100%;
+      cursor: pointer;
+      position: relative;
+      margin-left: 35px;
+
+      &::before, &::after {
+        border-radius: 5px;
+        position: absolute;
+        top: -1.5px;
+        left: -35px;
+        transition: all .3s ease-out;
+        z-index: 2;
+      }
+
+      &::before {
+        content: "";
+        border: 1.5px solid #E4E4E4;
+        width: 20px; height: 20px;
+      }
+
+      &::after{
+        content: "";
+        background: var(--color-brand-normal);
+        border: 1.5px solid var(--color-brand-normal);
+        color: #FFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        width: 20px; height: 20px;
+        transform: scale(0);
+      }
+
+      &:hover {
+        &::before { border-color: var(--color-brand-normal); }
       }
     }
   }

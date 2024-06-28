@@ -1,11 +1,14 @@
-import { AlertRenderer } from '../AlertRenderer';
 import { InputValidator } from './InputValidator';
+import { SelectComponent } from './SelectComponent';
+import { AlertRenderer } from '../AlertRenderer';
 import { addClassToElement, removeClassFromElement, sendError } from '../utils/utils';
 
 export class FormHandler {
   constructor(form, modal) {
     this.form = form;
     this.modal = modal;
+
+    this.selected = new SelectComponent();
 
     this.inputs = this.form.querySelectorAll('input');
     this.btnSubmit = this.form.querySelector('button');
@@ -125,8 +128,7 @@ export class FormHandler {
   }
 
   getPaymentValue() {
-    const paymentSelect = this.form.querySelector('#payment');
-    return paymentSelect ? paymentSelect.value : '';
+    return this.selected.selectedValue;
   }
 
   getContactData() {
@@ -138,7 +140,6 @@ export class FormHandler {
 
   getBasketText() {
     const basket = this.modal ? this.modal.basket.getBasket() : [];
-    console.log(basket[0]);
     return basket
       .map((product, index) => {
         return `

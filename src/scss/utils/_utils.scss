@@ -7,6 +7,17 @@
   overflow: hidden;
 }
 
+.rotated {
+  transform: rotate(180deg);
+}
+
+.active {
+  max-height: 240px !important;
+  opacity: 1 !important;
+  overflow-y: hidden !important;
+  margin-top: 52px !important;
+}
+
 .is-scroll-disable {
   overflow: hidden;
 }

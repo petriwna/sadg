@@ -2,6 +2,7 @@ import { AdvantagesComponent } from './advantages/AdvantagesComponent';
 import { Catalog } from './catalog/Catalog';
 import { DeliverySection } from './dlivery/DeliverySection';
 import { FormHandler } from './form/FormHandler';
+import { SelectComponent } from './form/SelectComponent';
 import { MobileMenu } from './modal/MobileMenu';
 import { ReviewsComponent } from './reviews/ReviewsComponent';
 
@@ -19,6 +20,7 @@ export class Main {
     this.initDeliverySection();
     new AdvantagesComponent();
     new ReviewsComponent();
+    new SelectComponent().init();
   }
 
   initMobileMenu() {

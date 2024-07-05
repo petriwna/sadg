@@ -31,6 +31,7 @@ export class ProductDescription {
       this.appendTitle(description, productDescription.title);
       this.appendText(description, productDescription.text);
       this.appendFeatures(description, productDescription.features);
+      this.appendComplectation(description, productDescription.accessories);
       this.appendDescriptionElement(description, productDescription.matter, 'Матеріал');
       this.appendDescriptionElement(description, productDescription.color, 'Колір');
       this.appendDescriptionElement(description, productDescription.application, 'Застосування');
@@ -72,6 +73,26 @@ export class ProductDescription {
 
       div.appendChild(ul);
       description.appendChild(div);
+    }
+  }
+
+  appendComplectation(description, accessories) {
+    if (accessories) {
+      const p = document.createElement('p');
+      p.classList.add('margin', 'accent');
+      p.textContent = 'Комплектація:';
+      description.appendChild(p);
+      const list = document.createElement('ul');
+      list.classList.add('list-style', 'margin--left');
+
+      accessories.forEach((el) => {
+        const li = document.createElement('li');
+        li.textContent = el;
+
+        list.appendChild(li);
+      });
+
+      description.appendChild(list);
     }
   }
 

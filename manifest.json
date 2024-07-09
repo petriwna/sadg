@@ -1,11 +1,14 @@
 {
   "main.css": "auto/main.css",
-  "main.js": "auto/main-dc90d182.js",
+  "main.js": "auto/main-a75b68d9.js",
   "public/videos/info-video.mp4": "auto/public/videos/info-video.mp4",
   "public/videos/simple.mp4": "auto/public/videos/simple.mp4",
   "public/videos/dvs.mp4": "auto/public/videos/dvs.mp4",
   "public/videos/mangal.mp4": "auto/public/videos/mangal.mp4",
+  "public/videos/sadj_gl.mp4": "auto/public/videos/sadj_gl.mp4",
   "public/images/property_4.jpg": "auto/public/images/property_4.jpg",
+  "public/videos/sadj.mp4": "auto/public/videos/sadj.mp4",
+  "public/videos/sadj_ner.mp4": "auto/public/videos/sadj_ner.mp4",
   "public/images/property_3.jpg": "auto/public/images/property_3.jpg",
   "public/images/order/sending.png": "auto/public/images/order/sending.png",
   "public/images/sending.png": "auto/public/images/sending.png",
@@ -38,5 +41,5 @@
   "public/favicon/site.webmanifest": "auto/public/favicon/site.webmanifest",
   "public/favicon/browserconfig.xml": "auto/public/favicon/browserconfig.xml",
   "main.css.map": "auto/main.css.map",
-  "main-dc90d182.js.map": "auto/main-dc90d182.js.map"
+  "main-a75b68d9.js.map": "auto/main-a75b68d9.js.map"
 }

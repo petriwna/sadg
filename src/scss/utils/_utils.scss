@@ -30,12 +30,16 @@
   font-weight: 600;
 
   &--color-green {
-    color: var(--color-brand-normal-light);
+    color: var(--color-brand-normal);
   }
 
   &--color-red {
     color: var(--error);
   }
+}
+
+.font-size-24 {
+  font-size: 24px;
 }
 
 .margin {
@@ -117,8 +121,3 @@
     timing-function: ease-in;
   }
 }
-//
-//.is-active {
-//  opacity: 1;
-//}
-

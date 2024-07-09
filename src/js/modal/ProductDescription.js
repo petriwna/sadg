@@ -32,12 +32,17 @@ export class ProductDescription {
       this.appendText(description, productDescription.text);
       this.appendFeatures(description, productDescription.features);
       this.appendComplectation(description, productDescription.accessories);
-      this.appendDescriptionElement(description, productDescription.matter, 'Матеріал');
+      this.appendDescriptionElement(description, productDescription.matter, 'Матеріал основи');
+      this.appendDescriptionElement(
+        description,
+        productDescription.secondMatter,
+        'Матеріал тарілок і ковпака',
+      );
       this.appendDescriptionElement(description, productDescription.color, 'Колір');
       this.appendDescriptionElement(description, productDescription.application, 'Застосування');
       this.appendAdvantages(description, productDescription.advantages);
       this.appendList(description, productDescription.size);
-      this.appendInstruction(description, productDescription.construction);
+      this.appendInstruction(description, productDescription.instruction);
       this.appendCharacteristics(
         description,
         productDescription.dimensionsFolded,
@@ -98,16 +103,10 @@ export class ProductDescription {
 
   appendInstruction(description, instruction) {
     if (instruction) {
-      const firstParagraph = document.createElement('p');
-      firstParagraph.classList.add('margin');
-      firstParagraph.innerText =
-        'Конструкція мангалу дозволяє швидко скласти його у вигляді валізи.';
-      description.appendChild(firstParagraph);
-
-      const secondParagraph = document.createElement('p');
-      secondParagraph.classList.add('margin');
-      secondParagraph.innerText = 'Для цього необхідно:';
-      description.appendChild(secondParagraph);
+      const p = document.createElement('p');
+      p.classList.add('margin', 'accent');
+      p.innerText = 'Інструкція з використання:';
+      description.appendChild(p);
 
       const ol = document.createElement('ol');
       ol.classList.add('margin');

@@ -13,7 +13,7 @@ export class AdvantagesComponent {
       pagination: false,
       perPage: 1,
       arrows: false,
-      interval: 17000,
+      interval: 18000,
       pauseOnHover: false,
       gap: 0,
       pauseOnFocus: false,

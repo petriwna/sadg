@@ -5,7 +5,7 @@
   gap: 10px;
 
   @media screen and (min-width: $bp-tablet) {
-    width: 40%;
+    width: 35%;
   }
 
   &__splide {
@@ -25,7 +25,12 @@
     fill: var(--color-splide-hover);
   }
 
+  &__slide {
+    display: flex;
+    align-items: center;
+  }
+
   &__slide.is-active {
-    border: 3px solid var(--color-splide) !important;
+    border: 3px solid var(--color-primary-dark) !important;
   }
 }

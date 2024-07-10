@@ -38,14 +38,14 @@
           <li><a class='link' href='#contacts' data-link>Контакти</a></li>
         </ul>
       </nav>
-      <button class='header__burger menu-btn-open' type='button' value='Відкрити меню'>
+      <button class='header__burger menu-btn-open' type='button' aria-label='Відкрити меню' value='Відкрити меню'>
         <svg width='24' height='24'>
           <use href='public/images/icons.svg#icon-menu'></use>
         </svg>
       </button>
 
       <div class='mobile-menu'>
-        <button class='mobile-menu__btn-close menu-btn-close' type='button' value='Закрити меню'>
+        <button class='mobile-menu__btn-close menu-btn-close' type='button' aria-label='Закрити меню' value='Закрити меню'>
           <svg width='24' height='24'>
             <use href='public/images/icons.svg#icon-close'></use>
           </svg>
@@ -78,7 +78,7 @@
           <p>Постійно тепле та соковите м'ясо.</p>
           <p>Вишукана подача, котра вразить ваших гостей.</p>
           <div class='hero-section__buttons'>
-            <a class='button hero-section__button link' href='#catalog'>Вибрати садж</a>
+            <a class='button hero-section__button link' aria-label='Вибрати садж' href='#catalog'>Вибрати садж</a>
             <a class='hero-section__video-btn link' href='#video'>
               <div class='hero-section__btn'>
                 <svg class='hero-section__icon-btn' width='11' height='11'>
@@ -329,7 +329,7 @@
               required
             />
           </div>
-          <button class='contacts__button button' type='submit' value='Замовити дзвінок'
+          <button class='contacts__button button' aria-label="Замовити дзвінок" type='submit' value='Замовити дзвінок'
           >Замовити дзвінок
           </button>
           <p class='form-terms'
@@ -422,7 +422,7 @@
 
 <div class='backdrop is-hidden' id='modal-product'>
   <div class='modal'>
-    <button class='modal__btn-close modal-btn-close' id='close-product' type='button' value='Закрити вікно'>
+    <button class='modal__btn-close modal-btn-close' id='close-product' aria-label='Закрити вікно' type='button' value='Закрити вікно'>
       <svg width='24' height='24'>
         <use href='public/images/icons.svg#icon-close'></use>
       </svg>
@@ -438,13 +438,13 @@
       </div>
       <div class='modal__buttons'>
         <div class='modal__counter'>
-          <button class='modal__plus-minus product-minus' type='button' value='Відняти один товар'>-</button>
+          <button class='modal__plus-minus product-minus' aria-label='Відняти один товар' type='button' value='Відняти один товар'>-</button>
           <label for='order-counter' class='visually-hidden'></label>
           <input type='number' id='order-counter' class='modal__value' min='1' step='1' size='4' max='999' maxlength='3'
                  value='1'>
-          <button class='modal__plus-minus product-plus' type='button' value='Додати один товар'>+</button>
+          <button class='modal__plus-minus product-plus' type='button' aria-label='Додати один товар' value='Додати один товар'>+</button>
         </div>
-        <button class='modal__order button' id='order-modal' type='button' value='Оформити замовлення'>Оформити
+        <button class='modal__order button' id='order-modal' type='button' aria-label='Оформити замовлення' value='Оформити замовлення'>Оформити
           замовлення
         </button>
       </div>
@@ -454,7 +454,7 @@
 
 <div class='backdrop is-hidden' id='modal-basket'>
   <div class='basket-modal'>
-    <button class='basket-modal__btn-close modal-btn-close' id='close-basket' type='button' value='Закрити вікно'>
+    <button class='basket-modal__btn-close modal-btn-close' id='close-basket' type='button' aria-label='Закрити вікно' value='Закрити вікно'>
       <svg width='24' height='24'>
         <use href='public/images/icons.svg#icon-close'></use>
       </svg>
@@ -574,7 +574,7 @@
           <p class='sum'></p></div>
       </div>
 
-      <button type='button' class='basket__submit button' value='Відправити заявку'>Відправити заявку</button>
+      <button type='button' class='basket__submit button' aria-label='Відправити заявку' value='Відправити заявку'>Відправити заявку</button>
       <p class='basket__terms'
       >Натискаючи на кнопку я погоджуюсь з
         <a class='basket__link' href='privacy-policy.html' target='_blank'> політикою конфіденційності</a>

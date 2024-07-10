@@ -121,3 +121,14 @@
     timing-function: ease-in;
   }
 }
+
+.splide__track--fade>.splide__list>.splide__slide {
+  height: 517px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-splide-hover);
+
+  @media screen and (min-width: $bp-tablet) {
+    height: 417px;
+  }
+}

@@ -103,7 +103,19 @@ export class Catalog {
     card.classList.add('card');
 
     card.innerHTML = `
-      <img class='card__image' src='${product.imgsUrl[0]}' alt='${product.alt}'/>
+      <div class='card__img-wrap'>
+        <img class='card__image' src='${product.imgsUrl[0]}' alt='${product.alt}'/>
+        ${
+          product.gift
+            ? `<div class='card__gift'> 
+                <svg class='card__icon' width='18' height='18'>
+                  <use href='public/images/icons.svg#icon-gift'></use>
+                </svg>
+                <p class='accent margin'>Подарунок.</p>
+               </div>`
+            : ''
+        }
+      </div>
       <div class='card__container'>
         <h4 class='card__title'>${product.name}</h4>
         <div class='card__price-container price'>

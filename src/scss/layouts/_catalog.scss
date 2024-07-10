@@ -1,10 +1,51 @@
 .catalog {
+
+  &__top {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+
+    @media screen and (min-width: $bp-mobile) {
+      justify-content: space-between;
+    }
+
+    &::before {
+      border: 2px solid var(--color-brand-light);
+      content: "";
+      display: none;
+      width: 100%;
+      height: 0;
+
+      @media screen and (min-width: $bp-mobile) {
+        display: block;
+      }
+    }
+
+    &::after {
+      border: 2px solid var(--color-brand-light);
+      content: "";
+      width: 100%;
+      height: 0;
+      display: none;
+
+      @media screen and (min-width: $bp-mobile) {
+        display: block;
+      }
+    }
+  }
+
   &__title {
-    position: relative;
     text-align: center;
     line-height: 1.3;
     font-size: 28px;
     font-weight: 800;
+    margin: 0 15px;
+
+    @media screen and (min-width: $bp-mobile) {
+      text-wrap: nowrap;
+    }
 
     @media screen and (min-width: $bp-tablet) {
       font-size: 35px;
@@ -12,61 +53,6 @@
 
     @media screen and (min-width: $bp-desktop) {
       font-size: 45px;
-    }
-
-    &::before {
-      position: absolute;
-      bottom: 20px;
-      border: 2px solid var(--color-brand-light);
-      content: "";
-      display: none;
-      margin-top: 12px;
-      width: 30%;
-
-      @media screen and (min-width: $bp-desktop) {
-        display: block;
-      }
-
-      @media screen and (min-width: $bp-large-desktop) {
-        width: 35%;
-      }
-    }
-
-    &::after {
-      position: absolute;
-      right: 0;
-      bottom: 20px;
-      border: 2px solid var(--color-brand-light);
-      content: "";
-      display: none;
-      margin-top: 12px;
-      width: 30%;
-
-      @media screen and (min-width: $bp-desktop) {
-        display: block;
-      }
-
-      @media screen and (min-width: $bp-large-desktop) {
-        width: 35%;
-      }
-    }
-
-    &--components {
-      &::before {
-        width: 14%;
-
-        @media screen and (min-width: $bp-large-desktop) {
-          width: 22%;
-        }
-      }
-
-      &::after {
-        width: 14%;
-
-        @media screen and (min-width: $bp-large-desktop) {
-          width: 22%;
-        }
-      }
     }
   }
 

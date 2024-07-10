@@ -167,10 +167,15 @@
     background-color: var(--color-brand-normal);
     border: 2px solid var(--color-brand-normal);
     width: 100%;
+    margin-bottom: 16px;
 
     &:hover {
       color: var(--color-brand-dark);
       border: 2px solid var(--color-brand-dark);
     }
+  }
+
+  &__terms {
+    text-align: center;
   }
 }

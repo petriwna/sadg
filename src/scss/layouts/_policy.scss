@@ -1,0 +1,15 @@
+.policy {
+  background-color: var(--color-primary-dark);
+
+  &__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 32px;
+  }
+
+  &__title {
+    text-align: center;
+  }
+}

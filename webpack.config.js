@@ -205,6 +205,11 @@ module.exports = {
       minify: true,
       inject: 'body',
     }),
+    new HtmlWebpackPlugin({
+      template: './src/privacy-policy.html',
+      filename: 'privacy-policy.html',
+      minify: true,
+    }),
     new WebpackManifestPlugin(),
   ].filter(Boolean),
   devtool: 'source-map',

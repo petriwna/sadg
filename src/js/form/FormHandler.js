@@ -84,7 +84,7 @@ export class FormHandler {
 
     const contactData = this.getContactData();
 
-    const text = `Заявка на дзвінок!\n Ім'я: ${contactData.name},\n Телефон: ${contactData.phone}`;
+    const text = `САДЖ!!! \n Заявка на дзвінок!\n Ім'я: ${contactData.name},\n Телефон: ${contactData.phone}`;
 
     if (!isError) {
       this.sendMessageTelegram(text);
@@ -146,7 +146,6 @@ export class FormHandler {
         Товар ${index + 1}:
         Назва: ${product.name},
         Код товара: ${product.code},
-        Розмір: ${product.size},
         Кількість: ${product.quantity},
         Сума за товар ${index + 1}: ${product.price * product.quantity} грн.
       `;
@@ -161,6 +160,7 @@ export class FormHandler {
 
   generateOrderDataText(orderData) {
     return `
+      САДЖ!!!!
       Замовлення! 
       ${orderData.firstName} ${orderData.name},
       телефон: ${orderData.phone}, 

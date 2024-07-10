@@ -6,4 +6,8 @@
   &:hover {
     color: var(--color-brand-normal);
   }
+
+  &--dark {
+    color: var(--color-primary-dark);
+  }
 }

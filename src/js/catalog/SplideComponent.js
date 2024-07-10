@@ -10,6 +10,7 @@ export class SplideComponent {
     const splide = new Splide(this.splideContainers, {
       type: 'loop',
       arrows: false,
+      rewind: true,
       gap: 8,
       perPage: 4,
       pagination: true,

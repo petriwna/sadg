@@ -16,7 +16,72 @@ export class ProductDescription {
 
     this.renderCompectationContent(description, product.description);
 
+    if (product.gift) {
+      this.renderGift(description, product.gift);
+      this.createGiftAccent();
+    }
+
     return description;
+  }
+
+  renderGift(description, gifts) {
+    const ul = document.createElement('ul');
+
+    gifts.forEach((gift) => {
+      const title = document.createElement('p');
+      title.innerText = gift.title;
+      title.classList.add('accent', 'accent--color-green');
+      description.appendChild(title);
+
+      gift.text.forEach((t) => {
+        const p = document.createElement('p');
+        p.innerText = t;
+        description.appendChild(p);
+      });
+
+      const li = document.createElement('li');
+      const giftEl = document.createElement('article');
+      giftEl.setAttribute('id', 'gift');
+      giftEl.classList.add('gift-card');
+
+      giftEl.innerHTML = `
+      <div class='gift-card__info'>
+          <div class='gift-card__description'>
+            <img class='gift-card__img' src='${gift.imgsUrl[0]}' alt='${gift.name}'>
+            <div class='gift-card__text'>
+              <p class='gift-card__price accent margin'>${gift.cost} грн</p>
+              <h3 class='gift-card__name margin'>${gift.name}</h3>
+            </div>
+          </div>           
+            <div>
+              <svg class='gift-card__icon' width='50' height='50'>
+                <use href='public/images/icons.svg#icon-gift'></use>
+              </svg>
+            </div>
+        </div>
+    `;
+      li.appendChild(giftEl);
+      ul.appendChild(li);
+    });
+
+    description.appendChild(ul);
+  }
+
+  createGiftAccent() {
+    const price = document.querySelector('.modal__price');
+    price.style.position = 'relative';
+
+    const a = document.createElement('a');
+    a.setAttribute('href', '#gift');
+    a.classList.add('gift-card__accent');
+
+    a.innerHTML = `
+      <svg class='gift-card__icon-accent' width='20' height='20'>
+        <use href='public/images/icons.svg#icon-gift'></use>
+      </svg>
+    `;
+
+    price.appendChild(a);
   }
 
   createDescriptionElement() {

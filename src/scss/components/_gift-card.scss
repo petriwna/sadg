@@ -48,6 +48,12 @@
     justify-content: center;
   }
 
+  &__quantity {
+    opacity: 0.7;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
   &__name {
     font-size: 18px;
   }

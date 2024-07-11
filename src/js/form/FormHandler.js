@@ -142,11 +142,18 @@ export class FormHandler {
     const basket = this.modal ? this.modal.basket.getBasket() : [];
     return basket
       .map((product, index) => {
+        const giftsText = product.gift
+          ? product.gift
+              .map((gift) => `Подарунок: ${gift.name} - ${product.quantity} шт.`)
+              .join(', ')
+          : '';
+
         return `
         Товар ${index + 1}:
         Назва: ${product.name},
         Код товара: ${product.code},
         Кількість: ${product.quantity},
+          ${giftsText}
         Сума за товар ${index + 1}: ${product.price * product.quantity} грн.
       `;
       })

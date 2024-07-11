@@ -28,6 +28,7 @@ export class ProductComponent {
     this.price = null;
     this.size = null;
     this.modalImg = null;
+    this.gift = null;
   }
 
   setupEventListeners(handleClickOrderBtn) {
@@ -38,6 +39,10 @@ export class ProductComponent {
     this.renderSkeletonContent();
 
     const product = await this.productService.getProduct(category, id);
+
+    if (product.gift) {
+      this.gift = product.gift;
+    }
 
     this.renderModalContent(product);
   }

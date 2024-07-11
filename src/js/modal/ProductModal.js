@@ -38,6 +38,7 @@ export class ProductModal extends Modal {
       this.productComponent.price,
       this.productComponent.size.name,
       this.productComponent.getCounter(),
+      this.productComponent.gift,
     );
   }
 }

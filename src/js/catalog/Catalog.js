@@ -189,6 +189,7 @@ export class Catalog {
         product.sizeList[0].newCost,
         product.sizeList[0].name,
         1,
+        product.gift ? product.gift : null,
       );
     }
   }

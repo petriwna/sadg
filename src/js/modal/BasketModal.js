@@ -17,8 +17,8 @@ export class BasketModal extends Modal {
     this.setupEventListeners();
   }
 
-  openWithBasket(img, name, code, price, size, quantity) {
-    this.basket.addProductToBasket(img, name, code, price, size, quantity);
+  openWithBasket(img, name, code, price, size, quantity, gift) {
+    this.basket.addProductToBasket(img, name, code, price, size, quantity, gift);
     this.updateFabCounter();
 
     this.openBasket();
@@ -99,6 +99,15 @@ export class BasketModal extends Modal {
     price.innerText = `${this.basket.getSumProduct(index)} грн`;
   }
 
+  updateQuantityGift(quantity, el) {
+    const parent = el.parentNode.parentNode.parentNode;
+    const giftQuantity = parent.querySelector('#gift-quantity');
+
+    if (giftQuantity) {
+      giftQuantity.textContent = quantity;
+    }
+  }
+
   handleInputValue(event, index, value) {
     const parent = event.target.parentNode;
     this.basket.changeQuantity(index, parseInt(value));
@@ -117,6 +126,7 @@ export class BasketModal extends Modal {
     this.updateProductSum(index, parent.parentNode);
     this.updateTotalSum();
     this.updateFabCounter();
+    this.updateQuantityGift(newQuantity, parent.parentNode);
   }
 
   handleDecrement(event, index) {
@@ -129,6 +139,7 @@ export class BasketModal extends Modal {
     this.updateProductSum(index, parent.parentNode);
     this.updateTotalSum();
     this.updateFabCounter();
+    this.updateQuantityGift(newQuantity);
   }
 
   handleDeleteProduct(event, index) {

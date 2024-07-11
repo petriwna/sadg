@@ -1,8 +1,8 @@
 {
   "main.css": "auto/main.css",
-  "main.js": "auto/main-11bb78b3.js",
+  "main.js": "auto/main-8efe9b41.js",
   "privacy-policy.css": "auto/privacy-policy.css",
-  "privacy-policy.js": "auto/privacy-policy-11bb78b3.js",
+  "privacy-policy.js": "auto/privacy-policy-8efe9b41.js",
   "public/videos/simple.mp4": "auto/public/videos/simple.mp4",
   "public/videos/sadj_gl.mp4": "auto/public/videos/sadj_gl.mp4",
   "public/images/property_4.jpg": "auto/public/images/property_4.jpg",
@@ -43,6 +43,6 @@
   "public/favicon/site.webmanifest": "auto/public/favicon/site.webmanifest",
   "public/favicon/browserconfig.xml": "auto/public/favicon/browserconfig.xml",
   "main.css.map": "auto/main.css.map",
-  "main-11bb78b3.js.map": "auto/main-11bb78b3.js.map",
+  "main-8efe9b41.js.map": "auto/main-8efe9b41.js.map",
   "privacy-policy.css.map": "auto/privacy-policy.css.map"
 }
